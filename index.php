@@ -1,5 +1,6 @@
 <?php
-    print "hey";
+    print "hey\n";
+    echo "hello?";
     $servername="127.0.0.1";
     $username="root";
     $password="";
