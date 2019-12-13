@@ -24,16 +24,16 @@
             <nav class="main-menu mobile-menu">
                 <ul>
                     <li class="active"><a href="index.php">Υπολογισμός Διαδρομής</a></li>
-                    <li><a href="how-it-works.html">Εισιτήρια</a></li>
-                    <li><a href="listings.html">Δρομολόγια</a></li>
-                    <li><a href="blog.html">Πληροφορίες</a></li>
-                    <li><a href="contact.html">Επικοινωνία</a></li>
+                    <li><a href="website/php/coming_soon.php">Εισιτήρια</a></li>
+                    <li><a href="website/php/coming_soon.php">Δρομολόγια</a></li>
+                    <li><a href="website/php/coming_soon.php">Πληροφορίες</a></li>
+                    <li><a href="website/php/coming_soon.php">Επικοινωνία</a></li>
                 </ul>
             </nav>
             <div class="header-right">
                 <div class="user-access">
-                    <a href="#">Εγγραφή/</a>
-                    <a href="#">Σύνδεση</a>
+                    <a href="website/php/coming_soon.php">Εγγραφή/</a>
+                    <a href="website/php/coming_soon.php">Σύνδεση</a>
                 </div>
             </div>
             <div id="mobile-menu-wrap"></div>
@@ -46,6 +46,52 @@
         
     </section>
     <!-- Hero Section End -->
+
+    <!-- Cards Section -->
+    <div class="container-fluid" style="padding: 4rem 8rem 8rem 8rem; background-color: #F9F9F9;">
+        <div class="row">
+			<div class="col-md-4">
+				<div class="card">
+                    <a href="">
+					    <img src="website/images/ticket_front_page.jpeg" class="card-img-top" alt="Tickets">
+                    </a>
+					<div class="card-body">
+						<a href="">
+                            <h5 class="card-title">Εισιτήρια</h5>
+                        </a>
+						<p class="card-text">Αγοράστε και επαναφορτίστε ηλεκτρονικά την ΑΤΗ.ΕΝΑ κάρτα σας</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="card">
+					<a href="">
+                        <img src="website/images/news_front_page.jpeg" class="card-img-top" alt="News">
+                    </a>
+					<div class="card-body">
+                        <a href="">
+                            <h5 class="card-title">Νέα</h5>
+                        </a>
+						<p class="card-text">Ενημερωθείτε για εκδηλώσεις και έργα που μπορεί να επηρεάσουν το ταξίδι σας</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="card">
+                    <a href="">
+					    <img src="website/images/places_front_page.jpeg" class="card-img-top" alt="Places">
+                    </a>
+					<div class="card-body">
+                    <a href="">
+                            <h5 class="card-title">Σημεία Ενδιαφέροντος</h5>
+                        </a>
+						<p class="card-text">Δείτε ενδιαφέροντα σημεία που μπορείτε να επισκεφθείτε με τον ΟΑΣΑ</p>
+					</div>
+				</div>
+			</div>
+		</div>
+    </div>
+    <!-- Cards -->
 
     <!-- Footer Section Begin -->
     <footer class="footer-section spad">
@@ -72,19 +118,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="footer-widget">
-                        <h4>Categories</h4>
-                        <ul>
-                            <li>Hotels</li>
-                            <li>Restaurant</li>
-                            <li>Spa & resorts</li>
-                            <li>Concert & Events</li>
-                            <li>Bars & Pubs</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
+                <div class="col-lg-6 col-sm-6">
                     <div class="footer-widget">
                         <h4>Usefull Links</h4>
                         <ul>
@@ -98,14 +132,16 @@
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div class="footer-widget">
-                        <h4>Usefull Links</h4>
-                        <ul>
-                            <li>About us</li>
-                            <li>Testimonials</li>
-                            <li>How it works</li>
-                            <li>Create an account</li>
-                            <li>Our Services</li>
-                        </ul>
+                        <div class="last">
+                            <h4>Social Media</h4>
+                            <ul>
+                                <li>Instagram</li>
+                                <li>Facebook</li>
+                                <li>YouTube</li>
+                                <li>Twitter</li>
+                                <li>SoundCloud</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>

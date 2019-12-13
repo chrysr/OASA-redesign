@@ -206,10 +206,6 @@ ol {
 	width: 100%;
 }
 
-.header-section.listings:after {
-	opacity: 0.79;
-}
-
 .header-section:after {
 	position: absolute;
 	left: 0;
@@ -218,7 +214,7 @@ ol {
 	width: 100%;
 	background: #1d1d1d;
 	content: "";
-	opacity: 0.49;
+	opacity: 0.78;
 	z-index: -1;
 }
 
@@ -301,7 +297,7 @@ ol {
 
 .footer-section {
 	background: #1d1d1d;
-	padding-top: 120px;
+	padding-top: 85px;
 	padding-bottom: 0;
 }
 
@@ -373,56 +369,11 @@ ol {
 	line-height: 36px;
 }
 
-.footer-section .footer-widget .single-blog {
-	margin-bottom: 15px;
-	overflow: hidden;
+.footer-section .footer-widget .last {
+	margin-left: -31px;
 }
 
-.footer-section .footer-widget .single-blog .blog-pic {
-	width: 69px;
-	height: 69px;
-	float: left;
-	margin-right: 21px;
-}
-
-.footer-section .footer-widget .single-blog .blog-text {
-	overflow: hidden;
-}
-
-.footer-section .footer-widget .single-blog .blog-text h6 {
-	color: #fff;
-	font-size: 16px;
-	line-height: 28px;
-}
-
-.footer-section .footer-widget .single-blog .blog-text span {
-	color: #FF5581;
-	font-size: 14px;
-	display: inline-block;
-}
-
-.footer-bottom {
-	padding-top: 60px;
-}
-
-.footer-menu {
-	padding-bottom: 8px;
-}
-
-.footer-menu a {
-	color: #7d7d7d;
-	font-size: 16px;
-	margin-left: 48px;
-	display: inline-block;
-	margin-bottom: 10px;
-	-webkit-transition: all 0.1s;
-	transition: all 0.1s;
-}
-
-.footer-menu a:first-child {
-	margin-left: 0;
-}
-
-.footer-menu a:hover {
-	color: #FF5581;
-}
+.card-img-top {
+	height: 400px;
+	object-fit: cover;
+  }
