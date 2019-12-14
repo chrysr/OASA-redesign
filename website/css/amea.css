@@ -1,0 +1,86 @@
+body {
+    background-color: #F9F9F9;
+}
+
+/*---------------------
+  Blog Section
+-----------------------*/
+
+.blog-section {
+    padding-top: 130px;
+}
+
+.blog-item {
+    margin-bottom: 70px;
+    padding-top: 40px;
+}
+
+.blog-item .blog-pic {
+	position: relative;
+	height: 360px;
+}
+
+.blog-item .blog-text {
+	text-align: center;
+	padding-top: 65px;
+}
+
+.blog-item .blog-text h2 {
+	color: #242424;
+	font-size: 48px;
+	font-weight: 700;
+	margin-bottom: 16px;
+}
+
+.blog-item .blog-text ul {
+	margin-bottom: 35px;
+}
+
+.blog-item .blog-text ul li {
+	list-style: none;
+	display: inline-block;
+	color: #000000;
+	font-size: 12px;
+	position: relative;
+	margin-right: 15px;
+}
+
+.blog-item .blog-text ul li:last-child {
+	margin-right: 0;
+}
+
+.blog-item .blog-text ul li:last-child:after {
+	display: none;
+}
+
+.blog-item .blog-text ul li:after {
+	position: absolute;
+	right: -12px;
+	top: -3px;
+	content: "|";
+	font-size: 15px;
+}
+
+.blog-item .blog-text p {
+	color: #787878;
+	font-size: 16px;
+	line-height: 28px;
+	letter-spacing: 0.2px;
+	margin-bottom: 46px;
+}
+
+.instructions {
+	background-repeat: no-repeat;
+    background-position: top center;
+	background-image: url(../images/index_bg2.jpg);
+}
+
+.primary-btn {
+	display: inline-block;
+	font-size: 20px;
+	font-weight: 400;
+	padding: 11px 44px 15px;
+	color: #fff;
+	background: #4098BE;
+	line-height: 23px;
+}

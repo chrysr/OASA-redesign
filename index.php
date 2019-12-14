@@ -32,7 +32,7 @@
                             <a class="dropbtn">Πληροφορίες</a>
                             <div class="dropdown-content">
                                 <a href="website/php/coming_soon.php">Σταθμοί</a>
-                                <a href="website/php/coming_soon.php">ΑμεΑ</a>
+                                <a href="website/php/amea.php">ΑμεΑ</a>
                                 <a href="website/php/coming_soon.php">Νέα & Ανακοινώσεις</a>
                             </div>
                         </div>
@@ -62,7 +62,6 @@
 
     <!-- Hero Section Begin -->
     <section class="hero-section set-bg">
-        
     </section>
     <!-- Hero Section End -->
 
@@ -117,10 +116,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <form action="#" class="newslatter-form">
+                    <form class="newslatter-form">
                         <input type="text"
                             placeholder="Εισάγετε το email σας για να λαμβάνετε ενημερώσεις σχετικά με τον ΟΑΣΑ">
-                        <button type="submit">Εγγραφή</button>
+                        <button id="button" type="submit">Εγγραφή</button>
                     </form>
                 </div>
             </div>
@@ -167,7 +166,28 @@
         </div>
     </footer>
     <!-- Footer Section End -->
+
+    <div class="bg-modal">
+        <div class="modal-content">
+            <div class="close">+</div>
+            <img src="website/images/email_subscription.png" alt="Email Subscription">
+            <h3>Ευχαριστούμε για την εγγραφή!</h3>
+        </div>
+    </div>
+
 </body>
+
+<script>
+    document.getElementById('button').addEventListener('click',
+    function() {
+        document.querySelector('.bg-modal').style.display = 'flex';
+    });
+
+    document.querySelector('.close').addEventListener('click',
+    function() {
+        document.querySelector('.bg-modal').style.display = 'none';
+    });
+</script>
 
 </html>
 

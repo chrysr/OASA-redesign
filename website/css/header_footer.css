@@ -84,9 +84,9 @@ ol {
 	top: 0;
 	height: 100%;
 	width: 100%;
-	background: #1d1d1d;
+	background: #0e0e0e;
 	content: "";
-	opacity: 0.78;
+	opacity: 0.90;
 	z-index: -1;
 }
 
@@ -111,8 +111,6 @@ ol {
 }
 
 .header-section .main-menu ul li.active a {
-	/* color: rgb(61, 207, 255); */
-	/* color: #FF5581; */
 	color: rgb(124, 205, 240);
 }
 
@@ -157,6 +155,7 @@ ol {
   
   /* Dropdown Content (Hidden by Default) */
   .dropdown-content {
+	padding-top: 40px;
 	display: none;
 	position: absolute;
 	min-width: 160px;
