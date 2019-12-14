@@ -1,34 +1,12 @@
-body {
-	height: 100%;
-	font-family: 'Open Sans', sans-serif;
-	-webkit-font-smoothing: antialiased;
-	background: none;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	margin: 0;
-	font-weight: 400;
-	font-family: 'Open Sans', sans-serif;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-}
-
-header {
+.main_header {
     background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url(../images/under_construction.jpg);
     height: 100vh;
     background-position: center;
     background-size: cover;
+	padding-top: 100vh;
 }
 
-.hero {
+.main {
     top: 50%;
     left: 50%;
     position: absolute;
@@ -37,18 +15,18 @@ header {
     text-align: center;
 }
 
-h1 {
+.main h1 {
     font-size: 60px;
     letter-spacing: 15px;
 }
 
-hr {
+.main hr {
     width: 50%;
     margin: 30px auto;
     border: 1.5px solid #fff;
 }
 
-p {
+.main p {
     font-size: 30px;
     margin-bottom: 30px;
 }

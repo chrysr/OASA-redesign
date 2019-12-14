@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
 
     <!-- Css Styles -->
+    <link rel="stylesheet" href="website/css/header_footer.css" type="text/css">
     <link rel="stylesheet" href="website/css/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="website/css/style.css" type="text/css">
 </head>
@@ -26,8 +27,26 @@
                     <li class="active"><a href="index.php">Υπολογισμός Διαδρομής</a></li>
                     <li><a href="website/php/coming_soon.php">Εισιτήρια</a></li>
                     <li><a href="website/php/coming_soon.php">Δρομολόγια</a></li>
-                    <li><a href="website/php/coming_soon.php">Πληροφορίες</a></li>
-                    <li><a href="website/php/coming_soon.php">Επικοινωνία</a></li>
+                    <li>
+                        <div class="dropdown">
+                            <a class="dropbtn">Πληροφορίες</a>
+                            <div class="dropdown-content">
+                                <a href="website/php/coming_soon.php">Σταθμοί</a>
+                                <a href="website/php/coming_soon.php">ΑμεΑ</a>
+                                <a href="website/php/coming_soon.php">Νέα & Ανακοινώσεις</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="dropdown">
+                            <a class="dropbtn">Επικοινωνία</a>
+                            <div class="dropdown-content">
+                                <a href="website/php/coming_soon.php">Επικοινωνία με τον ΟΑΣΑ</a>
+                                <a href="website/php/coming_soon.php">Συχνές Ερωτήσεις</a>
+                                <a href="website/php/coming_soon.php">Σχετικά με τον ΟΑΣΑ</a>
+                            </div>
+                        </div>
+                    </li>
                 </ul>
             </nav>
             <div class="header-right">
