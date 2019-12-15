@@ -10,9 +10,14 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
 
     <!-- Css Styles -->
-    <link rel="stylesheet" href="website/css/header_footer.css" type="text/css">
-    <link rel="stylesheet" href="website/css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="website/css/style.css" type="text/css">
+    <link rel="stylesheet" href="../css/header_footer.css" type="text/css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="../css/style.css" type="text/css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    
+    <!--Fontawesome CDN-->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
 </head>
 
 <body>
@@ -20,20 +25,20 @@
     <header class="header-section">
         <div class="container-fluid">
             <div class="logo">
-                <a href="./index.php"><img src="website/images/logo.png" alt="Αρχική"></a>
+                <a href="../../index.php"><img src="../images/logo.png" alt="Αρχική"></a>
             </div>
             <nav class="main-menu mobile-menu">
                 <ul>
-                    <li class="active"><a href="index.php">Υπολογισμός Διαδρομής</a></li>
-                    <li><a href="website/php/coming_soon.php">Εισιτήρια</a></li>
-                    <li><a href="website/php/coming_soon.php">Δρομολόγια</a></li>
+                    <li ><a href="../../index.php">Υπολογισμός Διαδρομής</a></li>
+                    <li><a href="./coming_soon.php">Εισιτήρια</a></li>
+                    <li><a href="./coming_soon.php">Δρομολόγια</a></li>
                     <li>
                         <div class="dropdown">
                             <a class="dropbtn">Πληροφορίες</a>
                             <div class="dropdown-content">
-                                <a href="website/php/coming_soon.php">Σταθμοί</a>
-                                <a href="website/php/amea.php">ΑμεΑ</a>
-                                <a href="website/php/coming_soon.php">Νέα & Ανακοινώσεις</a>
+                                <a href="./coming_soon.php">Σταθμοί</a>
+                                <a href="./amea.php">ΑμεΑ</a>
+                                <a href="./coming_soon.php">Νέα & Ανακοινώσεις</a>
                             </div>
                         </div>
                     </li>
@@ -41,9 +46,9 @@
                         <div class="dropdown">
                             <a class="dropbtn">Επικοινωνία</a>
                             <div class="dropdown-content">
-                                <a href="website/php/coming_soon.php">Επικοινωνία με τον ΟΑΣΑ</a>
-                                <a href="website/php/coming_soon.php">Συχνές Ερωτήσεις</a>
-                                <a href="website/php/coming_soon.php">Σχετικά με τον ΟΑΣΑ</a>
+                                <a href="./coming_soon.php">Επικοινωνία με τον ΟΑΣΑ</a>
+                                <a href="./coming_soon.php">Συχνές Ερωτήσεις</a>
+                                <a href="./coming_soon.php">Σχετικά με τον ΟΑΣΑ</a>
                             </div>
                         </div>
                     </li>
@@ -51,8 +56,8 @@
             </nav>
             <div class="header-right">
                 <div class="user-access">
-                    <a href="website/php/coming_soon.php">Εγγραφή/</a>
-                    <a href="website/php/login.php">Σύνδεση</a>
+                    <a href="./coming_soon.php">Εγγραφή/</a>
+                    <a href="./coming_soon.php">Σύνδεση</a>
                 </div>
             </div>
             <div id="mobile-menu-wrap"></div>
@@ -61,52 +66,55 @@
     <!-- Header End -->
 
     <!-- Hero Section Begin -->
-    <section class="hero-section set-bg">
-    </section>
+    <!-- <section class="hero-section set-bg2">
+    </section> -->
     <!-- Hero Section End -->
 
     <!-- Cards Section -->
-    <div class="container-fluid" style="padding: 4rem 8rem 8rem 8rem; background-color: #F9F9F9;">
+    <div class="container-fluid" style="padding: 14rem 8rem 12rem 8rem; background-color: #1d1d1d; background-position: center center;background-repeat: no-repeat; background-image: url('../images/login-background.jpg')">
         <div class="row">
-			<div class="col-md-4">
-				<div class="card">
-                    <a href="">
-					    <img src="website/images/ticket_front_page.jpeg" class="card-img-top" alt="Tickets">
-                    </a>
-					<div class="card-body">
-						<a href="">
-                            <h5 class="card-title">Εισιτήρια</h5>
-                        </a>
-						<p class="card-text">Αγοράστε και επαναφορτίστε ηλεκτρονικά την ΑΤΗ.ΕΝΑ κάρτα σας</p>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-4">
-				<div class="card">
-					<a href="">
-                        <img src="website/images/news_front_page.jpeg" class="card-img-top" alt="News">
-                    </a>
-					<div class="card-body">
-                        <a href="">
-                            <h5 class="card-title">Νέα</h5>
-                        </a>
-						<p class="card-text">Ενημερωθείτε για εκδηλώσεις και έργα που μπορεί να επηρεάσουν το ταξίδι σας</p>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-4">
-				<div class="card">
-                    <a href="">
-					    <img src="website/images/places_front_page.jpeg" class="card-img-top" alt="Places">
-                    </a>
-					<div class="card-body">
-                    <a href="">
-                            <h5 class="card-title">Σημεία Ενδιαφέροντος</h5>
-                        </a>
-						<p class="card-text">Δείτε ενδιαφέροντα σημεία που μπορείτε να επισκεφθείτε με τον ΟΑΣΑ</p>
-					</div>
-				</div>
-			</div>
+            <div class="container">
+                <div class="d-flex justify-content-center h-100">
+                    <div class="cardlogin">
+                        <div class="card-header" style="color: white">
+                            <h3>Sign In</h3>
+                        </div>
+                        <div class="card-body">
+                            <form>
+                                <!-- <span style="color:white">ATH.ENA Card Number*</span> -->
+                                <div class="input-group form-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="fas fa-id-card" title="ATH.ENA Card Number"></i></span>
+                                    </div>
+                                    <input type="tel" class="form-control" placeholder="ATH.ENA Card Number" pattern=".{16}" required title="ATH.ENA Card has 16 digits" >
+                                    
+                                </div>
+                                <!-- <span style="color:white">Password*</span> -->
+                                <div class="input-group form-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="fas fa-key" title="Password"></i></span>
+                                    </div>
+                                    <input type="password" class="form-control" placeholder="Password" required>
+                                </div>
+                                <div class="row align-items-center remember">
+                                    <input type="checkbox">Remember Me
+                                </div>
+                                <div class="form-group">
+                                    <input type="submit" value="Login" class="btn float-right login_btn">
+                                </div>
+                            </form>
+                        </div>
+                        <div class="card-footer">
+                            <div class="d-flex justify-content-center links">
+                                Don't have an account?<a href="#">Sign Up</a>
+                            </div>
+                            <div class="d-flex justify-content-center">
+                                <a href="#">Forgot your password?</a>
+                            </div>
+                        </div>
+                    </div>
+	            </div>
+            </div>
 		</div>
     </div>
     <!-- Cards -->
@@ -170,7 +178,7 @@
     <div class="bg-modal">
         <div class="modal-content">
             <div class="close">+</div>
-            <img src="website/images/email_subscription.png" alt="Email Subscription">
+            <img src="../images/email_subscription.png" alt="Email Subscription">
             <h3>Ευχαριστούμε για την εγγραφή!</h3>
         </div>
     </div>
