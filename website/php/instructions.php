@@ -21,11 +21,11 @@
         include(dirname(__FILE__)."/header.php");
     ?>
 
-    <!--== Car List Area Start ==-->
+    <!--== Instructions Start ==-->
     <section id="car-list-area" class="section-padding">
         <div class="container">
             <div class="row">
-                <!-- Car List Content Start -->
+                <!-- Main -->
                 <div class="col-lg-8">
                     <div class="car-details-content">
                         <h2>ΓΕΝΙΚΕΣ ΟΔΗΓΙΕΣ ΧΡΗΣΗΣ</h2>
@@ -90,14 +90,14 @@
                         </div>
                     </div>
                 </div>
-                <!-- Car List Content End -->
+                <!-- Main -->
 
                 <!-- Sidebar Area Start -->
                 <div class="col-lg-4">
                     <div class="sidebar-content-wrap m-t-50">
                         <!-- Single Sidebar Start -->
                         <div class="single-sidebar">
-                            <h3>ΓΡΑΜΜΗ ΑΠΟΚΛΕΙΣΤΙΚΗΣ ΕΞΥΠΗΡΕΤΗΣΗΣ</h3>
+                            <h3>ΓΡΑΜΜΗ ΑΠΟΚΛΕΙΣΤΙΚΗΣ ΕΞΥΠΗΡΕΤΗΣΗΣ ΑμεΑ</h3>
 
                             <div class="sidebar-body">
                                 <p><i class="fa fa-mobile"></i> 210 82 00 887</p>
@@ -161,7 +161,7 @@
             </div>
         </div>
     </section>
-    <!--== Car List Area End ==-->
+    <!--== Instructions End ==-->
 
     <?php
         include(dirname(__FILE__)."/footer.php");
