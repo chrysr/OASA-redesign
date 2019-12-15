@@ -2,12 +2,16 @@ body {
     background-color: #F9F9F9;
 }
 
+a:hover {
+	color: white;
+}
+
 /*---------------------
   Blog Section
 -----------------------*/
 
 .blog-section {
-    padding-top: 130px;
+    padding-top: 160px;
 }
 
 .blog-item {
@@ -72,7 +76,19 @@ body {
 .instructions {
 	background-repeat: no-repeat;
     background-position: top center;
-	background-image: url(../images/index_bg2.jpg);
+	background-image: url(../images/instructions.png);
+}
+
+.works {
+	background-repeat: no-repeat;
+    background-position: top center;
+	background-image: url(../images/works.png);
+}
+
+.stations {
+	background-repeat: no-repeat;
+    background-position: top center;
+	background-image: url(../images/stations_wheelchair.png);
 }
 
 .primary-btn {
