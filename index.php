@@ -16,6 +16,7 @@
 </head>
 
 <body>
+<<<<<<< HEAD
     <!-- Header Section Begin -->
     <header class="header-section">
         <div class="container-fluid">
@@ -60,12 +61,18 @@
     </header>
     <!-- Header End -->
 
+=======
+    <?php
+        include(dirname(__FILE__)."/website/php/header.php");
+    ?>
+    
+>>>>>>> cfbbc7035399d4286b9b5610243327657124ea2b
     <!-- Hero Section Begin -->
     <section class="hero-section set-bg">
     </section>
     <!-- Hero Section End -->
 
-    <!-- Cards Section -->
+    <!-- Cards Section Begin-->
     <div class="container-fluid" style="padding: 4rem 8rem 8rem 8rem; background-color: #F9F9F9;">
         <div class="row">
 			<div class="col-md-4">
@@ -109,72 +116,11 @@
 			</div>
 		</div>
     </div>
-    <!-- Cards -->
+    <!-- Cards Section End-->
 
-    <!-- Footer Section Begin -->
-    <footer class="footer-section spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <form class="newslatter-form">
-                        <input type="text"
-                            placeholder="Εισάγετε το email σας για να λαμβάνετε ενημερώσεις σχετικά με τον ΟΑΣΑ">
-                        <button id="button" type="submit">Εγγραφή</button>
-                    </form>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-3 col-sm-6">
-                    <div class="footer-widget">
-                        <h4>Usefull Links</h4>
-                        <ul>
-                            <li>About us</li>
-                            <li>Testimonials</li>
-                            <li>How it works</li>
-                            <li>Create an account</li>
-                            <li>Our Services</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-sm-6">
-                    <div class="footer-widget">
-                        <h4>Usefull Links</h4>
-                        <ul>
-                            <li>About us</li>
-                            <li>Testimonials</li>
-                            <li>How it works</li>
-                            <li>Create an account</li>
-                            <li>Our Services</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="footer-widget">
-                        <div class="last">
-                            <h4>Social Media</h4>
-                            <ul>
-                                <li>Instagram</li>
-                                <li>Facebook</li>
-                                <li>YouTube</li>
-                                <li>Twitter</li>
-                                <li>SoundCloud</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!-- Footer Section End -->
-
-    <div class="bg-modal">
-        <div class="modal-content">
-            <div class="close">+</div>
-            <img src="website/images/email_subscription.png" alt="Email Subscription">
-            <h3>Ευχαριστούμε για την εγγραφή!</h3>
-        </div>
-    </div>
-
+    <?php
+        include(dirname(__FILE__)."/website/php/footer.php");
+    ?>
 </body>
 
 <script>

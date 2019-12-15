@@ -16,33 +16,11 @@
 </head>
 
 <body>
-    <!-- Header Section Begin -->
-    <header class="header-section">
-        <div class="container-fluid">
-            <div class="logo">
-                <a href="../../index.php"><img src="../images/logo.png" alt="Αρχική"></a>
-            </div>
-            <nav class="main-menu mobile-menu">
-                <ul>
-                    <li class="active"><a href="../../index.php">Υπολογισμός Διαδρομής</a></li>
-                    <li><a href="coming_soon.php">Εισιτήρια</a></li>
-                    <li><a href="coming_soon.php">Δρομολόγια</a></li>
-                    <li><a href="coming_soon.php">Πληροφορίες</a></li>
-                    <li><a href="coming_soon.php">Επικοινωνία</a></li>
-                </ul>
-            </nav>
-            <div class="header-right">
-                <div class="user-access">
-                    <a href="coming_soon.php">Εγγραφή/</a>
-                    <a href="coming_soon.php">Σύνδεση</a>
-                </div>
-            </div>
-            <div id="mobile-menu-wrap"></div>
-        </div>
-    </header>
-    <!-- Header End -->
+    <?php
+        include(dirname(__FILE__)."/header.php");
+    ?>
 
-    <!-- Blog Section Begin -->
+    <!-- AMEA Front Page Begin -->
     <section class="blog-section spad">
         <div class="container">
             <div class="row">
@@ -78,62 +56,23 @@
             </div>
         </div>
     </section>
-    <!-- Blog Section End -->
+    <!-- AMEA Front Page End -->
 
-   <!-- Footer Section Begin -->
-   <footer class="footer-section spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <form action="#" class="newslatter-form">
-                        <input type="text"
-                            placeholder="Εισάγετε το email σας για να λαμβάνετε ενημερώσεις σχετικά με τον ΟΑΣΑ">
-                        <button type="submit">Εγγραφή</button>
-                    </form>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-3 col-sm-6">
-                    <div class="footer-widget">
-                        <h4>Usefull Links</h4>
-                        <ul>
-                            <li>About us</li>
-                            <li>Testimonials</li>
-                            <li>How it works</li>
-                            <li>Create an account</li>
-                            <li>Our Services</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-sm-6">
-                    <div class="footer-widget">
-                        <h4>Usefull Links</h4>
-                        <ul>
-                            <li>About us</li>
-                            <li>Testimonials</li>
-                            <li>How it works</li>
-                            <li>Create an account</li>
-                            <li>Our Services</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="footer-widget">
-                        <div class="last">
-                            <h4>Social Media</h4>
-                            <ul>
-                                <li>Instagram</li>
-                                <li>Facebook</li>
-                                <li>YouTube</li>
-                                <li>Twitter</li>
-                                <li>SoundCloud</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!-- Footer Section End -->
+    <?php
+        include(dirname(__FILE__)."/footer.php");
+    ?>
 </body>
+
+<script>
+    document.getElementById('button').addEventListener('click',
+    function() {
+        document.querySelector('.bg-modal').style.display = 'flex';
+    });
+
+    document.querySelector('.close').addEventListener('click',
+    function() {
+        document.querySelector('.bg-modal').style.display = 'none';
+    });
+</script>
+
 </html>
