@@ -34,7 +34,7 @@
         <div class="header-right">
             <div class="user-access">
                 <a href="<?$_SERVER['DOCUMENT_ROOT']?>/OASA-redesign/website/php/coming_soon.php">Εγγραφή/</a>
-                <a href="<?$_SERVER['DOCUMENT_ROOT']?>/OASA-redesign/website/php/coming_soon.php">Σύνδεση</a>
+                <a href="<?$_SERVER['DOCUMENT_ROOT']?>/OASA-redesign/website/php/login.php">Σύνδεση</a>
             </div>
         </div>
         <div id="mobile-menu-wrap"></div>

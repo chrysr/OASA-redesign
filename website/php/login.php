@@ -22,47 +22,9 @@
 
 <body>
     <!-- Header Section Begin -->
-    <header class="header-section">
-        <div class="container-fluid">
-            <div class="logo">
-                <a href="../../index.php"><img src="../images/logo.png" alt="Αρχική"></a>
-            </div>
-            <nav class="main-menu mobile-menu">
-                <ul>
-                    <li ><a href="../../index.php">Υπολογισμός Διαδρομής</a></li>
-                    <li><a href="./coming_soon.php">Εισιτήρια</a></li>
-                    <li><a href="./coming_soon.php">Δρομολόγια</a></li>
-                    <li>
-                        <div class="dropdown">
-                            <a class="dropbtn">Πληροφορίες</a>
-                            <div class="dropdown-content">
-                                <a href="./coming_soon.php">Σταθμοί</a>
-                                <a href="./amea.php">ΑμεΑ</a>
-                                <a href="./coming_soon.php">Νέα & Ανακοινώσεις</a>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="dropdown">
-                            <a class="dropbtn">Επικοινωνία</a>
-                            <div class="dropdown-content">
-                                <a href="./coming_soon.php">Επικοινωνία με τον ΟΑΣΑ</a>
-                                <a href="./coming_soon.php">Συχνές Ερωτήσεις</a>
-                                <a href="./coming_soon.php">Σχετικά με τον ΟΑΣΑ</a>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </nav>
-            <div class="header-right">
-                <div class="user-access">
-                    <a href="./coming_soon.php">Εγγραφή/</a>
-                    <a href="./coming_soon.php">Σύνδεση</a>
-                </div>
-            </div>
-            <div id="mobile-menu-wrap"></div>
-        </div>
-    </header>
+    <?php
+        include(dirname(__FILE__)."/header.php");
+    ?>
     <!-- Header End -->
 
     <!-- Hero Section Begin -->
@@ -120,59 +82,9 @@
     <!-- Cards -->
 
     <!-- Footer Section Begin -->
-    <footer class="footer-section spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <form class="newslatter-form">
-                        <input type="text"
-                            placeholder="Εισάγετε το email σας για να λαμβάνετε ενημερώσεις σχετικά με τον ΟΑΣΑ">
-                        <button id="button" type="submit">Εγγραφή</button>
-                    </form>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-3 col-sm-6">
-                    <div class="footer-widget">
-                        <h4>Usefull Links</h4>
-                        <ul>
-                            <li>About us</li>
-                            <li>Testimonials</li>
-                            <li>How it works</li>
-                            <li>Create an account</li>
-                            <li>Our Services</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-sm-6">
-                    <div class="footer-widget">
-                        <h4>Usefull Links</h4>
-                        <ul>
-                            <li>About us</li>
-                            <li>Testimonials</li>
-                            <li>How it works</li>
-                            <li>Create an account</li>
-                            <li>Our Services</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="footer-widget">
-                        <div class="last">
-                            <h4>Social Media</h4>
-                            <ul>
-                                <li>Instagram</li>
-                                <li>Facebook</li>
-                                <li>YouTube</li>
-                                <li>Twitter</li>
-                                <li>SoundCloud</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <?php
+        include(dirname(__FILE__)."/footer.php");
+    ?>
     <!-- Footer Section End -->
 
     <div class="bg-modal">

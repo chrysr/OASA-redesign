@@ -16,49 +16,6 @@
 </head>
 
 <body>
-    <!-- Header Section Begin -->
-    <header class="header-section">
-        <div class="container-fluid">
-            <div class="logo">
-                <a href="./index.php"><img src="website/images/logo.png" alt="Αρχική"></a>
-            </div>
-            <nav class="main-menu mobile-menu">
-                <ul>
-                    <li class="active"><a href="index.php">Υπολογισμός Διαδρομής</a></li>
-                    <li><a href="website/php/coming_soon.php">Εισιτήρια</a></li>
-                    <li><a href="website/php/coming_soon.php">Δρομολόγια</a></li>
-                    <li>
-                        <div class="dropdown">
-                            <a class="dropbtn">Πληροφορίες</a>
-                            <div class="dropdown-content">
-                                <a href="website/php/coming_soon.php">Σταθμοί</a>
-                                <a href="website/php/amea.php">ΑμεΑ</a>
-                                <a href="website/php/coming_soon.php">Νέα & Ανακοινώσεις</a>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="dropdown">
-                            <a class="dropbtn">Επικοινωνία</a>
-                            <div class="dropdown-content">
-                                <a href="website/php/coming_soon.php">Επικοινωνία με τον ΟΑΣΑ</a>
-                                <a href="website/php/coming_soon.php">Συχνές Ερωτήσεις</a>
-                                <a href="website/php/coming_soon.php">Σχετικά με τον ΟΑΣΑ</a>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </nav>
-            <div class="header-right">
-                <div class="user-access">
-                    <a href="website/php/coming_soon.php">Εγγραφή/</a>
-                    <a href="website/php/login.php">Σύνδεση</a>
-                </div>
-            </div>
-            <div id="mobile-menu-wrap"></div>
-        </div>
-    </header>
-    <!-- Header End -->
 
     <?php
         include(dirname(__FILE__)."/website/php/header.php");
