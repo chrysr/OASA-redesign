@@ -94,9 +94,9 @@ session_start();
         
     
 
-    <div class="container-fluid" style="padding: 14rem 8rem 12rem 8rem; background-color: #1d1d1d; background-position: center center;background-repeat: no-repeat; background-image: url('../images/signup-background.jpg')">
+    <div class="container-fluid" style="padding: 14rem 0rem 12rem 0rem; background-color: #1d1d1d; background-position: center center;background-repeat: no-repeat; background-image: url('../images/signup-background.jpg')">
         <div class="row">
-            <div class="container">
+            <div class="container" style="padding-bottom:2rem; padding-right:35rem">
                 <div class="d-flex justify-content-center h-100">
                     <div class="cardsignup">
                         <div class="card-header" style="color: white">
