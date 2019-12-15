@@ -134,13 +134,13 @@ session_start();
                                 </div>
                             </form>
                         </div>
-                        <div class="card-footer">
+                        <div class="card-footer" style="margin-top:1.25rem;background-color: #212529">
                             <div class="d-flex justify-content-center links">
-                                Δεν έχετε εγγραφεί?<a href="./signup.php">Εγγραφή</a>
+                                Δεν έχετε εγγραφεί;<a href="./signup.php">Εγγραφή</a>
                             </div>
                             <br>
-                            <div class="d-flex justify-content-center">
-                                <a href="#">Ξέχασα τον κωδικό μου</a>
+                            <div class="d-flex justify-content-center links">
+                                Ξεχάσατε τον κωδικό σας;<a href="#">Επαναφορά</a>
                             </div>
                         </div>
                     </div>

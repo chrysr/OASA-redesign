@@ -102,7 +102,7 @@ session_start();
                         <div class="card-header" style="color: white">
                             <h3>Εγγραφή</h3>
                         </div>
-                        <div class="card-body">
+                        <div class="card-body card-body-signup">
                             <form action="signup.php" method="POST">
                                 <!-- <span style="color:white">ATH.ENA Card Number*</span> -->
                                 <?php if($exists==true) print '<span class="error text-danger">Αυτός ο αριθμός κάρτας έχει ήδη εγγραφεί</span>' ?>
@@ -137,7 +137,7 @@ session_start();
                                         <input type="text" class="form-control" name="lastname" title="Επίθετο" required placeholder="Επίθετο">
                                     </div>
                                 </div>
-                                <div class="form-group">
+                                <div class="form-group" style="padding-top:1rem">
                                     <input type="submit" value="Εγγραφή" class="btn float-right login_btn">
                                 </div>
                             </form>

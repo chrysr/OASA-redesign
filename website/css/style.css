@@ -225,6 +225,9 @@ margin-left: 4px;
 	background-position: center center;
 	background-image: url(../images/login-background.jpg);
 }
+.card-body-signup{
+	padding-top: 0rem !important;
+}
 
 /*LOGIN STYLE END*/
 
@@ -234,7 +237,7 @@ margin-left: 4px;
 	height: 370px;
 	margin-top: auto;
 	margin-bottom: auto;
-	width: 450px;
+	width: 400px;
 	background-color: rgba(33,37,41,0.85) !important;
 }
 /*SIGNUP STYLE END*/
