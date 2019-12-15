@@ -1,3 +1,7 @@
+<?php
+// Start the session
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="el">
 
@@ -21,6 +25,13 @@
 </head>
 
 <body>
+    <?php
+        if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true)
+        {
+            header('Location: ./account.php');
+            die();
+        }
+    ?>
     <!-- Header Section Begin -->
     <?php
         include(dirname(__FILE__)."/header.php");
@@ -33,6 +44,13 @@
     <!-- Hero Section End -->
 
     <!-- Cards Section -->
+    
+            <!-- <h1>SET</h1> -->
+           
+
+             <!-- <h1>$_POST['card']." ".$_POST['password']</h1>; -->
+        
+    
     <div class="container-fluid" style="padding: 14rem 8rem 12rem 8rem; background-color: #1d1d1d; background-position: center center;background-repeat: no-repeat; background-image: url('../images/login-background.jpg')">
         <div class="row">
             <div class="container">
@@ -42,21 +60,22 @@
                             <h3>Sign In</h3>
                         </div>
                         <div class="card-body">
-                            <form>
+                            <form action="authenticate.php" method="POST">
                                 <!-- <span style="color:white">ATH.ENA Card Number*</span> -->
                                 <div class="input-group form-group">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="fas fa-id-card" title="ATH.ENA Card Number"></i></span>
                                     </div>
-                                    <input type="tel" class="form-control" placeholder="ATH.ENA Card Number" pattern=".{16}" required title="ATH.ENA Card has 16 digits" >
-                                    
+                                    <!-- <input type="tel" name='card' class="form-control" placeholder="ATH.ENA Card Number" pattern=".{16}" required title="ATH.ENA Card has 16 digits" > -->
+                                    <input type="tel" name='card' class="form-control" placeholder="ATH.ENA Card Number" required title="ATH.ENA Card has 16 digits" >
+
                                 </div>
                                 <!-- <span style="color:white">Password*</span> -->
                                 <div class="input-group form-group">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="fas fa-key" title="Password"></i></span>
                                     </div>
-                                    <input type="password" class="form-control" placeholder="Password" required>
+                                    <input type="password" name='password' class="form-control" placeholder="Password" required>
                                 </div>
                                 <div class="row align-items-center remember">
                                     <input type="checkbox">Remember Me
