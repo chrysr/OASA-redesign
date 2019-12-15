@@ -227,3 +227,14 @@ margin-left: 4px;
 }
 
 /*LOGIN STYLE END*/
+
+
+/*SIGNUP STYLE START*/
+.cardsignup{
+	height: 370px;
+	margin-top: auto;
+	margin-bottom: auto;
+	width: 450px;
+	background-color: rgba(33,37,41,0.85) !important;
+}
+/*SIGNUP STYLE END*/
