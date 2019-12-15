@@ -4,7 +4,52 @@ session_start();
 ?>
 <!DOCTYPE html>
 <html lang="el">
-
+<?php
+    $card=false;
+    $pass=false;
+    if(isset($_POST['card']))
+    {    
+        $servername="127.0.0.1";
+        $username="root";
+        $password="";
+        $dbname="oasa";
+    
+        $connection=new mysqli($servername,$username,$password,$dbname);
+        
+        if($connection->connect_error)
+            die("Connection failed: ".$connection->connect_error);
+        
+        $sql="SELECT * FROM users WHERE users.card=".$_POST['card']." and users.password='".$_POST['password']."'";
+        //print $sql;
+        if(($result=$connection->query($sql))&&$result->num_rows==1)
+        {
+            //success
+            $_SESSION['loggedin']=true;
+            $_SESSION['username']=$_POST['card'];
+        } 
+        else 
+        {
+            $sql="SELECT * FROM users where users.card=".$_POST['card'];
+            //print $sql;
+            if(!($result=$connection->query($sql))||$result->num_rows==0)
+                $card=true;
+                
+            else
+            {
+                //print $result->num_rows."\n\n\n";
+                $sql="SELECT * FROM users where users.card=".$_POST['card']." and users.password=".$_POST['password'];
+                //print $sql;
+                if(!($result=$connection->query($sql))||$result->num_rows==0)
+                    $pass=true;
+            }
+            //nosuccess
+        }
+        $connection->close();
+        //header('Location: ./login.php');
+        //set env for signin/signup
+        //die();
+    }
+?>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -51,6 +96,7 @@ session_start();
              <!-- <h1>$_POST['card']." ".$_POST['password']</h1>; -->
         
     
+
     <div class="container-fluid" style="padding: 14rem 8rem 12rem 8rem; background-color: #1d1d1d; background-position: center center;background-repeat: no-repeat; background-image: url('../images/login-background.jpg')">
         <div class="row">
             <div class="container">
@@ -60,8 +106,9 @@ session_start();
                             <h3>Σύνδεση</h3>
                         </div>
                         <div class="card-body">
-                            <form action="authenticate.php" method="POST">
+                            <form action="login.php" method="POST">
                                 <!-- <span style="color:white">ATH.ENA Card Number*</span> -->
+                                <?php if($card==true) print '<span class="error text-danger">Αυτός ο αριθμός κάρτας δεν έχει εγγραφεί</span>' ?>
                                 <div class="input-group form-group">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="fas fa-id-card" title="Αριθμός ATH.ENA Card"></i></span>
@@ -71,6 +118,7 @@ session_start();
 
                                 </div>
                                 <!-- <span style="color:white">Password*</span> -->
+                                <?php if($pass==true) print '<span class="error text-danger">Λανθασμένος Κωδικός Πρόσβασης</span>' ?>
                                 <div class="input-group form-group">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="fas fa-key" title="Κωδικός Πρόσβασης"></i></span>

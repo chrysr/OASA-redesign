@@ -2,6 +2,48 @@
 // Start the session
 session_start();
 ?>
+<?php
+    $exists=false;
+    if(isset($_POST['card']))
+    {
+        $servername="127.0.0.1";
+        $username="root";
+        $password="";
+        $dbname="oasa";
+        
+        $connection=new mysqli($servername,$username,$password,$dbname);
+        if($connection->connect_error)
+            die("Connection failed: ".$connection->connect_error);
+            
+        $sql="SELECT * FROM users WHERE users.card=".$_POST['card'];
+        //print $sql;
+        if(($result=$connection->query($sql))&&$result->num_rows>0)
+            $exists=true;
+        else
+        {            
+            $sql="INSERT INTO users (firstname,lastname,email,card,password) VALUES ('".$_POST["firstname"]."','".$_POST["lastname"]."','".$_POST["email"]."','".$_POST["card"]."','".$_POST["password"]."')";
+            print $sql;
+            if($connection->query($sql))
+            {
+                $connection->close();
+                echo ("<script LANGUAGE='JavaScript'>
+                window.alert('Η εγγραφή σας ολοκληρώθηκε με επιτυχία');
+                window.location.href='./login.php';
+                </script>");
+
+            }
+            else
+            {
+                $connection->close();
+                echo ("<script LANGUAGE='JavaScript'>
+                window.alert('Υπήρξε κάποιο σφάλμα');
+                window.location.href='./signup.php';
+                </script>");
+            }
+        }
+    }
+    //$exists=true;
+?>
 <!DOCTYPE html>
 <html lang="el">
 
@@ -51,6 +93,7 @@ session_start();
              <!-- <h1>$_POST['card']." ".$_POST['password']</h1>; -->
         
     
+
     <div class="container-fluid" style="padding: 14rem 8rem 12rem 8rem; background-color: #1d1d1d; background-position: center center;background-repeat: no-repeat; background-image: url('../images/signup-background.jpg')">
         <div class="row">
             <div class="container">
@@ -60,8 +103,10 @@ session_start();
                             <h3>Εγγραφή</h3>
                         </div>
                         <div class="card-body">
-                            <form action="register.php" method="POST">
+                            <form action="signup.php" method="POST">
                                 <!-- <span style="color:white">ATH.ENA Card Number*</span> -->
+                                <?php if($exists==true) print '<span class="error text-danger">Αυτός ο αριθμός κάρτας έχει ήδη εγγραφεί</span>' ?>
+
                                 <div class="input-group form-group">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="fas fa-id-card" title="Αριθμός ATH.ENA Card"></i></span>
@@ -85,7 +130,7 @@ session_start();
                                 </div>
                                 <div class="row">
                                     <div class="form-group name1 col-md-6">
-                                        <input type="text" class="form-control" name="firstaname" title="Όνομα" required placeholder="Όνομα">
+                                        <input type="text" class="form-control" name="firstname" title="Όνομα" required placeholder="Όνομα">
                                     </div>
 
                                     <div class="form-group name2 col-md-6">
