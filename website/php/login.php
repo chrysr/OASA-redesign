@@ -2,8 +2,7 @@
 // Start the session
 session_start();
 ?>
-<!DOCTYPE html>
-<html lang="el">
+
 <?php
     $card=false;
     $pass=false;
@@ -50,6 +49,8 @@ session_start();
         //die();
     }
 ?>
+<!DOCTYPE html>
+<html lang="el">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">

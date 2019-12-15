@@ -50,7 +50,7 @@ session_start();
     <form action="account.php" method="POST" style="padding-top: 20rem">
         <!-- <span style="color:white">ATH.ENA Card Number*</span> -->
         <input type="hidden" value=1 name="hid">
-        <input type="submit" name="signout">
+        <input type="submit" name="signout" value="Έξοδος">
         
     </form>    
     <!-- Header End -->
