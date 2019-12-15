@@ -16,7 +16,6 @@
 </head>
 
 <body>
-<<<<<<< HEAD
     <!-- Header Section Begin -->
     <header class="header-section">
         <div class="container-fluid">
@@ -61,12 +60,10 @@
     </header>
     <!-- Header End -->
 
-=======
     <?php
         include(dirname(__FILE__)."/website/php/header.php");
     ?>
     
->>>>>>> cfbbc7035399d4286b9b5610243327657124ea2b
     <!-- Hero Section Begin -->
     <section class="hero-section set-bg">
     </section>
