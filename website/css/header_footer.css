@@ -209,26 +209,6 @@ ol {
 	font-style: italic;
 }
 
-.footer-section .newslatter-form input::-webkit-input-placeholder {
-	color: #fff;
-}
-
-.footer-section .newslatter-form input::-moz-placeholder {
-	color: #fff;
-}
-
-.footer-section .newslatter-form input:-ms-input-placeholder {
-	color: #fff;
-}
-
-.footer-section .newslatter-form input::-ms-input-placeholder {
-	color: #fff;
-}
-
-.footer-section .newslatter-form input::placeholder {
-	color: #fff;
-}
-
 .footer-section .newslatter-form button {
 	position: absolute;
 	right: 0;
@@ -263,4 +243,44 @@ ol {
 
 .footer-section .footer-widget .last {
 	margin-left: -31px;
+}
+
+/* MODAL */
+.bg-modal {
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.8);
+	position: fixed;
+    bottom: 0;
+	display: none;
+	justify-content: center;
+	align-items: center;
+}
+
+.bg-modal .modal-content {
+	width: 500px;
+	height: 250px;
+	background-color: white;
+	text-align: center;
+	padding: 20px;
+	position: relative;
+	border-radius: 4px;
+}
+
+.bg-modal .modal-content img {
+	width: 400px;
+	height: 130px;
+	padding-left: 70px;
+}
+
+.bg-modal .modal-content h3 {
+	padding-top: 20px;
+}
+
+.close {
+	position: absolute;
+	top: 0;
+	right: 14px;
+	font-size: 42px;
+	transform: rotate(45deg);
 }
