@@ -32,10 +32,18 @@
             </ul>
         </nav>
         <div class="header-right">
-            <div class="user-access">
-                <a href="<?$_SERVER['DOCUMENT_ROOT']?>/OASA-redesign/website/php/coming_soon.php">Εγγραφή/</a>
-                <a href="<?$_SERVER['DOCUMENT_ROOT']?>/OASA-redesign/website/php/login.php">Σύνδεση</a>
-            </div>
+            
+            <?php if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true):?>
+                <div class="user-access">
+                    <a href="<?$_SERVER['DOCUMENT_ROOT']?>/OASA-redesign/website/php/account.php">Η ATH.ENA Card μου</a>
+                </div> 
+            <?php else:?>
+                <div class="user-access">
+                    <a href="<?$_SERVER['DOCUMENT_ROOT']?>/OASA-redesign/website/php/coming_soon.php">Εγγραφή/</a>
+                    <a href="<?$_SERVER['DOCUMENT_ROOT']?>/OASA-redesign/website/php/login.php">Σύνδεση</a>
+                </div>        
+            <?php endif;?>
+            
         </div>
         <div id="mobile-menu-wrap"></div>
     </div>
