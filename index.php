@@ -24,7 +24,7 @@ session_start();
 <body>
 
     <?php
-        include(dirname(__FILE__)."/website/php/header.php");
+        $page = 'one'; include(dirname(__FILE__)."/website/php/header.php");
     ?>
     
     <!-- Hero Section Begin -->

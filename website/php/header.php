@@ -6,10 +6,10 @@
         </div>
         <nav class="main-menu mobile-menu">
             <ul>
-                <li class="active"><a href="<?$_SERVER['DOCUMENT_ROOT']?>/OASA-redesign/index.php">Υπολογισμός Διαδρομής</a></li>
-                <li><a href="<?$_SERVER['DOCUMENT_ROOT']?>/OASA-redesign/website/php/coming_soon.php">Εισιτήρια</a></li>
-                <li><a href="<?$_SERVER['DOCUMENT_ROOT']?>/OASA-redesign/website/php/coming_soon.php">Δρομολόγια</a></li>
-                <li>
+                <li <?php echo ($page == 'one') ? "class='active'" : ""; ?>><a href="<?$_SERVER['DOCUMENT_ROOT']?>/OASA-redesign/index.php">Υπολογισμός Διαδρομής</a></li>
+                <li <?php echo ($page == 'two') ? "class='active'" : ""; ?>><a href="<?$_SERVER['DOCUMENT_ROOT']?>/OASA-redesign/website/php/coming_soon.php">Εισιτήρια</a></li>
+                <li <?php echo ($page == 'three') ? "class='active'" : ""; ?>><a href="<?$_SERVER['DOCUMENT_ROOT']?>/OASA-redesign/website/php/coming_soon.php">Δρομολόγια</a></li>
+                <li <?php echo ($page == 'four') ? "class='active'" : ""; ?>>
                     <div class="dropdown">
                         <a class="dropbtn">Πληροφορίες</a>
                         <div class="dropdown-content">
@@ -19,7 +19,7 @@
                         </div>
                     </div>
                 </li>
-                <li>
+                <li <?php echo ($page == 'five') ? "class='active'" : ""; ?>>
                     <div class="dropdown">
                         <a class="dropbtn">Επικοινωνία</a>
                         <div class="dropdown-content">

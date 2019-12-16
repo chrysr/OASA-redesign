@@ -21,7 +21,7 @@ session_start();
 
 <body>
     <?php
-        include(dirname(__FILE__)."/header.php");
+        $page = 'zero'; include(dirname(__FILE__)."/header.php");
     ?>
 
     <!-- Countdown Section Begin -->
