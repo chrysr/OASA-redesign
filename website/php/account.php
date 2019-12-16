@@ -34,7 +34,7 @@ session_start();
     ?>
     <!-- Header Section Begin -->
     <?php
-        include(dirname(__FILE__)."/header.php");
+        $page='zero'; include(dirname(__FILE__)."/header.php");
     ?>
 
     <!-- <?php 
@@ -75,7 +75,7 @@ session_start();
                 if(isset($_POST['update']))
                 {
                     print "try to update";
-                    $sql="SELECT * FROM users WHERE users.card=".$_SESSION['card'].' and password="'.$_POST['password'].'"';
+                    $sql="SELECT * FROM users WHERE card=".$_SESSION['card'].' and password="'.$_POST['password'].'"';
                     if(($result=$connection->query($sql))&&$result->num_rows==1)
                     {
                         $sql='UPDATE users SET firstname="'.$_POST['firstname'].'",lastname="'.$_POST['lastname'].'",email="'.$_POST['email'].'" WHERE card='.$_SESSION['card'];
@@ -89,6 +89,7 @@ session_start();
                         }
                         else
                         {
+                            print "error update";
                             $error=true;
                             //error
                         }

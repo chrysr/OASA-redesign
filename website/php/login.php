@@ -153,7 +153,7 @@ session_start();
 
     <!-- Footer Section Begin -->
     <?php
-        include(dirname(__FILE__)."/footer.php");
+        $page='zero';  include(dirname(__FILE__)."/footer.php");
     ?>
     <!-- Footer Section End -->
 
