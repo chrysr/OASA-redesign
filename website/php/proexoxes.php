@@ -8,7 +8,7 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>ΑμεΑ - Κατάσταση Δικτύου</title>
+    <title>ΑμεΑ - Προεξοχές</title>
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
@@ -23,7 +23,7 @@ session_start();
 
 <body>
     <?php
-        include(dirname(__FILE__)."/header.php");
+        $page = 'four'; include(dirname(__FILE__)."/header.php");
     ?>
 
     <!--== Works Start ==-->

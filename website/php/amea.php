@@ -21,7 +21,7 @@ session_start();
 
 <body>
     <?php
-        include(dirname(__FILE__)."/header.php");
+        $page = 'four'; include(dirname(__FILE__)."/header.php");
     ?>
 
     <!-- AMEA Front Page Begin -->
