@@ -112,7 +112,9 @@ session_start();
                                         <span class="input-group-text"><i class="fas fa-id-card" title="Αριθμός ATH.ENA Card"></i></span>
                                     </div>
                                     <!-- <input type="tel" name='card' class="form-control" placeholder="ATH.ENA Card Number" pattern=".{16}" required title="ATH.ENA Card has 16 digits" > -->
-                                    <input type="tel" name='card' class="form-control" placeholder="Αριθμός ATH.ENA Card" required title="Η ATH.ENA Card έχει 16 ψηφία" >
+                                    <?php if($exists==true) print '<input type="tel" name="card" class="form-control is-invalid" placeholder="Αριθμός ATH.ENA Card" required title="Η ATH.ENA Card έχει 16 ψηφία" >' ?>
+                                    <?php if($exists==false) print '<input type="tel" name="card" class="form-control" placeholder="Αριθμός ATH.ENA Card" required title="Η ATH.ENA Card έχει 16 ψηφία" >' ?>
+
 
                                 </div>
                                 <!-- <span style="color:white">Password*</span> -->
@@ -126,15 +128,15 @@ session_start();
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="fas fa-envelope" title="Διεύθυνση Ηλεκτρονικού Ταχυδρομίου"></i></span>
                                     </div>
-                                    <input type="email" name='email' class="form-control" placeholder="E-mail" title="Διεύθυνση Ηλεκτρονικού Ταχυδρομίου" required>
+                                    <?php print '<input type="email" name="email" value="'.(isset($_POST['email'])?$_POST['email']:'').'" class="form-control" placeholder="E-mail" title="Διεύθυνση Ηλεκτρονικού Ταχυδρομίου" required>' ?>
                                 </div>
                                 <div class="row">
                                     <div class="form-group name1 col-md-6">
-                                        <input type="text" class="form-control" name="firstname" title="Όνομα" required placeholder="Όνομα">
+                                        <?php print '<input type="text" class="form-control" value="'.(isset($_POST['firstname'])?$_POST['firstname']:'').'"name="firstname" title="Όνομα" required placeholder="Όνομα">' ?>
                                     </div>
 
                                     <div class="form-group name2 col-md-6">
-                                        <input type="text" class="form-control" name="lastname" title="Επίθετο" required placeholder="Επίθετο">
+                                        <?php print '<input type="text" class="form-control" value="'.(isset($_POST['lastname'])?$_POST['lastname']:'').'"name="lastname" title="Επίθετο" required placeholder="Επίθετο">' ?>
                                     </div>
                                 </div>
                                 <div class="form-group" style="padding-top:1rem">
