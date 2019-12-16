@@ -58,7 +58,7 @@ session_start();
                             <table id="mytable" class="table-fill">
                                 <thead>
                                     <tr>
-                                        <th onclick="sortTable(0)" class="text-left">Στάση</th>
+                                        <th onclick="sortTable(0)" class="text-left">Στάση<i class="fa fa-fw fa-sort"></i></th>
                                         <th class="text-left" style="padding-right: 120px;">Ημερομηνίες</th>
                                         <th class="text-left">Περιγραφή προβλήματος</th>
                                     </tr>

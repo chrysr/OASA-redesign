@@ -311,6 +311,13 @@ button.bg-light:focus {
 		  background: #1089ff !important;
 		  color: #fff !important; }
 
+/* Styling Select is stupid */
+/* https://stackoverflow.com/questions/30750006/why-is-it-so-hard-to-style-select-and-option-elements */
+
+.form-control option {
+	color: black !important;
+}
+
 /*LOGIN STYLE START*/
 @import url('https://fonts.googleapis.com/css?family=Numans');
 /* background-image: url('http://getwallpapers.com/wallpaper/full/a/5/d/544750.jpg'); */
