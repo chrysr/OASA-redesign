@@ -24,7 +24,7 @@ session_start();
         {
             //success
             $_SESSION['loggedin']=true;
-            $_SESSION['username']=$_POST['card'];
+            $_SESSION['card']=$_POST['card'];
         } 
         else 
         {
@@ -115,8 +115,8 @@ session_start();
                                         <span class="input-group-text"><i class="fas fa-id-card" title="Αριθμός ATH.ENA Card"></i></span>
                                     </div>
                                     <!-- <input type="tel" name='card' class="form-control" placeholder="ATH.ENA Card Number" pattern=".{16}" required title="ATH.ENA Card has 16 digits" > -->
-                                    <input type="tel" name='card' class="form-control" placeholder="Αριθμός ATH.ENA Card" required title="Η ATH.ENA Card έχει 16 ψηφία" >
-
+                                    <?php if($card==true) print '<input type="tel" name="card" class="form-control is-invalid" placeholder="Αριθμός ATH.ENA Card" required title="Η ATH.ENA Card έχει 16 ψηφία" >' ?>
+                                    <?php if($card==false) print '<input type="tel" name="card" class="form-control" value="'.(isset($_POST['card'])?$_POST['card']:'').'" placeholder="Αριθμός ATH.ENA Card" required title="Η ATH.ENA Card έχει 16 ψηφία" >' ?>
                                 </div>
                                 <!-- <span style="color:white">Password*</span> -->
                                 <?php if($pass==true) print '<span class="error text-danger">Λανθασμένος Κωδικός Πρόσβασης</span>' ?>
@@ -124,7 +124,8 @@ session_start();
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="fas fa-key" title="Κωδικός Πρόσβασης"></i></span>
                                     </div>
-                                    <input type="password" name='password' class="form-control" placeholder="Κωδικός Πρόσβασης" title="Κωδικός Πρόσβασης" required>
+                                    <?php if($pass==true) print '<input type="password" name="password" class="form-control is-invalid" placeholder="Κωδικός Πρόσβασης" title="Κωδικός Πρόσβασης" required>' ?>
+                                    <?php if($pass==false) print '<input type="password" name="password" class="form-control" placeholder="Κωδικός Πρόσβασης" title="Κωδικός Πρόσβασης" required>' ?>
                                 </div>
                                 <div class="row align-items-center remember">
                                     <input type="checkbox">Να παραμένω συνδεδεμένος
