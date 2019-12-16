@@ -131,6 +131,186 @@
 	object-fit: cover;
 }
 
+.bg-primary {
+	background-color: rgba(33, 74, 92, 0.972) !important;
+}
+
+.ftco-section {
+  /* padding: 6em 0; */
+  position: relative; 
+}
+  @media (max-width: 767.98px) {
+    .ftco-section {
+      padding: 6em 0; } }
+
+.bg-light {
+  background-color: #f8f9fa !important; }
+
+a.bg-light:hover, a.bg-light:focus,
+button.bg-light:hover,
+button.bg-light:focus {
+  background-color: #dae0e5 !important; }
+
+.no-gutters {
+  margin-right: 0;
+  margin-left: 0; }
+  .no-gutters > .col,
+  .no-gutters > [class*="col-"] {
+    padding-right: 0;
+	padding-left: 0; }
+	
+.featured-top {
+	margin-top: -75px;
+}
+
+.request-form {
+  background: #fff;
+  padding: 30px;
+  z-index: 1;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 5px 12px -1px rgba(0, 0, 0, 0.06);
+  -moz-box-shadow: 0px 5px 12px -1px rgba(0, 0, 0, 0.06);
+  box-shadow: 0px 5px 12px -1px rgba(0, 0, 0, 0.06); }
+  .request-form h2 {
+    color: #fff;
+    font-size: 22px;
+	font-weight: 600; 
+	padding-bottom: 10px; }
+  .request-form p {
+    color: rgba(255, 255, 255, 0.8); }
+  .request-form .form-group {
+    position: relative;
+    width: 100%;
+    display: block; }
+    .request-form .form-group .icon {
+      position: absolute;
+      top: 50% !important;
+      right: 0;
+      font-size: 16px;
+      -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+      border: 1px solid red; }
+      .request-form .form-group .icon span {
+        color: rgba(0, 0, 0, 0.3) !important; }
+    .request-form .form-group .select-wrap, .request-form .form-group .input-wrap {
+      position: relative; }
+      .request-form .form-group .select-wrap select, .request-form .form-group .input-wrap select {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none; }
+    .request-form .form-group .btn {
+      width: 100%;
+      display: block !important; }
+  .request-form label.label {
+    color: #fff;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 600; }
+  .request-form .form-control {
+    border: transparent !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    height: 40px !important;
+    background: transparent !important;
+    color: rgba(255, 255, 255, 0.7) !important;
+    font-size: 14px;
+    border-radius: 0px;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important; }
+    .request-form .form-control::-webkit-input-placeholder {
+      /* Chrome/Opera/Safari */
+      color: rgba(255, 255, 255, 0.7); }
+    .request-form .form-control::-moz-placeholder {
+      /* Firefox 19+ */
+      color: rgba(255, 255, 255, 0.7); }
+    .request-form .form-control:-ms-input-placeholder {
+      /* IE 10+ */
+      color: rgba(255, 255, 255, 0.7); }
+    .request-form .form-control:-moz-placeholder {
+      /* Firefox 18- */
+      color: rgba(255, 255, 255, 0.7); }
+    .request-form .form-control:focus, .request-form .form-control:active {
+      border-color: #fff; }
+  .request-form textarea.form-control {
+	height: inherit !important; }
+	
+
+.btn {
+	cursor: pointer;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-ms-border-radius: 3px;
+	border-radius: 3px;
+	-webkit-box-shadow: none !important;
+	box-shadow: none !important;
+	font-size: 16px; }
+	.btn:hover, .btn:active, .btn:focus {
+	  outline: none; }
+	.btn.btn-primary {
+	  background: #1089ff !important;
+	  border: 1px solid #1089ff !important;
+	  color: #fff !important; }
+	  .btn.btn-primary:hover {
+		border: 1px solid #1089ff;
+		background: transparent;
+		color: #1089ff; }
+	  .btn.btn-primary.btn-outline-primary {
+		border: 1px solid #1089ff;
+		background: transparent;
+		color: #1089ff; }
+		.btn.btn-primary.btn-outline-primary:hover {
+		  border: 1px solid transparent;
+		  background: #1089ff;
+		  color: #fff; }
+	.btn.btn-secondary {
+	  background: #1d1d1d !important;
+	  border: 1px solid #1d1d1d !important;
+	  color: #fff !important; }
+	  .btn.btn-secondary:hover {
+		border: 1px solid #1d1d1d;
+		background: transparent;
+		color: #1d1d1d; }
+	  .btn.btn-secondary.btn-outline-secondary {
+		border: 1px solid #1d1d1d;
+		background: transparent;
+		color: #1d1d1d; }
+		.btn.btn-secondary.btn-outline-secondary:hover {
+		  border: 1px solid transparent;
+		  background: #1d1d1d;
+		  color: #fff; }
+	.btn.btn-outline-white {
+	  border-color: rgba(255, 255, 255, 0.8);
+	  background: none;
+	  -webkit-border-radius: 5px;
+	  -moz-border-radius: 5px;
+	  -ms-border-radius: 5px;
+	  border-radius: 5px;
+	  border-width: 1px;
+	  color: #fff; }
+	  .btn.btn-outline-white:hover, .btn.btn-outline-white:focus, .btn.btn-outline-white:active {
+		background: #fff;
+		border-color: #fff;
+		color: #1089ff; }
+	.btn.btn-black {
+	  background: #000000 !important;
+	  border: 1px solid #000000 !important;
+	  color: #fff !important; }
+	  .btn.btn-black:hover {
+		border: 1px solid #1089ff;
+		background: transparent;
+		color: #1089ff; }
+	  .btn.btn-black.btn-outline-black {
+		border: 1px solid #f0f0f0 !important;
+		background: transparent !important;
+		color: #000000 !important; }
+		.btn.btn-black.btn-outline-black:hover {
+		  border: 1px solid #1089ff !important;
+		  background: #1089ff !important;
+		  color: #fff !important; }
+
 /*LOGIN STYLE START*/
 @import url('https://fonts.googleapis.com/css?family=Numans');
 /* background-image: url('http://getwallpapers.com/wallpaper/full/a/5/d/544750.jpg'); */

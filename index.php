@@ -17,6 +17,8 @@ session_start();
     <link rel="stylesheet" href="website/css/header_footer.css" type="text/css">
     <link rel="stylesheet" href="website/css/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="website/css/style.css" type="text/css">
+    <link rel="stylesheet" href="website/css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="website/css/jquery.timepicker.css">
 </head>
 
 <body>
@@ -27,6 +29,45 @@ session_start();
     
     <!-- Hero Section Begin -->
     <section class="hero-section set-bg">
+    <section class="ftco-section ftco-no-pt">
+    	<div class="container-fluid" style="padding-left: 280px !important">
+    		<div class="row no-gutters">
+    			<div class="col-md-10 featured-top">
+    				<div class="row no-gutters">
+	  					<div class="col-md-4">
+	  						<form action="website/php/results.php" method="post" class="request-form ftco-animate bg-primary">
+		          		        <h2>Υπολογισμός Διαδρομής</h2>
+			    				<div class="form-group">
+			    					<label class="label">Σημείο Εκκίνησης</label>
+			    					<input name="start" type="text" class="form-control" placeholder="Σταθμός Εκκίνησης" required>
+			    				</div>
+			    				<div class="form-group">
+			    					<label class="label">Προορισμός</label>
+			    					<input name="destination" type="text" class="form-control" placeholder="Σταθμός Προορισμού" required>
+			    				</div>
+			    				<div class="d-flex">
+			    					<div class="form-group mr-2">
+			                            <label class="label">Ημερομηνία Αναχώρησης</label>
+			                            <input name="date" type="text" class="form-control" id="book_pick_date" placeholder="Ημερομηνία" readonly/>
+			                        </div>
+                                    <!-- <div class="form-group ml-2">
+                                        <label for="" class="label">Drop-off date</label>
+                                        <input type="text" class="form-control" id="book_off_date" placeholder="Date">
+                                    </div> -->
+		                        </div>
+                                <div class="form-group">
+                                    <label class="label">Ωρα Αναχώρησης</label>
+                                    <input name="time" type="text" class="form-control" id="time_pick" placeholder="Ώρα"/>
+                                </div>
+                                <div class="form-group">
+                                    <input type="submit" value="Πάμε" class="btn btn-secondary py-3 px-4">
+                                </div>
+			    			</form>
+	  					</div>
+	  				</div>
+				</div>
+  		    </div>
+        </section>
     </section>
     <!-- Hero Section End -->
 
@@ -93,4 +134,10 @@ session_start();
     });
 </script>
 
+<script src="website/javascript/jquery.min.js"></script>
+<script src="website/javascript/jquery-migrate-3.0.1.min.js"></script>
+<script src="website/javascript/bootstrap.min.js"></script>
+<script src="website/javascript/bootstrap-datepicker.js"></script>
+<script src="website/javascript/jquery.timepicker.min.js"></script>
+<script src="website/javascript/index.js"></script>
 </html>
