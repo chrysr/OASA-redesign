@@ -80,7 +80,7 @@ session_start();
     ?>
     <!-- Header Section Begin -->
     <?php
-        include(dirname(__FILE__)."/header.php");
+        $page='zero'; include(dirname(__FILE__)."/header.php");
     ?>
     <!-- Header End -->
 
