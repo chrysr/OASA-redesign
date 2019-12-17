@@ -42,24 +42,22 @@ session_start();
                                     <div clas="dropdown">
                                         <select name="start" class="form-control" required>
                                             <option value="" disabled selected>Σταθμός Εκκίνησης</option>
-                                            <option value="Volvo">Volvo</option>
-                                            <option value="saab">Saab</option>
-                                            <option value="mercedes">Mercedes</option>
-                                            <option value="audi">Audi</option>
+                                            <option value="Volvo">Ευαγγελισμός</option>
+                                            <option value="saab">Ειρήνη</option>
+                                            <option value="mercedes">Μοναστηράκι</option>
+                                            <option value="audi">Δουκίσσης Πλακεντίας</option>
                                         </select>
                                     </div>
-                                    <!-- <input name="start" type="text" class="form-control" placeholder="Σταθμός Εκκίνησης" required> -->
 			    				</div>
 			    				<div class="form-group">
                                     <label class="label">Προορισμός</label>
                                     <select name="destination" class="form-control" required>
                                         <option value="" disabled selected>Σταθμός Προορισμού</option>
-                                        <option value="Volvo">Volvo</option>
-                                        <option value="saab">Saab</option>
-                                        <option value="mercedes">Mercedes</option>
-                                        <option value="audi">Audi</option>
+                                        <option value="Volvo">Ευαγγελισμός</option>
+                                        <option value="saab">Ειρήνη</option>
+                                        <option value="mercedes">Μοναστηράκι</option>
+                                        <option value="audi">Δουκίσσης Πλακεντίας</option>
                                     </select>
-			    					<!-- <input name="destination" type="text" class="form-control" placeholder="Σταθμός Προορισμού" required> -->
 			    				</div>
 			    				<div class="d-flex">
 			    					<div class="form-group mr-2">
