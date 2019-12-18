@@ -42,10 +42,9 @@ session_start();
                                     <div clas="dropdown">
                                         <select name="start" class="form-control" required>
                                             <option value="" disabled selected>Σταθμός Εκκίνησης</option>
-                                            <option value="Volvo">Ευαγγελισμός</option>
-                                            <option value="saab">Ειρήνη</option>
-                                            <option value="mercedes">Μοναστηράκι</option>
-                                            <option value="audi">Δουκίσσης Πλακεντίας</option>
+                                            <option value="Ευαγγελισμός">Ευαγγελισμός</option>
+                                            <option value="Τμήμα Πληροφορικής και Τηλεπικοινωνιών">Τμήμα Πληροφορικής και Τηλεπικοινωνιών</option>
+                                            <option value="Μοναστηράκι">Μοναστηράκι</option>
                                         </select>
                                     </div>
 			    				</div>
@@ -53,10 +52,9 @@ session_start();
                                     <label class="label">Προορισμός</label>
                                     <select name="destination" class="form-control" required>
                                         <option value="" disabled selected>Σταθμός Προορισμού</option>
-                                        <option value="Volvo">Ευαγγελισμός</option>
-                                        <option value="saab">Ειρήνη</option>
-                                        <option value="mercedes">Μοναστηράκι</option>
-                                        <option value="audi">Δουκίσσης Πλακεντίας</option>
+                                        <option value="Ευαγγελισμός">Ευαγγελισμός</option>
+                                        <option value="Ειρήνη">Ειρήνη</option>
+                                        <option value="Μοναστηράκι">Μοναστηράκι</option>
                                     </select>
 			    				</div>
 			    				<div class="d-flex">
