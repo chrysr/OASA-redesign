@@ -7,7 +7,7 @@
         <nav class="main-menu mobile-menu">
             <ul>
                 <li <?php echo ($page == 'one') ? "class='active'" : ""; ?>><a href="<?$_SERVER['DOCUMENT_ROOT']?>/OASA-redesign/index.php">Υπολογισμός Διαδρομής</a></li>
-                <li <?php echo ($page == 'two') ? "class='active'" : ""; ?>><a href="<?$_SERVER['DOCUMENT_ROOT']?>/OASA-redesign/website/php/coming_soon.php">Εισιτήρια</a></li>
+                <li <?php echo ($page == 'two') ? "class='active'" : ""; ?>><a href="<?$_SERVER['DOCUMENT_ROOT']?>/OASA-redesign/website/php/tickets.php">Εισιτήρια</a></li>
                 <li <?php echo ($page == 'three') ? "class='active'" : ""; ?>><a href="<?$_SERVER['DOCUMENT_ROOT']?>/OASA-redesign/website/php/coming_soon.php">Δρομολόγια</a></li>
                 <li <?php echo ($page == 'four') ? "class='active'" : ""; ?>>
                     <div class="dropdown">
