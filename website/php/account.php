@@ -169,7 +169,7 @@ session_start();
                                                 </div>
                                             </td>
                                         <tr>
-                                        <tr>
+                                        <tr">
                                             <td>Διεύθυνση Email</td>
                                             <td>
                                                 <div class="input-group form-group" style="margin:0">
@@ -189,6 +189,9 @@ session_start();
                                     </table>
                                     <br>
                                     <div class="input-group">
+                                        <div class="form-group">
+                                            <input type="submit" name="update" value="Eνημέρωση Δεδομένων" style="display: none; visibility: hidden;">
+                                        </div>
                                         <div class="form-group" style="margin-right:1rem">
                                             <input type="submit" name="exit" value="Ακύρωση Επεξεργασίας" formnovalidate>
                                         </div>
