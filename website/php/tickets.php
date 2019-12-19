@@ -1,52 +1,34 @@
 <?php
 // Start the session
 session_start();
+if(!isset($_SESSION['chart']))
+{
+    $_SESSION['chart']=array();
+}
 ?>
 
 <?php
-    $card=false;
-    $pass=false;
-    if(isset($_POST['card']))
-    {    
-        $servername="127.0.0.1";
-        $username="root";
-        $password="";
-        $dbname="oasa";
-    
-        $connection=new mysqli($servername,$username,$password,$dbname);
-        
-        if($connection->connect_error)
-            die("Connection failed: ".$connection->connect_error);
-        
-        $sql="SELECT * FROM users WHERE users.card=".$_POST['card']." and users.password='".$_POST['password']."'";
-        //print $sql;
-        if(($result=$connection->query($sql))&&$result->num_rows==1)
+    if(isset($_POST['addto']))
+    {
+        foreach ($_POST as $key=>$value)
         {
-            //success
-            $_SESSION['loggedin']=true;
-            $_SESSION['card']=$_POST['card'];
-        } 
-        else 
-        {
-            $sql="SELECT * FROM users where users.card=".$_POST['card'];
-            //print $sql;
-            if(!($result=$connection->query($sql))||$result->num_rows==0)
-                $card=true;
-                
-            else
+            print $key.'->'.$value."xA";
+            if($value>0)
             {
-                //print $result->num_rows."\n\n\n";
-                $sql="SELECT * FROM users where users.card=".$_POST['card']." and users.password=".$_POST['password'];
-                //print $sql;
-                if(!($result=$connection->query($sql))||$result->num_rows==0)
-                    $pass=true;
+                if(isset($_SESSION['chart'][$key]))
+                {
+                    $_SESSION['chart'][$key]=$_SESSION['chart'][$key]+$value;
+                }
+                else $_SESSION['chart'][$key]=$value;
             }
-            //nosuccess
+
         }
-        $connection->close();
-        //header('Location: ./login.php');
-        //set env for signin/signup
-        //die();
+        foreach($_SESSION['chart'] as $key=>$value)
+        {
+            print $key.'-->'.$value.'|';
+        }
+        header('Location: ./chart.php');
+        die();
     }
 ?>
 <!DOCTYPE html>
@@ -82,7 +64,7 @@ session_start();
     
 
     <div class="container-fluid" style="padding: 14rem 0rem 30rem 0rem; background-color: white; ">
-        <form action="tickets.php" method="POST">
+        <form action="tickets.php" method="POST" id="tick">
             <div class="tab" style="width:100%">
                 <button class="tablinks lvl1" id="default" style="margin-left:0rem; width: 33.33%;" onclick="lvl1f(event, '1')">Κανονικό Εισιτήριο</button>
                 <button class="tablinks lvl1" style="margin-left:0rem; width: 33.33%;" onclick="lvl1f(event, '2')">Μειωμένο Εισιτήριο</button>
@@ -91,7 +73,7 @@ session_start();
             </div>
             <div id="1" class="tabcontent lvl1tab" style="border:none;">
                 <div class="tab" style="width:100%">
-                    <button class="tablinks lvl2" style="margin-left:0rem; width: 33.33%;" onclick="lvl2f(event, '11')">Ενιάιο Εισιτήριο</button>
+                    <button class="tablinks lvl2" style="margin-left:0rem; width: 33.33%;" onclick="lvl2f(event, '11')">Ενιαίο Εισιτήριο</button>
                     <button class="tablinks lvl2" style="margin-left:0rem; width: 33.33%;" onclick="lvl2f(event, '12')">Εισιτήριο Αεροδρομίου</button>
                     <button class="tablinks lvl2" style="margin-left:0rem; width: 33.33%;" onclick="lvl2f(event, '13')">Εισιτήριο Μακράς Διάρκειας</button>
                 </div>
@@ -101,14 +83,9 @@ session_start();
                             <li class="header">90 Λεπτών</li>
                             <li class="grey">1,40&#8364</li>
                             <li class="grey">
-                                <div class="input-group" style="background-color: #eee; border:none;">
-                                    <div class="form-control"style="display:none;">
-                                        <input type="text" required style="display:none;">
-                                    </div>
-                                    <div class="form-control" style="background-color: #eee; border:none; ">
-                                        <input class="submitticket" type="submit" name="addto" value="Προσθήκη στο Καλάθι" formnovalidate> 
-                                    </div>
-                                </div>
+                                <div class="form-control" style="background-color: #eee; border:none; margin:0;">
+                                    <input type="number" name="n111" min=0 value=0  style="width:2.5rem; height:2rem">
+                                </div> 
                             </li>
                         </ul>
                     </div>
@@ -117,14 +94,9 @@ session_start();
                             <li class="header">Ημερήσιο</li>
                             <li class="grey">4,50&#8364</li>
                             <li class="grey">
-                                <div class="input-group" style="background-color: #eee; border:none;">
-                                    <div class="form-control"style="display:none;">
-                                        <input type="text" required style="display:none;">
-                                    </div>
-                                    <div class="form-control" style="background-color: #eee; border:none; ">
-                                        <input class="submitticket" type="submit" name="addto" value="Προσθήκη στο Καλάθι" formnovalidate> 
-                                    </div>
-                                </div>
+                                <div class="form-control" style="background-color: #eee; border:none; margin:0;">
+                                    <input type="number" name="n112" min=0 value=0  style="width:2.5rem; height:2rem">
+                                </div> 
                             </li>
                         </ul>
                     </div>
@@ -133,14 +105,9 @@ session_start();
                             <li class="header">5 Ημερών</li>
                             <li class="grey">9,00&#8364</li>
                             <li class="grey">
-                                <div class="input-group" style="background-color: #eee; border:none;">
-                                    <div class="form-control"style="display:none;">
-                                        <input type="text" required style="display:none;">
-                                    </div>
-                                    <div class="form-control" style="background-color: #eee; border:none; ">
-                                        <input class="submitticket" type="submit" name="addto" value="Προσθήκη στο Καλάθι" formnovalidate> 
-                                    </div>
-                                </div>
+                                <div class="form-control" style="background-color: #eee; border:none; margin:0;">
+                                    <input type="number" name="n113" min=0 value=0  style="width:2.5rem; height:2rem">
+                                </div> 
                             </li>
                         </ul>
                     </div>
@@ -149,14 +116,9 @@ session_start();
                             <li class="header">5πλό Εισιτήριο</li>
                             <li class="grey">6,50&#8364</li>
                             <li class="grey">
-                                <div class="input-group" style="background-color: #eee; border:none;">
-                                    <div class="form-control"style="display:none;">
-                                        <input type="text" required style="display:none;">
-                                    </div>
-                                    <div class="form-control" style="background-color: #eee; border:none; ">
-                                        <input class="submitticket" type="submit" name="addto" value="Προσθήκη στο Καλάθι" formnovalidate> 
-                                    </div>
-                                </div>
+                                <div class="form-control" style="background-color: #eee; border:none; margin:0;">
+                                    <input type="number" name="n114" min=0 value=0  style="width:2.5rem; height:2rem">
+                                </div> 
                             </li>
                         </ul>
                     </div>
@@ -165,14 +127,9 @@ session_start();
                             <li class="header">10+1 Ειστήρια</li>
                             <li class="grey">13,50&#8364</li>
                             <li class="grey">
-                                <div class="input-group" style="background-color: #eee; border:none;">
-                                    <div class="form-control"style="display:none;">
-                                        <input type="text" required style="display:none;">
-                                    </div>
-                                    <div class="form-control" style="background-color: #eee; border:none; ">
-                                        <input class="submitticket" type="submit" name="addto" value="Προσθήκη στο Καλάθι" formnovalidate> 
-                                    </div>
-                                </div>
+                                <div class="form-control" style="background-color: #eee; border:none; margin:0;">
+                                    <input type="number" name="n115" min=0 value=0  style="width:2.5rem; height:2rem">
+                                </div> 
                             </li>
                         </ul>
                     </div>
@@ -181,14 +138,9 @@ session_start();
                             <li class="header">2πλό Ειστήριο</li>
                             <li class="grey">2,70&#8364</li>
                             <li class="grey">
-                                <div class="input-group" style="background-color: #eee; border:none;">
-                                    <div class="form-control"style="display:none;">
-                                        <input type="text" required style="display:none;">
-                                    </div>
-                                    <div class="form-control" style="background-color: #eee; border:none; ">
-                                        <input class="submitticket" type="submit" name="addto" value="Προσθήκη στο Καλάθι" formnovalidate> 
-                                    </div>
-                                </div>
+                                <div class="form-control" style="background-color: #eee; border:none; margin:0;">
+                                    <input type="number" name="n116" min=0 value=0  style="width:2.5rem; height:2rem">
+                                </div> 
                             </li>
                         </ul>
                     </div>
@@ -199,14 +151,9 @@ session_start();
                             <li class="header">1 Διαδρομής με Μετρό</li>
                             <li class="grey">10,00&#8364</li>
                             <li class="grey">
-                                <div class="input-group" style="background-color: #eee; border:none;">
-                                    <div class="form-control"style="display:none;">
-                                        <input type="text" required style="display:none;">
-                                    </div>
-                                    <div class="form-control" style="background-color: #eee; border:none; ">
-                                        <input class="submitticket" type="submit" name="addto" value="Προσθήκη στο Καλάθι" formnovalidate> 
-                                    </div>
-                                </div>
+                                <div class="form-control" style="background-color: #eee; border:none; margin:0;">
+                                    <input type="number" name="n121" min=0 value=0  style="width:2.5rem; height:2rem">
+                                </div> 
                             </li>
                         </ul>
                     </div>
@@ -215,14 +162,9 @@ session_start();
                             <li class="header">1 Διαδρομής με λεωφορείο</li>
                             <li class="grey">6,00&#8364</li>
                             <li class="grey">
-                                <div class="input-group" style="background-color: #eee; border:none;">
-                                    <div class="form-control"style="display:none;">
-                                        <input type="text" required style="display:none;">
-                                    </div>
-                                    <div class="form-control" style="background-color: #eee; border:none; ">
-                                        <input class="submitticket" type="submit" name="addto" value="Προσθήκη στο Καλάθι" formnovalidate> 
-                                    </div>
-                                </div>
+                                <div class="form-control" style="background-color: #eee; border:none; margin:0;">
+                                    <input type="number" name="n122" min=0 value=0  style="width:2.5rem; height:2rem">
+                                </div> 
                             </li>
                         </ul>
                     </div>
@@ -231,14 +173,9 @@ session_start();
                             <li class="header">1 Μετ' επιστροφής</li>
                             <li class="grey">18,00&#8364</li>
                             <li class="grey">
-                                <div class="input-group" style="background-color: #eee; border:none;">
-                                    <div class="form-control"style="display:none;">
-                                        <input type="text" required style="display:none;">
-                                    </div>
-                                    <div class="form-control" style="background-color: #eee; border:none; ">
-                                        <input class="submitticket" type="submit" name="addto" value="Προσθήκη στο Καλάθι" formnovalidate> 
-                                    </div>
-                                </div>
+                                <div class="form-control" style="background-color: #eee; border:none; margin:0;">
+                                    <input type="number" name="n123" min=0 value=0  style="width:2.5rem; height:2rem">
+                                </div> 
                             </li>
                         </ul>
                     </div>
@@ -247,14 +184,9 @@ session_start();
                             <li class="header">1 από/πρός τους σταθμούς Παλλήνη-Κάντζα-Κορωπί με Μετρό</li>
                             <li class="grey">6,00&#8364</li>
                             <li class="grey">
-                                <div class="input-group" style="background-color: #eee; border:none;">
-                                    <div class="form-control"style="display:none;">
-                                        <input type="text" required style="display:none;">
-                                    </div>
-                                    <div class="form-control" style="background-color: #eee; border:none; ">
-                                        <input class="submitticket" type="submit" name="addto" value="Προσθήκη στο Καλάθι" formnovalidate> 
-                                    </div>
-                                </div>
+                                <div class="form-control" style="background-color: #eee; border:none; margin:0;">
+                                    <input type="number" name="n124" min=0 value=0  style="width:2.5rem; height:2rem">
+                                </div> 
                             </li>
                         </ul>
                     </div>
@@ -272,14 +204,9 @@ session_start();
                                 <li class="header">Χωρίς Διαδρομές Αεροδρομίου</li>
                                 <li class="grey">30,00&#8364</li>
                                 <li class="grey">
-                                    <div class="input-group" style="background-color: #eee; border:none;">
-                                        <div class="form-control"style="display:none;">
-                                            <input type="text" required style="display:none;">
-                                        </div>
-                                        <div class="form-control" style="background-color: #eee; border:none; ">
-                                            <input class="submitticket" type="submit" name="addto" value="Προσθήκη στο Καλάθι" formnovalidate> 
-                                        </div>
-                                    </div>
+                                    <div class="form-control" style="background-color: #eee; border:none; margin:0;">
+                                        <input type="number" name="n1311" min=0 value=0  style="width:2.5rem; height:2rem">
+                                    </div> 
                                 </li>
                             </ul>
                         </div>
@@ -288,14 +215,9 @@ session_start();
                                 <li class="header">Με Διαδρομές Αεροδρομίου</li>
                                 <li class="grey">49,00&#8364</li>
                                 <li class="grey">
-                                    <div class="input-group" style="background-color: #eee; border:none;">
-                                        <div class="form-control"style="display:none;">
-                                            <input type="text" required style="display:none;">
-                                        </div>
-                                        <div class="form-control" style="background-color: #eee; border:none; ">
-                                            <input class="submitticket" type="submit" name="addto" value="Προσθήκη στο Καλάθι" formnovalidate> 
-                                        </div>
-                                    </div>
+                                    <div class="form-control" style="background-color: #eee; border:none; margin:0;">
+                                <input type="number" name="n1312" min=0 value=0  style="width:2.5rem; height:2rem">
+                            </div> 
                                 </li>
                             </ul>
                         </div>
@@ -306,14 +228,9 @@ session_start();
                             <li class="header">Χωρίς Διαδρομές Αεροδρομίου</li>
                                 <li class="grey">85,00&#8364</li>
                                 <li class="grey">
-                                    <div class="input-group" style="background-color: #eee; border:none;">
-                                        <div class="form-control"style="display:none;">
-                                            <input type="text" required style="display:none;">
-                                        </div>
-                                        <div class="form-control" style="background-color: #eee; border:none; ">
-                                            <input class="submitticket" type="submit" name="addto" value="Προσθήκη στο Καλάθι" formnovalidate> 
-                                        </div>
-                                    </div>
+                                    <div class="form-control" style="background-color: #eee; border:none; margin:0;">
+                                        <input type="number" name="n1321" min=0 value=0  style="width:2.5rem; height:2rem">
+                                    </div> 
                                 </li>
                             </ul>
                         </div>
@@ -322,14 +239,9 @@ session_start();
                             <li class="header">Με Διαδρομές Αεροδρομίου</li>
                                 <li class="grey">142,00&#8364</li>
                                 <li class="grey">
-                                    <div class="input-group" style="background-color: #eee; border:none;">
-                                        <div class="form-control"style="display:none;">
-                                            <input type="text" required style="display:none;">
-                                        </div>
-                                        <div class="form-control" style="background-color: #eee; border:none; ">
-                                            <input class="submitticket" type="submit" name="addto" value="Προσθήκη στο Καλάθι" formnovalidate> 
-                                        </div>
-                                    </div>
+                                    <div class="form-control" style="background-color: #eee; border:none; margin:0;">
+                                        <input type="number" name="n1322" min=0 value=0  style="width:2.5rem; height:2rem">
+                                    </div> 
                                 </li>
                             </ul>
                         </div>
@@ -340,14 +252,9 @@ session_start();
                             <li class="header">Χωρίς Διαδρομές Αεροδρομίου</li>
                                 <li class="grey">170,00&#8364</li>
                                 <li class="grey">
-                                    <div class="input-group" style="background-color: #eee; border:none;">
-                                        <div class="form-control"style="display:none;">
-                                            <input type="text" required style="display:none;">
-                                        </div>
-                                        <div class="form-control" style="background-color: #eee; border:none; ">
-                                            <input class="submitticket" type="submit" name="addto" value="Προσθήκη στο Καλάθι" formnovalidate> 
-                                        </div>
-                                    </div>
+                                    <div class="form-control" style="background-color: #eee; border:none; margin:0;">
+                                        <input type="number" name="n1331" min=0 value=0  style="width:2.5rem; height:2rem">
+                                    </div> 
                                 </li>
                             </ul>
                         </div>
@@ -356,14 +263,9 @@ session_start();
                             <li class="header">Με Διαδρομές Αεροδρομίου</li>
                                 <li class="grey">250,00&#8364</li>
                                 <li class="grey">
-                                    <div class="input-group" style="background-color: #eee; border:none;">
-                                        <div class="form-control"style="display:none;">
-                                            <input type="text" required style="display:none;">
-                                        </div>
-                                        <div class="form-control" style="background-color: #eee; border:none; ">
-                                            <input class="submitticket" type="submit" name="addto" value="Προσθήκη στο Καλάθι" formnovalidate> 
-                                        </div>
-                                    </div>
+                                    <div class="form-control" style="background-color: #eee; border:none; margin:0;">
+                                        <input type="number" name="1-3-3-2n" min=0 value=0  style="width:2.5rem; height:2rem">
+                                    </div> 
                                 </li>
                             </ul>
                         </div>
@@ -374,14 +276,9 @@ session_start();
                             <li class="header">Χωρίς Διαδρομές Αεροδρομίου</li>
                                 <li class="grey">330,00&#8364</li>
                                 <li class="grey">
-                                    <div class="input-group" style="background-color: #eee; border:none;">
-                                        <div class="form-control"style="display:none;">
-                                            <input type="text" required style="display:none;">
-                                        </div>
-                                        <div class="form-control" style="background-color: #eee; border:none; ">
-                                            <input class="submitticket" type="submit" name="addto" value="Προσθήκη στο Καλάθι" formnovalidate> 
-                                        </div>
-                                    </div>
+                                    <div class="form-control" style="background-color: #eee; border:none; margin:0;">
+                                        <input type="number" name="n1341" min=0 value=0  style="width:2.5rem; height:2rem">
+                                    </div> 
                                 </li>
                             </ul>
                         </div>
@@ -390,14 +287,9 @@ session_start();
                             <li class="header">Με Διαδρομές Αεροδρομίου</li>
                                 <li class="grey">490,00&#8364</li>
                                 <li class="grey">
-                                    <div class="input-group" style="background-color: #eee; border:none;">
-                                        <div class="form-control"style="display:none;">
-                                            <input type="text" required style="display:none;">
-                                        </div>
-                                        <div class="form-control" style="background-color: #eee; border:none; ">
-                                            <input class="submitticket" type="submit" name="addto" value="Προσθήκη στο Καλάθι" formnovalidate> 
-                                        </div>
-                                    </div>
+                                    <div class="form-control" style="background-color: #eee; border:none; margin:0;">
+                                        <input type="number" name="n1342" min=0 value=0  style="width:2.5rem; height:2rem">
+                                    </div> 
                                 </li>
                             </ul>
                         </div>
@@ -406,7 +298,7 @@ session_start();
             </div>
             <div id="2" class="tabcontent lvl1tab" style="border:none;">
                 <div class="tab" style="width:100%">
-                    <button class="tablinks lvl2" style="margin-left:0rem; width: 33.33%;" onclick="lvl2f(event, '21')">Ενιάιο Εισιτήριο</button>
+                    <button class="tablinks lvl2" style="margin-left:0rem; width: 33.33%;" onclick="lvl2f(event, '21')">Ενιαίο Εισιτήριο</button>
                     <button class="tablinks lvl2" style="margin-left:0rem; width: 33.33%;" onclick="lvl2f(event, '22')">Εισιτήριο Αεροδρομίου</button>
                     <button class="tablinks lvl2" style="margin-left:0rem; width: 33.33%;" onclick="lvl2f(event, '23')">Εισιτήριο Μακράς Διάρκειας</button>
                 </div>
@@ -416,14 +308,9 @@ session_start();
                             <li class="header">90 Λεπτών</li>
                             <li class="grey">0,60&#8364</li>
                             <li class="grey">
-                                <div class="input-group" style="background-color: #eee; border:none;">
-                                    <div class="form-control"style="display:none;">
-                                        <input type="text" required style="display:none;">
-                                    </div>
-                                    <div class="form-control" style="background-color: #eee; border:none; ">
-                                        <input class="submitticket" type="submit" name="addto" value="Προσθήκη στο Καλάθι" formnovalidate> 
-                                    </div>
-                                </div>
+                                <div class="form-control" style="background-color: #eee; border:none; margin:0;">
+                                    <input type="number" name="n211" min=0 value=0  style="width:2.5rem; height:2rem">
+                                </div> 
                             </li>
                         </ul>
                     </div>
@@ -432,14 +319,9 @@ session_start();
                             <li class="header">5πλό Εισιτήριο</li>
                             <li class="grey">3,00&#8364</li>
                             <li class="grey">
-                                <div class="input-group" style="background-color: #eee; border:none;">
-                                    <div class="form-control"style="display:none;">
-                                        <input type="text" required style="display:none;">
-                                    </div>
-                                    <div class="form-control" style="background-color: #eee; border:none; ">
-                                        <input class="submitticket" type="submit" name="addto" value="Προσθήκη στο Καλάθι" formnovalidate> 
-                                    </div>
-                                </div>
+                                <div class="form-control" style="background-color: #eee; border:none; margin:0;">
+                                    <input type="number" name="n212" min=0 value=0  style="width:2.5rem; height:2rem">
+                                </div> 
                             </li>
                         </ul>
                     </div>
@@ -448,14 +330,9 @@ session_start();
                             <li class="header">10+1 Ειστήρια</li>
                             <li class="grey">6,00&#8364</li>
                             <li class="grey">
-                                <div class="input-group" style="background-color: #eee; border:none;">
-                                    <div class="form-control"style="display:none;">
-                                        <input type="text" required style="display:none;">
-                                    </div>
-                                    <div class="form-control" style="background-color: #eee; border:none; ">
-                                        <input class="submitticket" type="submit" name="addto" value="Προσθήκη στο Καλάθι" formnovalidate> 
-                                    </div>
-                                </div>
+                                <div class="form-control" style="background-color: #eee; border:none; margin:0;">
+                                    <input type="number" name="n213" min=0 value=0  style="width:2.5rem; height:2rem">
+                                </div> 
                             </li>
                         </ul>
                     </div>
@@ -464,14 +341,9 @@ session_start();
                             <li class="header">2πλό Ειστήριο</li>
                             <li class="grey">1,20&#8364</li>
                             <li class="grey">
-                                <div class="input-group" style="background-color: #eee; border:none;">
-                                    <div class="form-control"style="display:none;">
-                                        <input type="text" required style="display:none;">
-                                    </div>
-                                    <div class="form-control" style="background-color: #eee; border:none; ">
-                                        <input class="submitticket" type="submit" name="addto" value="Προσθήκη στο Καλάθι" formnovalidate> 
-                                    </div>
-                                </div>
+                                <div class="form-control" style="background-color: #eee; border:none; margin:0;">
+                                    <input type="number" name="n214" min=0 value=0  style="width:2.5rem; height:2rem">
+                                </div> 
                             </li>
                         </ul>
                     </div>
@@ -482,14 +354,9 @@ session_start();
                             <li class="header">1 Διαδρομής με Μετρό</li>
                             <li class="grey">5,00&#8364</li>
                             <li class="grey">
-                                <div class="input-group" style="background-color: #eee; border:none;">
-                                    <div class="form-control"style="display:none;">
-                                        <input type="text" required style="display:none;">
-                                    </div>
-                                    <div class="form-control" style="background-color: #eee; border:none; ">
-                                        <input class="submitticket" type="submit" name="addto" value="Προσθήκη στο Καλάθι" formnovalidate> 
-                                    </div>
-                                </div>
+                                <div class="form-control" style="background-color: #eee; border:none; margin:0;">
+                                    <input type="number" name="n221" min=0 value=0  style="width:2.5rem; height:2rem">
+                                </div> 
                             </li>
                         </ul>
                     </div>
@@ -498,14 +365,9 @@ session_start();
                             <li class="header">1 Διαδρομής με λεωφορείο</li>
                             <li class="grey">3,00&#8364</li>
                             <li class="grey">
-                                <div class="input-group" style="background-color: #eee; border:none;">
-                                    <div class="form-control"style="display:none;">
-                                        <input type="text" required style="display:none;">
-                                    </div>
-                                    <div class="form-control" style="background-color: #eee; border:none; ">
-                                        <input class="submitticket" type="submit" name="addto" value="Προσθήκη στο Καλάθι" formnovalidate> 
-                                    </div>
-                                </div>
+                                <div class="form-control" style="background-color: #eee; border:none; margin:0;">
+                                    <input type="number" name="n222" min=0 value=0  style="width:2.5rem; height:2rem">
+                                </div> 
                             </li>
                         </ul>
                     </div>
@@ -514,14 +376,9 @@ session_start();
                             <li class="header">1 από/πρός τους σταθμούς Παλλήνη-Κάντζα-Κορωπί με Μετρό</li>
                             <li class="grey">3,00&#8364</li>
                             <li class="grey">
-                                <div class="input-group" style="background-color: #eee; border:none;">
-                                    <div class="form-control"style="display:none;">
-                                        <input type="text" required style="display:none;">
-                                    </div>
-                                    <div class="form-control" style="background-color: #eee; border:none; ">
-                                        <input class="submitticket" type="submit" name="addto" value="Προσθήκη στο Καλάθι" formnovalidate> 
-                                    </div>
-                                </div>
+                                <div class="form-control" style="background-color: #eee; border:none; margin:0;">
+                                <input type="number" name="n223" min=0 value=0  style="width:2.5rem; height:2rem">
+                            </div> 
                             </li>
                         </ul>
                     </div>
@@ -539,14 +396,9 @@ session_start();
                                 <li class="header">Χωρίς Διαδρομές Αεροδρομίου</li>
                                 <li class="grey">15,00&#8364</li>
                                 <li class="grey">
-                                    <div class="input-group" style="background-color: #eee; border:none;">
-                                        <div class="form-control"style="display:none;">
-                                            <input type="text" required style="display:none;">
-                                        </div>
-                                        <div class="form-control" style="background-color: #eee; border:none; ">
-                                            <input class="submitticket" type="submit" name="addto" value="Προσθήκη στο Καλάθι" formnovalidate> 
-                                        </div>
-                                    </div>
+                                    <div class="form-control" style="background-color: #eee; border:none; margin:0;">
+                                        <input type="number" name="n231" min=0 value=0  style="width:2.5rem; height:2rem">
+                                    </div> 
                                 </li>
                             </ul>
                         </div>
@@ -555,14 +407,9 @@ session_start();
                                 <li class="header">Με Διαδρομές Αεροδρομίου</li>
                                 <li class="grey">25,00&#8364</li>
                                 <li class="grey">
-                                    <div class="input-group" style="background-color: #eee; border:none;">
-                                        <div class="form-control"style="display:none;">
-                                            <input type="text" required style="display:none;">
-                                        </div>
-                                        <div class="form-control" style="background-color: #eee; border:none; ">
-                                            <input class="submitticket" type="submit" name="addto" value="Προσθήκη στο Καλάθι" formnovalidate> 
-                                        </div>
-                                    </div>
+                                    <div class="form-control" style="background-color: #eee; border:none; margin:0;">
+                                        <input type="number" name="n232" min=0 value=0  style="width:2.5rem; height:2rem">
+                                    </div> 
                                 </li>
                             </ul>
                         </div>
@@ -573,14 +420,9 @@ session_start();
                             <li class="header">Χωρίς Διαδρομές Αεροδρομίου</li>
                                 <li class="grey">43,00&#8364</li>
                                 <li class="grey">
-                                    <div class="input-group" style="background-color: #eee; border:none;">
-                                        <div class="form-control"style="display:none;">
-                                            <input type="text" required style="display:none;">
-                                        </div>
-                                        <div class="form-control" style="background-color: #eee; border:none; ">
-                                            <input class="submitticket" type="submit" name="addto" value="Προσθήκη στο Καλάθι" formnovalidate> 
-                                        </div>
-                                    </div>
+                                    <div class="form-control" style="background-color: #eee; border:none; margin:0;">
+                                        <input type="number" name="n2321" min=0 value=0  style="width:2.5rem; height:2rem">
+                                    </div> 
                                 </li>
                             </ul>
                         </div>
@@ -589,14 +431,9 @@ session_start();
                             <li class="header">Με Διαδρομές Αεροδρομίου</li>
                                 <li class="grey">71,00&#8364</li>
                                 <li class="grey">
-                                    <div class="input-group" style="background-color: #eee; border:none;">
-                                        <div class="form-control"style="display:none;">
-                                            <input type="text" required style="display:none;">
-                                        </div>
-                                        <div class="form-control" style="background-color: #eee; border:none; ">
-                                            <input class="submitticket" type="submit" name="addto" value="Προσθήκη στο Καλάθι" formnovalidate> 
-                                        </div>
-                                    </div>
+                                    <div class="form-control" style="background-color: #eee; border:none; margin:0;">
+                                        <input type="number" name="n2322" min=0 value=0  style="width:2.5rem; height:2rem">
+                                    </div> 
                                 </li>
                             </ul>
                         </div>
@@ -607,14 +444,9 @@ session_start();
                             <li class="header">Χωρίς Διαδρομές Αεροδρομίου</li>
                                 <li class="grey">85,00&#8364</li>
                                 <li class="grey">
-                                    <div class="input-group" style="background-color: #eee; border:none;">
-                                        <div class="form-control"style="display:none;">
-                                            <input type="text" required style="display:none;">
-                                        </div>
-                                        <div class="form-control" style="background-color: #eee; border:none; ">
-                                            <input class="submitticket" type="submit" name="addto" value="Προσθήκη στο Καλάθι" formnovalidate> 
-                                        </div>
-                                    </div>
+                                    <div class="form-control" style="background-color: #eee; border:none; margin:0;">
+                                        <input type="number" name="n2331" min=0 value=0  style="width:2.5rem; height:2rem">
+                                    </div> 
                                 </li>
                             </ul>
                         </div>
@@ -623,14 +455,9 @@ session_start();
                             <li class="header">Με Διαδρομές Αεροδρομίου</li>
                                 <li class="grey">125,00&#8364</li>
                                 <li class="grey">
-                                    <div class="input-group" style="background-color: #eee; border:none;">
-                                        <div class="form-control"style="display:none;">
-                                            <input type="text" required style="display:none;">
-                                        </div>
-                                        <div class="form-control" style="background-color: #eee; border:none; ">
-                                            <input class="submitticket" type="submit" name="addto" value="Προσθήκη στο Καλάθι" formnovalidate> 
-                                        </div>
-                                    </div>
+                                    <div class="form-control" style="background-color: #eee; border:none; margin:0;">
+                                        <input type="number" name="n2332" min=0 value=0  style="width:2.5rem; height:2rem">
+                                    </div> 
                                 </li>
                             </ul>
                         </div>
@@ -641,14 +468,9 @@ session_start();
                             <li class="header">Χωρίς Διαδρομές Αεροδρομίου</li>
                                 <li class="grey">165,00&#8364</li>
                                 <li class="grey">
-                                    <div class="input-group" style="background-color: #eee; border:none;">
-                                        <div class="form-control"style="display:none;">
-                                            <input type="text" required style="display:none;">
-                                        </div>
-                                        <div class="form-control" style="background-color: #eee; border:none; ">
-                                            <input class="submitticket" type="submit" name="addto" value="Προσθήκη στο Καλάθι" formnovalidate> 
-                                        </div>
-                                    </div>
+                                    <div class="form-control" style="background-color: #eee; border:none; margin:0;">
+                                        <input type="number" name="n2341" min=0 value=0  style="width:2.5rem; height:2rem">
+                                    </div> 
                                 </li>
                             </ul>
                         </div>
@@ -657,14 +479,9 @@ session_start();
                             <li class="header">Με Διαδρομές Αεροδρομίου</li>
                                 <li class="grey">245,00&#8364</li>
                                 <li class="grey">
-                                    <div class="input-group" style="background-color: #eee; border:none;">
-                                        <div class="form-control"style="display:none;">
-                                            <input type="text" required style="display:none;">
-                                        </div>
-                                        <div class="form-control" style="background-color: #eee; border:none; ">
-                                            <input class="submitticket" type="submit" name="addto" value="Προσθήκη στο Καλάθι" formnovalidate> 
-                                        </div>
-                                    </div>
+                                    <div class="form-control" style="background-color: #eee; border:none; margin:0;">
+                                        <input type="number" name="n2342" min=0 value=0  style="width:2.5rem; height:2rem">
+                                    </div> 
                                 </li>
                             </ul>
                         </div>
@@ -675,26 +492,28 @@ session_start();
                 <div class="columns">
                     <ul class="price">
                     <li class="header">3 Ημερών + Μεταφορά και Επιστροφή στο Αεροδρόμιο</li>
-                        <li class="grey">22,00&#8364</li>
-                        <li class="grey">
-                            <div class="input-group" style="background-color: #eee; border:none;">
-                                <div class="form-control"style="display:none;">
-                                    <input type="text" required style="display:none;">
-                                </div>
-                                <div class="form-control" style="background-color: #eee; border:none; ">
-                                    <input class="submitticket" type="submit" name="addto" value="Προσθήκη στο Καλάθι" formnovalidate> 
-                                </div>
-                            </div>
+                        <li class="grey" style="padding-bottom: 0;">22,00&#8364</li>
+                        <li class="grey" style="padding-bottom: 1rem;">
+                            <div class="form-control" style="background-color: #eee; border:none; margin:0;">
+                                <input type="number" name="n31" min=0 value=0  style="width:2.5rem; height:2rem">
+                            </div>                                
                         </li>
                     </ul>
                 </div>                
             </div>
+            <input type="text" name="hid" required style="display:none">
+
         </form>
         
     </div>
-    <div style="margin-bottom:10rem;">
-        <a href="./chart" style="float:right;margin-right:5rem;margin-top:4rem;padding:0.5rem;background-color:black;color:white;">Καλάθι</a>
+    <div class="form-control" style="background-color: white; border:none;margin-bottom:10rem; ">
+        <button formnovalidate type="submit" class="submitticket" name="addto" form="tick" style="border-radius:5px;cursor:pointer;float:right;margin-right:5rem;margin-top:4rem;">
+        Προσθήκη και μετάβαση στο Καλάθι <i class="fas fa-shopping-cart"></i></button>
     </div>
+    
+    <!-- <div style="margin-bottom:10rem;">
+        <a href="./chart.php" style="float:right;margin-right:5rem;margin-top:4rem;padding:0.5rem;background-color:black;color:white;">Καλάθι</a>
+    </div> -->
     <br> 
 
     
@@ -735,11 +554,16 @@ session_start();
             lvl3='';
             lvl3evt='';
         }
-        console.log(document.getElementById(id));
+        //console.log(document.getElementById(id));
+        console.log(1);
         document.getElementById(id).style.display="block";
+        console.log(2);
         evt.currentTarget.className += " active";
+        console.log(3);
         lvl1=id;
+        console.log(4);
         lvl1evt=evt.currentTarget;
+        console.log(5);
         
         
     };

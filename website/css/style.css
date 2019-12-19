@@ -561,7 +561,10 @@ th, td {
 	background-color:black;
 	color:white;
 	margin: 0;
-	padding:0.5rem;
+	/* padding:0.5rem; */
+	padding-left:0.5rem;
+	padding-right:0.5rem;
+	height: 2rem;
 	border:none;
 }
 /*TICKETS STYLE END*/
