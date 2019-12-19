@@ -136,6 +136,7 @@ ol {
 .header-section .header-right .user-access {
 	display: inline-block;
 	margin-right: 25px;
+	margin-top: 4px;
 }
 
 .header-section .header-right .user-access a {

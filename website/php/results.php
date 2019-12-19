@@ -42,11 +42,13 @@ session_start();
                     <p style="font-size: 18px;" class="card-text">Προς: <span style="font-weight: bold;"><?php echo $ending_station;?></span></p>
                     <?php
                         if ($date_var !== '') {
-                            echo '<p style="font-size: 18px; class="card-text">Αναχώρηση: <span style="font-weight: bold;">';
+                            echo '<p style="font-size: 18px; class="card-text">Ημερομηνία: <span style="font-weight: bold;">';
                             echo $date_var . '&nbsp;';
-                            if ($time_var !== '') {
-                                echo $time_var;
-                            }
+                            echo '</span></p>';
+                        }
+                        if ($time_var !== '') {
+                            echo '<p style="font-size: 18px; class="card-text">Ώρα: <span style="font-weight: bold;">';
+                            echo $time_var . '&nbsp;';
                             echo '</span></p>';
                         } 
                     ?>
@@ -113,7 +115,26 @@ session_start();
                         echo '</li>'; 
                     }
                     echo '<li>';
-                    echo '<button class="acc_ctrl"><h2>(';
+                    echo '<button class="acc_ctrl"><h2>';
+                    if ($time_var !== '') {
+                        date_default_timezone_set("Europe/Athens");
+                        $curr_time = $date_var . ' ' . $time_var;
+                        $dt = new DateTime($curr_time, new DateTimeZone("Europe/Athens"));
+                        echo $dt->format("h:ia"), ' ';
+
+                        $adding = 'PT' . $row["total_time"] . 'M';
+                        $dt->add(new DateInterval($adding));
+                        echo $dt->format("h:ia"), PHP_EOL;
+                    } else {
+                        date_default_timezone_set("Europe/Athens");
+                        $dt = new DateTime(date("Y-m-d h:i:s"), new DateTimeZone("Europe/Athens"));
+                        echo $dt->format("h:ia"), ' ';
+                        
+                        $adding = 'PT' . $row["total_time"] . 'M';
+                        $dt->add(new DateInterval($adding));
+                        echo $dt->format("h:ia"), PHP_EOL;
+                    }
+                    echo '(';
                     if ($row["total_time"] > 60) {
                         $hours = (int)floor($row["total_time"] / 60);
                         $minutes = $row["total_time"] % 60;
