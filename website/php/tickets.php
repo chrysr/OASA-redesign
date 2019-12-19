@@ -12,7 +12,7 @@ if(!isset($_SESSION['chart']))
     {
         foreach ($_POST as $key=>$value)
         {
-            print $key.'->'.$value."xA";
+            //print $key.'->'.$value."xA";
             if($value>0)
             {
                 if(isset($_SESSION['chart'][$key]))
@@ -25,7 +25,7 @@ if(!isset($_SESSION['chart']))
         }
         foreach($_SESSION['chart'] as $key=>$value)
         {
-            print $key.'-->'.$value.'|';
+            //print $key.'-->'.$value.'|';
         }
         header('Location: ./chart.php');
         die();
@@ -264,7 +264,7 @@ if(!isset($_SESSION['chart']))
                                 <li class="grey">250,00&#8364</li>
                                 <li class="grey">
                                     <div class="form-control" style="background-color: #eee; border:none; margin:0;">
-                                        <input type="number" name="1-3-3-2n" min=0 value=0  style="width:2.5rem; height:2rem">
+                                        <input type="number" name="n1332" min=0 value=0  style="width:2.5rem; height:2rem">
                                     </div> 
                                 </li>
                             </ul>
@@ -397,7 +397,7 @@ if(!isset($_SESSION['chart']))
                                 <li class="grey">15,00&#8364</li>
                                 <li class="grey">
                                     <div class="form-control" style="background-color: #eee; border:none; margin:0;">
-                                        <input type="number" name="n231" min=0 value=0  style="width:2.5rem; height:2rem">
+                                        <input type="number" name="n2311" min=0 value=0  style="width:2.5rem; height:2rem">
                                     </div> 
                                 </li>
                             </ul>
@@ -408,7 +408,7 @@ if(!isset($_SESSION['chart']))
                                 <li class="grey">25,00&#8364</li>
                                 <li class="grey">
                                     <div class="form-control" style="background-color: #eee; border:none; margin:0;">
-                                        <input type="number" name="n232" min=0 value=0  style="width:2.5rem; height:2rem">
+                                        <input type="number" name="n2312" min=0 value=0  style="width:2.5rem; height:2rem">
                                     </div> 
                                 </li>
                             </ul>

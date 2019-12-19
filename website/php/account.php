@@ -217,7 +217,7 @@ session_start();
             <p> is the capital city of England.</p>
         </div>
         <div id="4" class="tabcontent">
-            <a href="#">Αγορία Εισιτηρίου
+            <a href="./tickets.php">Αγορά Εισιτηρίου
         </div>
         <div id="5" class="tabcontent">
             <a href="#">Αλλαγή Κωδικού Πρόσβασης
