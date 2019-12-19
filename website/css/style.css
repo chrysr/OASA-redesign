@@ -561,4 +561,8 @@ th, td {
 	  width: 100%;
 	}
   }
+
+.tablinks{
+	width:17rem;
+}
 /*TICKETS STYLE END*/

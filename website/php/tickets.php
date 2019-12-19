@@ -88,15 +88,13 @@ session_start();
             <button class="tablinks lvl1" style="margin-left:0rem" onclick="lvl1f(event, '3')">Τουριστικά Εισιτήρια (Πακέτα)</button>
 
         </div>
-        <div id="1" class="tabcontent lvl1tab">
-            <h3>Κανονικό Εισιτήριο</h3>
+        <div id="1" class="tabcontent lvl1tab" style="border:none;">
             <div class="tab">
                 <button class="tablinks lvl2" style="margin-left:0rem" onclick="lvl2f(event, '11')">Ενιάιο Εισιτήριο</button>
                 <button class="tablinks lvl2" style="margin-left:0rem" onclick="lvl2f(event, '12')">Εισιτήριο Αεροδρομίου</button>
                 <button class="tablinks lvl2" style="margin-left:0rem" onclick="lvl2f(event, '13')">Εισιτήριο Μακράς Διάρκειας</button>
             </div>
-            <div id="11" class="tabcontent lvl2tab">
-                <h3>Ενιάιο Εισιτήριο</h3>
+            <div id="11" class="tabcontent lvl2tab" style="border:none;"> 
                 <div class="columns">
                     <ul class="price">
                         <li class="header">90 Λεπτών</li>
@@ -114,159 +112,275 @@ session_start();
                 <div class="columns">
                     <ul class="price">
                         <li class="header">5 Ημερών</li>
-                        <li class="grey">6&#8364</li>
+                        <li class="grey">9,00&#8364</li>
                         <li class="grey"><a href="#" class="button">Sign Up</a></li>
                     </ul>
                 </div>
                 <div class="columns">
                     <ul class="price">
                         <li class="header">5πλό Εισιτήριο</li>
-                        <li class="grey">6,5&#8364</li>
+                        <li class="grey">6,50&#8364</li>
                         <li class="grey"><a href="#" class="button">Sign Up</a></li>
                     </ul>
                 </div>
                 <div class="columns">
                     <ul class="price">
                         <li class="header">10+1 Ειστήρια</li>
-                        <li class="grey">6&#8364</li>
+                        <li class="grey">13,50&#8364</li>
                         <li class="grey"><a href="#" class="button">Sign Up</a></li>
                     </ul>
                 </div>
                 <div class="columns">
                     <ul class="price">
                         <li class="header">2πλό Ειστήριο</li>
-                        <li class="grey">2,7&#8364</li>
+                        <li class="grey">2,70&#8364</li>
                         <li class="grey"><a href="#" class="button">Sign Up</a></li>
                     </ul>
                 </div>
             </div>
-            <div id="12" class="tabcontent lvl2tab">
-                <h3>Εισιτήριο Αεροδρομίου</h3>
+            <div id="12" class="tabcontent lvl2tab" style="border:none;">
                 <div class="columns">
                     <ul class="price">
                         <li class="header">1 Διαδρομής με Μετρό</li>
-                        <li class="grey">10&#8364</li>
+                        <li class="grey">10,00&#8364</li>
                         <li class="grey"><a href="#" class="button">Sign Up</a></li>
                     </ul>
                 </div>
                 <div class="columns">
                     <ul class="price">
                         <li class="header">1 Διαδρομής με λεωφορείο</li>
-                        <li class="grey">6&#8364</li>
+                        <li class="grey">6,00&#8364</li>
                         <li class="grey"><a href="#" class="button">Sign Up</a></li>
                     </ul>
                 </div>
                 <div class="columns">
                     <ul class="price">
                         <li class="header">1 Μετ' επιστροφής</li>
-                        <li class="grey">18&#8364</li>
+                        <li class="grey">18,00&#8364</li>
                         <li class="grey"><a href="#" class="button">Sign Up</a></li>
                     </ul>
                 </div>
                 <div class="columns">
                     <ul class="price">
                         <li class="header">1 από/πρός τους σταθμούς Παλλήνη-Κάντζα-Κορωπί με Μετρό</li>
-                        <li class="grey">6,5&#8364</li>
+                        <li class="grey">6,00&#8364</li>
                         <li class="grey"><a href="#" class="button">Sign Up</a></li>
                     </ul>
                 </div>
             </div>
-            <div id="13" class="tabcontent lvl2tab">
-                <h3>Εισιτήριο Μακράς Διάρκειας</h3>
+            <div id="13" class="tabcontent lvl2tab" style="border:none;">
                 <div class="tab">
                     <button class="tablinks lvl3" style="margin-left:0rem" onclick="lvl3f(event, '131')">30 Ημερών</button>
                     <button class="tablinks lvl3" style="margin-left:0rem" onclick="lvl3f(event, '132')">90 Ημερών</button>
                     <button class="tablinks lvl3" style="margin-left:0rem" onclick="lvl3f(event, '133')">180 Ημερών</button>
                     <button class="tablinks lvl3" style="margin-left:0rem" onclick="lvl3f(event, '134')">365 Ημερών</button>
                 </div>
-                <div id="131" class="tabcontent lvl2tab">
-                    <h3>30 Ημερών</h3>
+                <div id="131" class="tabcontent lvl3tab">
                     <div class="columns">
                         <ul class="price">
                             <li class="header">Χωρίς Διαδρομές Αεροδρομίου</li>
-                            <li class="grey">30&#8364</li>
+                            <li class="grey">30,00&#8364</li>
                             <li class="grey"><a href="#" class="button">Sign Up</a></li>
                         </ul>
                     </div>
                     <div class="columns">
                         <ul class="price">
                             <li class="header">Με Διαδρομές Αεροδρομίου</li>
-                            <li class="grey">49&#8364</li>
+                            <li class="grey">49,00&#8364</li>
                             <li class="grey"><a href="#" class="button">Sign Up</a></li>
                         </ul>
                     </div>
                 </div>
-                <div id="132" class="tabcontent lvl2tab">
-                    <h3>90 Ημερών</h3>
+                <div id="132" class="tabcontent lvl3tab">
                     <div class="columns">
                         <ul class="price">
                         <li class="header">Χωρίς Διαδρομές Αεροδρομίου</li>
-                            <li class="grey">85&#8364</li>
+                            <li class="grey">85,00&#8364</li>
                             <li class="grey"><a href="#" class="button">Sign Up</a></li>
                         </ul>
                     </div>
                     <div class="columns">
                         <ul class="price">
                         <li class="header">Με Διαδρομές Αεροδρομίου</li>
-                            <li class="grey">142&#8364</li>
+                            <li class="grey">142,00&#8364</li>
                             <li class="grey"><a href="#" class="button">Sign Up</a></li>
                         </ul>
                     </div>
                 </div>
-                <div id="133" class="tabcontent lvl2tab">
-                    <h3>180 Ημερών</h3>
+                <div id="133" class="tabcontent lvl3tab">
                     <div class="columns">
                         <ul class="price">
                         <li class="header">Χωρίς Διαδρομές Αεροδρομίου</li>
-                            <li class="grey">170&#8364</li>
+                            <li class="grey">170,00&#8364</li>
                             <li class="grey"><a href="#" class="button">Sign Up</a></li>
                         </ul>
                     </div>
                     <div class="columns">
                         <ul class="price">
                         <li class="header">Με Διαδρομές Αεροδρομίου</li>
-                            <li class="grey">250&#8364</li>
+                            <li class="grey">250,00&#8364</li>
                             <li class="grey"><a href="#" class="button">Sign Up</a></li>
                         </ul>
                     </div>
                 </div>
-                <div id="134" class="tabcontent lvl2tab">
-                    <h3>365 Ημερών</h3>
+                <div id="134" class="tabcontent lvl3tab">
                     <div class="columns">
                         <ul class="price">
                         <li class="header">Χωρίς Διαδρομές Αεροδρομίου</li>
-                            <li class="grey">330&#8364</li>
+                            <li class="grey">330,00&#8364</li>
                             <li class="grey"><a href="#" class="button">Sign Up</a></li>
                         </ul>
                     </div>
                     <div class="columns">
                         <ul class="price">
                         <li class="header">Με Διαδρομές Αεροδρομίου</li>
-                            <li class="grey">490&#8364</li>
+                            <li class="grey">490,00&#8364</li>
                             <li class="grey"><a href="#" class="button">Sign Up</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
-        <div id="2" class="tabcontent lvl1tab">
-            <h3>Μειωμένο Εισιτήριο</h3>
+        <div id="2" class="tabcontent lvl1tab" style="border:none;">
             <div class="tab">
-                <button class="tablinks lvl2" style="margin-left:0rem" onclick="lvl2f(event, '21')">21</button>
-                <button class="tablinks lvl2" style="margin-left:0rem" onclick="lvl2f(event, '22')">22</button>
-                <button class="tablinks lvl2" style="margin-left:0rem" onclick="lvl2f(event, '23')">23</button>
+                <button class="tablinks lvl2" style="margin-left:0rem" onclick="lvl2f(event, '21')">Ενιάιο Εισιτήριο</button>
+                <button class="tablinks lvl2" style="margin-left:0rem" onclick="lvl2f(event, '22')">Εισιτήριο Αεροδρομίου</button>
+                <button class="tablinks lvl2" style="margin-left:0rem" onclick="lvl2f(event, '23')">Εισιτήριο Μακράς Διάρκειας</button>
             </div>
-            <div id="21" class="tabcontent lvl2tab">
-                <h3>London</h3>
-                <p>London is the capital city of England.</p>
+            <div id="21" class="tabcontent lvl2tab" style="border:none;"> 
+                <div class="columns">
+                    <ul class="price">
+                        <li class="header">90 Λεπτών</li>
+                        <li class="grey">0,60&#8364</li>
+                        <li class="grey"><a href="#" class="button">Sign Up</a></li>
+                    </ul>
+                </div>
+                <div class="columns">
+                    <ul class="price">
+                        <li class="header">5πλό Εισιτήριο</li>
+                        <li class="grey">3,00&#8364</li>
+                        <li class="grey"><a href="#" class="button">Sign Up</a></li>
+                    </ul>
+                </div>
+                <div class="columns">
+                    <ul class="price">
+                        <li class="header">10+1 Ειστήρια</li>
+                        <li class="grey">6,00&#8364</li>
+                        <li class="grey"><a href="#" class="button">Sign Up</a></li>
+                    </ul>
+                </div>
+                <div class="columns">
+                    <ul class="price">
+                        <li class="header">2πλό Ειστήριο</li>
+                        <li class="grey">1,20&#8364</li>
+                        <li class="grey"><a href="#" class="button">Sign Up</a></li>
+                    </ul>
+                </div>
             </div>
-            <div id="22" class="tabcontent lvl2tab">
-                <h3>London</h3>
-                <p> is the capital city of England.</p>
+            <div id="22" class="tabcontent lvl2tab" style="border:none;">
+                <div class="columns">
+                    <ul class="price">
+                        <li class="header">1 Διαδρομής με Μετρό</li>
+                        <li class="grey">5,00&#8364</li>
+                        <li class="grey"><a href="#" class="button">Sign Up</a></li>
+                    </ul>
+                </div>
+                <div class="columns">
+                    <ul class="price">
+                        <li class="header">1 Διαδρομής με λεωφορείο</li>
+                        <li class="grey">3,00&#8364</li>
+                        <li class="grey"><a href="#" class="button">Sign Up</a></li>
+                    </ul>
+                </div>
+                <div class="columns">
+                    <ul class="price">
+                        <li class="header">1 από/πρός τους σταθμούς Παλλήνη-Κάντζα-Κορωπί με Μετρό</li>
+                        <li class="grey">3,00&#8364</li>
+                        <li class="grey"><a href="#" class="button">Sign Up</a></li>
+                    </ul>
+                </div>
             </div>
-            <div id="23" class="tabcontent lvl2tab">
-                <a href="#">Αγορία Εισιτηρίου
+            <div id="23" class="tabcontent lvl2tab" style="border:none;">
+                <div class="tab">
+                    <button class="tablinks lvl3" style="margin-left:0rem" onclick="lvl3f(event, '231')">30 Ημερών</button>
+                    <button class="tablinks lvl3" style="margin-left:0rem" onclick="lvl3f(event, '232')">90 Ημερών</button>
+                    <button class="tablinks lvl3" style="margin-left:0rem" onclick="lvl3f(event, '233')">180 Ημερών</button>
+                    <button class="tablinks lvl3" style="margin-left:0rem" onclick="lvl3f(event, '234')">365 Ημερών</button>
+                </div>
+                <div id="231" class="tabcontent lvl3tab">
+                    <div class="columns">
+                        <ul class="price">
+                            <li class="header">Χωρίς Διαδρομές Αεροδρομίου</li>
+                            <li class="grey">15,00&#8364</li>
+                            <li class="grey"><a href="#" class="button">Sign Up</a></li>
+                        </ul>
+                    </div>
+                    <div class="columns">
+                        <ul class="price">
+                            <li class="header">Με Διαδρομές Αεροδρομίου</li>
+                            <li class="grey">25,00&#8364</li>
+                            <li class="grey"><a href="#" class="button">Sign Up</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="232" class="tabcontent lvl3tab">
+                    <div class="columns">
+                        <ul class="price">
+                        <li class="header">Χωρίς Διαδρομές Αεροδρομίου</li>
+                            <li class="grey">43,00&#8364</li>
+                            <li class="grey"><a href="#" class="button">Sign Up</a></li>
+                        </ul>
+                    </div>
+                    <div class="columns">
+                        <ul class="price">
+                        <li class="header">Με Διαδρομές Αεροδρομίου</li>
+                            <li class="grey">71,00&#8364</li>
+                            <li class="grey"><a href="#" class="button">Sign Up</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="233" class="tabcontent lvl3tab">
+                    <div class="columns">
+                        <ul class="price">
+                        <li class="header">Χωρίς Διαδρομές Αεροδρομίου</li>
+                            <li class="grey">85,00&#8364</li>
+                            <li class="grey"><a href="#" class="button">Sign Up</a></li>
+                        </ul>
+                    </div>
+                    <div class="columns">
+                        <ul class="price">
+                        <li class="header">Με Διαδρομές Αεροδρομίου</li>
+                            <li class="grey">125,00&#8364</li>
+                            <li class="grey"><a href="#" class="button">Sign Up</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="234" class="tabcontent lvl3tab">
+                    <div class="columns">
+                        <ul class="price">
+                        <li class="header">Χωρίς Διαδρομές Αεροδρομίου</li>
+                            <li class="grey">165,00&#8364</li>
+                            <li class="grey"><a href="#" class="button">Sign Up</a></li>
+                        </ul>
+                    </div>
+                    <div class="columns">
+                        <ul class="price">
+                        <li class="header">Με Διαδρομές Αεροδρομίου</li>
+                            <li class="grey">245,00&#8364</li>
+                            <li class="grey"><a href="#" class="button">Sign Up</a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
+        </div>
+        <div id="3" class="tabcontent lvl1tab" style="border:none;">
+            <div class="columns">
+                <ul class="price">
+                <li class="header">3 Ημερών + Μεταφορά και Επιστροφή στο Αεροδρόμιο</li>
+                    <li class="grey">22,00&#8364</li>
+                    <li class="grey"><a href="#" class="button">Sign Up</a></li>
+                </ul>
+            </div>                
         </div>
         
     </div>
