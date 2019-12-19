@@ -544,15 +544,7 @@ th, td {
   }
   
   /* The "Sign Up" button */
-  .button {
-	background-color: #4CAF50;
-	border: none;
-	color: white;
-	padding: 10px 25px;
-	text-align: center;
-	text-decoration: none;
-	font-size: 18px;
-  }
+
   
   /* Change the width of the three columns to 100%
   (to stack horizontally on small screens) */

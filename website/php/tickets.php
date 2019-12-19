@@ -692,6 +692,11 @@ session_start();
         </form>
         
     </div>
+    <div style="margin-bottom:10rem;">
+        <a href="./chart" style="float:right;margin-right:5rem;margin-top:4rem;padding:0.5rem;background-color:black;color:white;">Καλάθι</a>
+    </div>
+    <br> 
+
     
 
     <!-- Cards -->
