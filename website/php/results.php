@@ -1,9 +1,10 @@
-<!-- <?php
-    echo $_POST["start"];
-    echo $_POST["destination"];
-    echo $_POST["date"];
-    echo $_POST["time"];
-?> -->
+<?php
+    // Storing the values from the user
+    $starting_station = $_POST["start"];
+    $ending_station = $_POST["destination"];
+    $date_var = $_POST["date"];
+    $time_var = $_POST["time"];
+?>
 
 <?php
 // Start the session
@@ -15,7 +16,7 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>ΑμεΑ - Κατάσταση Δικτύου</title>
+    <title>Υπολογισμός Διαδρομής</title>
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
@@ -24,6 +25,7 @@ session_start();
     <link rel="stylesheet" href="../../website/css/header_footer.css" type="text/css">
     <link rel="stylesheet" href="../../website/css/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="../../website/css/results.css" type="text/css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
 </head>
 
 <body>
@@ -31,41 +33,140 @@ session_start();
         $page = 'one'; include(dirname(__FILE__)."/header.php");
     ?>
 
-    <div class="container" style="padding-top: 80px; max-width: 640px;">
-        <ul class="acc">
-            <li>
-            <button class="acc_ctrl"><h2>41 λεπτ.</h2></button>
-            <div class="acc_panel">
-                <div class="station">
-                    <h5>Ομόνοια</h5>
-                    <div class="station-details-green">
-                        <p>Οδηγίες
-                        </p>
-                    </div>
+    <div class="row" style="padding-top: 200px; padding-left: 615px; max-width: 1700px; margin-bottom: -100px;">
+        <div class="col-sm-10">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title">Αποτελέσματα αναζήτησης</h3>
+                    <p style="font-size: 18px;" class="card-text">Από: <span style="font-weight: bold;"><?php echo $starting_station;?></span></p>
+                    <p style="font-size: 18px;" class="card-text">Προς: <span style="font-weight: bold;"><?php echo $ending_station;?></span></p>
+                    <?php
+                        if ($date_var !== '') {
+                            echo '<p style="font-size: 18px; class="card-text">Αναχώρηση: <span style="font-weight: bold;">';
+                            echo $date_var . '&nbsp;';
+                            if ($time_var !== '') {
+                                echo $time_var;
+                            }
+                            echo '</span></p>';
+                        } 
+                    ?>
+                    <i class="fa fa-map-marker" style="padding-right: 10px"></i><a style="font-size: 18px;" href="../../index.php">Νέα Αναζήτηση</a>
                 </div>
-                <div class="station">
-                    <h5>Ομόνοια</h5>
-                    <div class="station-details-red">
-                        <p>Οδηγίες
-                        </p>
-                    </div>
-                </div>
             </div>
-            </li>
-            <li>
-            <button class="acc_ctrl"><h2>Ford</h2></button>
-            <div class="acc_panel">
-                <p>The Ford Motor Company (commonly referred to as simply Ford) is an American multinational automaker headquartered in Dearborn, Michigan, a suburb of Detroit. It was founded by Henry Ford and incorporated on June 16, 1903.</p>
-            </div>
-            </li>
-            <li>
-            <button class="acc_ctrl"><h2>Toyota</h2></button>
-            <div class="acc_panel">
-                <p>Toyota Motor Corporation is a Japanese automotive manufacturer which was founded by Kiichiro Toyoda in 1937 as a spinoff from his father's company Toyota Industries, which is currently headquartered in Toyota, Aichi Prefecture, Japan.</p>
-            </div>
-            </li>
-        </ul>
+        </div>
     </div>
+
+    <?php
+        // Connecting to the database
+        $servername="127.0.0.1";
+        $username="root";
+        $password="";
+        $dbname="oasa";
+        
+        $connection=new mysqli($servername,$username,$password,$dbname);
+
+        if($connection->connect_error)
+            die("Connection failed: ".$connection->connect_error);
+
+        // Querying the database
+        $sql="select * FROM routes WHERE starting_station LIKE '%$starting_station%' AND ending_station LIKE '%$ending_station%'";
+        $result=$connection->query($sql);
+        
+        if ($result->num_rows > 0) {
+            echo '<div class="container" style="padding-top: 80px; max-width: 640px;">
+            <ul class="acc">';
+            $curr_scenario = 0;
+            while($row = $result->fetch_assoc()) {
+                if ($curr_scenario == $row["scenario"]) {
+                    echo '<div class="station">
+                            <h5>' . $row["current_station"] . '</h5>';
+                    if ($row["action"] == "M1") {
+                        echo "<div class='station-details-m1'>";        
+                    } else if ($row["action"] == "M2") {
+                        echo "<div class='station-details-m2'>";  
+                    } else if ($row["action"] == "M3") {
+                        echo "<div class='station-details-m3'>";
+                    } else {
+                        echo "<div class='station-details-bus'>";
+                    }
+                    echo        '<p style="font-size: 20px">';
+                    if ($row["action"] == "M1") {
+                        echo "<span class='action-m1'>";        
+                    } else if ($row["action"] == "M2") {
+                        echo "<span class='action-m2'>";  
+                    } else if ($row["action"] == "M3") {
+                        echo "<span class='action-m3'>";
+                    } else {
+                        echo "<span class='action-bus'>";
+                    }
+                    echo            $row["action"] . '</span> &nbsp;'
+                                    . $row["explanation"] .
+                                '</p>
+                                
+                                <p>' . $row["time_stations"] . '</p>
+                            </div>
+                        </div>';
+                } else {
+                    if ($curr_scenario != 0) {
+                            echo '<div class="eye"><h5>' . $ending_station . '</h5></div>';
+                        echo '</div>';
+                        echo '</li>'; 
+                    }
+                    echo '<li>';
+                    echo '<button class="acc_ctrl"><h2>(';
+                    if ($row["total_time"] > 60) {
+                        $hours = (int)floor($row["total_time"] / 60);
+                        $minutes = $row["total_time"] % 60;
+                        echo $hours . '&nbsp;ώρ.&nbsp;&nbsp;' . $minutes . '&nbsp;λεπτ.';
+                    } else {
+                        echo $row["total_time"] . ' λεπτ.';
+                    }
+                    echo ')</h2></button>';
+                    echo '<div class="acc_panel">';
+                    echo '<div class="station">
+                            <h5>' . $row["current_station"] . '</h5>';
+                    if ($row["action"] == "M1") {
+                        echo "<div class='station-details-m1'>";        
+                    } else if ($row["action"] == "M2") {
+                        echo "<div class='station-details-m2'>";  
+                    } else if ($row["action"] == "M3") {
+                        echo "<div class='station-details-m3'>";
+                    } else {
+                        echo "<div class='station-details-bus'>";
+                    }
+                    echo        '<p style="font-size: 20px">';
+                    if ($row["action"] == "M1") {
+                        echo "<span class='action-m1'>";        
+                    } else if ($row["action"] == "M2") {
+                        echo "<span class='action-m2'>";  
+                    } else if ($row["action"] == "M3") {
+                        echo "<span class='action-m3'>";
+                    } else {
+                        echo "<span class='action-bus'>";
+                    }
+                    echo            $row["action"] . '</span> &nbsp;'
+                                    . $row["explanation"] .
+                                '</p>
+                                
+                                <p>' . $row["time_stations"] . '</p>
+                            </div>
+                        </div>';
+                    $curr_scenario += 1;
+                }
+            }
+
+            echo '<div class="eye"><h5>' . $ending_station . '</h5></div>';
+            echo '</div>';
+            echo '</li>'; 
+            echo '</ul>
+            </div>';
+        } else {
+            echo '<div style="padding: 150px 0 100px 615px;">
+            <h5>Δυστυχώς δεν υπάρχουν αποτελέσματα, δοκιμάστε μια <a href="../../index.php">καινούργια αναζήτηση</a>.</h5>
+            </div>';
+        }
+        $connection->close();
+    ?>
 
     <?php
         include(dirname(__FILE__)."/footer.php");
