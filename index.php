@@ -88,11 +88,11 @@ session_start();
         <div class="row">
 			<div class="col-md-4">
 				<div class="card">
-                    <a href="">
+                    <a href="website/php/tickets.php">
 					    <img src="website/images/ticket_front_page.jpeg" class="card-img-top" alt="Tickets">
                     </a>
 					<div class="card-body">
-						<a href="">
+						<a href="website/php/tickets.php">
                             <h5 class="card-title">Εισιτήρια</h5>
                         </a>
 						<p class="card-text">Αγοράστε και επαναφορτίστε ηλεκτρονικά την ΑΤΗ.ΕΝΑ κάρτα σας</p>

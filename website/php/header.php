@@ -6,12 +6,12 @@
         </div>
         <nav class="main-menu mobile-menu">
             <ul>
-                <li <?php echo ($page == 'one') ? "class='active'" : ""; ?>><a href="<?$_SERVER['DOCUMENT_ROOT']?>/OASA-redesign/index.php">Υπολογισμός Διαδρομής</a></li>
-                <li <?php echo ($page == 'two') ? "class='active'" : ""; ?>><a href="<?$_SERVER['DOCUMENT_ROOT']?>/OASA-redesign/website/php/tickets.php">Εισιτήρια</a></li>
-                <li <?php echo ($page == 'three') ? "class='active'" : ""; ?>><a href="<?$_SERVER['DOCUMENT_ROOT']?>/OASA-redesign/website/php/coming_soon.php">Δρομολόγια</a></li>
-                <li <?php echo ($page == 'four') ? "class='active'" : ""; ?>>
+                <li><a <?php echo ($page == 'one') ? "class='active'" : ""; ?> href="<?$_SERVER['DOCUMENT_ROOT']?>/OASA-redesign/index.php">Υπολογισμός Διαδρομής</a></li>
+                <li><a <?php echo ($page == 'two') ? "class='active'" : ""; ?> href="<?$_SERVER['DOCUMENT_ROOT']?>/OASA-redesign/website/php/tickets.php">Εισιτήρια</a></li>
+                <li><a <?php echo ($page == 'three') ? "class='active'" : ""; ?> href="<?$_SERVER['DOCUMENT_ROOT']?>/OASA-redesign/website/php/coming_soon.php">Δρομολόγια</a></li>
+                <li >
                     <div class="dropdown">
-                        <a class="dropbtn">Πληροφορίες</a>
+                        <a <?php echo ($page == 'four') ? "class='active'" : ""; ?> class="dropbtn">Πληροφορίες</a><i class="arrow down"></i>
                         <div class="dropdown-content">
                             <a href="<?$_SERVER['DOCUMENT_ROOT']?>/OASA-redesign/website/php/coming_soon.php">Σταθμοί</a>
                             <a href="<?$_SERVER['DOCUMENT_ROOT']?>/OASA-redesign/website/php/amea.php">ΑμεΑ</a>
@@ -19,9 +19,9 @@
                         </div>
                     </div>
                 </li>
-                <li <?php echo ($page == 'five') ? "class='active'" : ""; ?>>
+                <li>
                     <div class="dropdown">
-                        <a class="dropbtn">Επικοινωνία</a>
+                        <a <?php echo ($page == 'five') ? "class='active'" : ""; ?> class="dropbtn">Επικοινωνία</a><i class="arrow down"></i>
                         <div class="dropdown-content">
                             <a href="<?$_SERVER['DOCUMENT_ROOT']?>/OASA-redesign/website/php/coming_soon.php">Επικοινωνία με τον ΟΑΣΑ</a>
                             <a href="<?$_SERVER['DOCUMENT_ROOT']?>/OASA-redesign/website/php/coming_soon.php">Συχνές Ερωτήσεις</a>
