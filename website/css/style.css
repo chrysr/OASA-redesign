@@ -562,7 +562,14 @@ th, td {
 	}
   }
 
-.tablinks{
+/* .tablinks{
 	width:17rem;
+} */
+.submitticket{
+	background-color:black;
+	color:white;
+	margin: 0;
+	padding:0.5rem;
+	border:none;
 }
 /*TICKETS STYLE END*/
