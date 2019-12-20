@@ -33,6 +33,7 @@ session_start();
         $page = 'one'; include(dirname(__FILE__)."/header.php");
     ?>
 
+    <!-- <div class="row" style="padding-top: 200px; padding-left: 273px; max-width: 1700px; margin-bottom: -100px;"> -->
     <div class="row" style="padding-top: 200px; padding-left: 615px; max-width: 1700px; margin-bottom: -100px;">
         <div class="col-sm-10">
             <div class="card">
