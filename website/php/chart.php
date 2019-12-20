@@ -98,7 +98,7 @@ if(!isset($_SESSION['chart']))
                     Ανανέωση Καλαθιού <i class="fas fa-sync-alt"></i></button>
                 </div>
                 <div style="padding:0.5rem;border-top:1px solid white;">
-                    <span style="border:none; ">Τελικό Ποσό: <?php print $total;?>&#8364</span>
+                    <span style="border:none; ">Τελικό Ποσό: <?php print str_replace('.',',',strval(number_format((double)$total,2,'.','')));?>&#8364</span>
                 </div>
             </div>
         </div>
