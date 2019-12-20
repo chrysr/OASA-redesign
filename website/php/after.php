@@ -7,6 +7,14 @@ if(!isset($_SESSION['chart']))
 }
 ?>
 <?php
+    if(isset($_POST['tostart']))
+    {
+        $_SESSION['chart']=array();
+        header('Location: ../../index.php');
+        die();
+    }
+?>
+<?php
     if(isset($_POST['addto']))
     {
         $_SESSION['chart']=array();
@@ -166,10 +174,14 @@ if(!isset($_SESSION['chart']))
             <p class="mb-0">Ευχαριστούμε για την αγορά σας!</p>
         </div>
     </div>
-    
+    <form method="POST" action="./after.php" id="tostart">
+        <input type='hidden' value=1 name="tostart">
+    </form>
     <div style="margin-bottom:5rem;">
         <div style="border-radius:5px;float:right; margin-right:4rem;padding:1rem;background-color:black;color:white">
-            <a style="color:white;" href="../../index.php">Μετάβαση στην Αρχική</a>
+        <button style="cursor:pointer; background-color:black; color:white; border:none;" type="submit" form="tostart">
+            Μετάβαση στην Αρχική</button>
+            <!-- <a style="color:white;" href="../../index.php">Μετάβαση στην Αρχική</a> -->
         </div>
     </div>
 

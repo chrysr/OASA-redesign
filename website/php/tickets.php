@@ -23,10 +23,6 @@ if(!isset($_SESSION['chart']))
             }
 
         }
-        foreach($_SESSION['chart'] as $key=>$value)
-        {
-            //print $key.'-->'.$value.'|';
-        }
         header('Location: ./chart.php');
         die();
     }
@@ -64,6 +60,7 @@ if(!isset($_SESSION['chart']))
     
 
     <div class="container-fluid" style="padding: 14rem 0rem 30rem 0rem; background-color: white; ">
+    <div style="margin: 0rem 3rem 0rem 3rem;">
         <form action="tickets.php" method="POST" id="tick">
             <div class="tab" style="width:100%">
                 <button class="tablinks lvl1" id="default" style="margin-left:0rem; width: 33.33%;" onclick="lvl1f(event, '1')">Κανονικό Εισιτήριο</button>
@@ -504,7 +501,7 @@ if(!isset($_SESSION['chart']))
             <input type="text" name="hid" required style="display:none">
 
         </form>
-        
+    </div>
     </div>
     <div class="form-control" style="background-color: white; border:none;margin-bottom:10rem; ">
         <button formnovalidate type="submit" class="submitticket" name="addto" form="tick" style="border-radius:5px;cursor:pointer;float:right;margin-right:5rem;margin-top:4rem;">

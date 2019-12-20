@@ -7,6 +7,13 @@ if(!isset($_SESSION['chart']))
 }
 ?>
 <?php
+    if(empty($_SESSION['chart']))
+    {
+        echo ("<script LANGUAGE='JavaScript'>
+        window.alert('Δεν έχετε επιλέξει εισιτήρια');
+        window.location.href='./tickets.php';
+        </script>");
+    }
     if(isset($_POST['addto']))
     {
         $_SESSION['chart']=array();
@@ -16,6 +23,18 @@ if(!isset($_SESSION['chart']))
             if($value>0)
                 $_SESSION['chart'][$key]=$value;
         }
+    }
+    else if(isset($_POST['pay']))
+    {
+        $_SESSION['chart']=array();
+        foreach ($_POST as $key=>$value)
+        {
+            //print $key.'->'.$value."xA";
+            if($value>0)
+                $_SESSION['chart'][$key]=$value;
+        }
+        header('Location: ./payment.php');
+        die();
     }
 ?>
 <!DOCTYPE html>
@@ -109,7 +128,9 @@ if(!isset($_SESSION['chart']))
             <a style="color:white;" href="./tickets.php">Εισιτήρια</a>
         </div>
         <div style="border-radius:5px;float:right; margin-right:4rem;padding:1rem;background-color:black;color:white">
-            <a style="color:white;" href="./payment.php">Πληρωμή</a>
+            <button style="cursor:pointer; background-color:black; color:white; border:none;" formnovalidate type="submit" name="pay" form="tick">
+            Πληρωμή</button>
+        <!-- <a style="color:white;" href="./payment.php">Πληρωμή</a> -->
         </div>
     </div>
 
