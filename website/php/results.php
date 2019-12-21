@@ -33,8 +33,8 @@ session_start();
         $page = 'one'; include(dirname(__FILE__)."/header.php");
     ?>
 
-    <!-- <div class="row" style="padding-top: 200px; padding-left: 273px; max-width: 1700px; margin-bottom: -100px;"> -->
-    <div class="row" style="padding-top: 200px; padding-left: 615px; max-width: 1700px; margin-bottom: -100px;">
+    <div class="row" style="padding-top: 200px; padding-left: 277px; max-width: 1760px; margin-bottom: -100px;">
+    <!-- <div class="row" style="padding-top: 200px; padding-left: 615px; max-width: 1700px; margin-bottom: -100px;"> -->
         <div class="col-sm-10">
             <div class="card">
                 <div class="card-body">
@@ -76,7 +76,7 @@ session_start();
         $result=$connection->query($sql);
         
         if ($result->num_rows > 0) {
-            echo '<div class="container" style="padding-top: 80px; max-width: 640px;">
+            echo '<div class="container" style="padding-top: 80px; max-width: 640px; margin-left: 262px">
             <ul class="acc">';
             $curr_scenario = 0;
             while($row = $result->fetch_assoc()) {

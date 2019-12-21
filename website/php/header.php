@@ -13,9 +13,9 @@
                     <div class="dropdown">
                         <a <?php echo ($page == 'four') ? "class='active'" : ""; ?> class="dropbtn">Πληροφορίες</a><i class="arrow down"></i>
                         <div class="dropdown-content">
-                            <a href="<?$_SERVER['DOCUMENT_ROOT']?>/OASA-redesign/website/php/coming_soon.php">Σταθμοί</a>
                             <a href="<?$_SERVER['DOCUMENT_ROOT']?>/OASA-redesign/website/php/amea.php">ΑμεΑ</a>
                             <a href="<?$_SERVER['DOCUMENT_ROOT']?>/OASA-redesign/website/php/coming_soon.php">Νέα & Ανακοινώσεις</a>
+                            <a href="<?$_SERVER['DOCUMENT_ROOT']?>/OASA-redesign/website/php/faq.php">Συχνές Ερωτήσεις</a>
                         </div>
                     </div>
                 </li>
@@ -24,7 +24,6 @@
                         <a <?php echo ($page == 'five') ? "class='active'" : ""; ?> class="dropbtn">Επικοινωνία</a><i class="arrow down"></i>
                         <div class="dropdown-content">
                             <a href="<?$_SERVER['DOCUMENT_ROOT']?>/OASA-redesign/website/php/coming_soon.php">Επικοινωνία με τον ΟΑΣΑ</a>
-                            <a href="<?$_SERVER['DOCUMENT_ROOT']?>/OASA-redesign/website/php/coming_soon.php">Συχνές Ερωτήσεις</a>
                             <a href="<?$_SERVER['DOCUMENT_ROOT']?>/OASA-redesign/website/php/coming_soon.php">Σχετικά με τον ΟΑΣΑ</a>
                         </div>
                     </div>
