@@ -41,6 +41,8 @@ if(!isset($_SESSION['chart']))
 <html lang="el">
 
 <head>
+    <link rel="shortcut icon" type="image/x-icon" href="<?$_SERVER['DOCUMENT_ROOT']?>/OASA-redesign/website/images/favicon.ico">
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>ΟΑΣΑ</title>
