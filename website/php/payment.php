@@ -95,12 +95,13 @@ if(!isset($_SESSION['chart']))
         
     </div>
     <div>
+        <form action="after.php" method="POST" id="checkout" onsubmit="return false;" >
+
         <div class="row" style="margin-left:3rem; margin-right:3rem;">
             <div class="col-7" >
                 <button onclick="card=1-card;" type="button" class="collapsible"><i class="far fa-credit-card"></i> Πληρωμή με Χρεωστική ή Πιστωτική Κάρτα</button>
                 <div class="content" >
                     <div class="containerp" style="padding-top:2rem;margin: 2rem 0 2rem 0;">
-                        <form action="after.php" method="POST" id="checkout" onsubmit="return false;" >
                             <input type='hidden' value=0 id='ms' name='ms'>
                             <input type='hidden' value=0 id='pp' name='pp'>
                             <input type='hidden' value=0 name="subcheck">
@@ -163,7 +164,6 @@ if(!isset($_SESSION['chart']))
                                     </select> 
                                 </div>                            
                             </div>
-                        </form>
                     </div>
                 </div>
                 <div>
@@ -184,6 +184,31 @@ if(!isset($_SESSION['chart']))
                         <!-- <p>Έχετε επιλέξει πληρωμή και παραλαβή σε σταθμό</p> -->
                     </div>
                 </div>
+                <?php
+                if(!isset($_SESSION['loggedin']))
+                print'
+                <div style="margin-top:2rem; ">
+                    <span style="border-bottom:2px solid #ccc">Στοιχεία Κράτησης</span>
+                </div>
+                <div class="row" style="margin-top:1.5rem;" >
+                    <div class="col-6">
+                        <label>Όνομα</label>
+                        <input  type="text" class="form-control" name="firstname" title="Όνομα" required placeholder="Όνομα">
+                    </div>
+                    <div class="col-6">
+                        <label>Επίθετο</label>
+                        <input type="text" class="form-control" name="lastname" title="Επίθετο" required placeholder="Επίθετο">
+                    </div>
+                </div>';
+                else print'
+                <div style="display:none"> 
+                    <input type="text" name="firstname" value=1>
+                    <input type="text" name="lastname" value=1>
+                </div>
+                ';
+                ?>
+            </form>
+
             </div>
             <div class="col-5">
                 <div class="containerp" style="padding-top:1rem;">
@@ -277,6 +302,8 @@ if(!isset($_SESSION['chart']))
     var station=0;
     var card=0;
     function validateForm() {
+        if(document.forms['checkout']['firstname'].value==''||document.forms['checkout']['lastname'].value=='')
+            return false;
         var ret=0;
         if(paypal)
         {
