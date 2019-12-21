@@ -124,13 +124,23 @@
     transition: max-height 0.2s ease-out;
   }
   .collapsible:after {
-    content: '\02795'; /* Unicode character for "plus" sign (+) */
+    /* content: '\02795'; Unicode character for "plus" sign (+) */
     font-size: 13px;
-    color: white;
+    /* color: white; */
     float: right;
     margin-left: 5px;
+    font-family: "Font Awesome 5 Free";
+    content: "\f107";
+    font-weight: 900;
+    color:rgb(64, 152, 190);
+    font-size:20px;
   }
   
   .active:after {
-    content: "\2796"; /* Unicode character for "minus" sign (-) */
+    /* content: "\2796"; Unicode character for "minus" sign (-) */
+    font-family: "Font Awesome 5 Free";
+    content: "\f106";
+    font-weight: 900;
+    color:rgb(64, 152, 190);
+    font-size:20px;
   }
