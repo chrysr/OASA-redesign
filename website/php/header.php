@@ -39,7 +39,7 @@
                 </div> 
             <?php else:?>
                 <div class="user-access">
-                    <a href="<?$_SERVER['DOCUMENT_ROOT']?>/OASA-redesign/website/php/signup.php">Εγγραφή/</a>
+                    <a href="<?$_SERVER['DOCUMENT_ROOT']?>/OASA-redesign/website/php/signup.php">Εγγραφή / </a>
                     <a href="<?$_SERVER['DOCUMENT_ROOT']?>/OASA-redesign/website/php/login.php">Σύνδεση</a>
                 </div>        
             <?php endif;?>
