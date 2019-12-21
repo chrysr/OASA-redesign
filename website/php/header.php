@@ -1,5 +1,8 @@
 <!-- Header Section Begin -->
+<link rel="shortcut icon" type="image/x-icon" href="<?$_SERVER['DOCUMENT_ROOT']?>/OASA-redesign/website/images/favicon.ico">
+
 <header class="header-section">
+
     <div class="container-fluid">
         <div class="logo">
             <a href="<?$_SERVER['DOCUMENT_ROOT']?>/OASA-redesign/index.php"><img src="<?$_SERVER['DOCUMENT_ROOT']?>/OASA-redesign/website/images/logo.png" alt="Αρχική"></a>
