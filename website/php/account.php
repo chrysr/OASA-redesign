@@ -115,6 +115,8 @@ body {font-family: "Lato", sans-serif;}
 }
 </style>
 <head>
+    <link rel="shortcut icon" type="image/x-icon" href="<?$_SERVER['DOCUMENT_ROOT']?>/OASA-redesign/website/images/favicon.ico">
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>ΟΑΣΑ</title>
@@ -288,11 +290,16 @@ body {font-family: "Lato", sans-serif;}
                                             </tr>
                                             <tr style="border-bottom: 1px solid #dee2e6;">
                                                 <td style="padding-bottom:0.5rem;">Επιβεβαίωση Κωδικού</td>
-                                                <td style="padding-bottom:0.5rem;">'.
-                                                    ($error==true?'<span class="error text-danger">Λανθασμένος Κωδικός Πρόσβασης</span>':'')
-                                                    .'<div class="input-group form-group" style="margin:0">'.
+                                                <td style="padding-bottom:0.5rem;">
+                                                    <div class="input-group form-group" style="margin:0">'.
                                                         ($error==true?'<input type="password" class="form-control is-invalid" name="password" class="form-control" placeholder="Κωδικός Πρόσβασης" title="Κωδικός Πρόσβασης" required>':'<input type="password" name="password" class="form-control" placeholder="Κωδικός Πρόσβασης" title="Κωδικός Πρόσβασης" required>')
+                                                    .''.
+                                                    ($error==true?'
+                                                        <div class="invalid-feedback" >
+                                                            Λανθασμένος Κωδικός 
+                                                        </div> ':'')
                                                     .'</div>
+                                                    
                                                 </td>
                                             </tr>
                                         </table>
@@ -326,7 +333,7 @@ body {font-family: "Lato", sans-serif;}
                             <!-- 'value="'.$_POST['passwordcur'].'"  -->
                             <!-- '.(isset($_POST['passwordcur'])?'class="form-control is-valid" ':'class="form-control"'). ' -->
                                 <td style="padding-bottom:0.5rem;">Τωρινός Κωδικός</td>
-                                <td style="text-align:center; padding-bottom:0.5rem;">
+                                <td style="padding-bottom:0.5rem;">
                                     <?php if($errorpass==true) print '<input type="password" name="passwordcur" class="form-control is-invalid" placeholder="Τωρινός Κωδικός" title="Τωρινός Κωδικός" required>' ?>
                                     <?php if($errorpass==false) print '<input style="margin:0;" type="password" name="passwordcur" '.(isset($_POST['passwordcur'])?'value="'.$_POST['passwordcur'].'" class="form-control is-valid" ':'class="form-control"'). '  placeholder="Τωρινός Κωδικός" title="Τωρινός Κωδικός" required>'; ?>
                                     <?php if($errorpass==true) print '<div class="invalid-feedback">
@@ -339,7 +346,7 @@ body {font-family: "Lato", sans-serif;}
                             <tr style="height:0.5rem;"></tr>
                             <tr style="border-bottom: 1px solid #dee2e6;">
                                 <td style="padding-bottom:0.5rem;">Νέος Κωδικός</td>
-                                <td style="text-align:center;padding-bottom:0.5rem;">
+                                <td style="padding-bottom:0.5rem;">
                                     <?php if($nomatch==true) print  '<input type="password" name="passwordnew" '.($errorpass==true?'style="border-color: darkorange;"':'').' class="form-control is-invalid" placeholder="Νέος Κωδικός" title="Νέος Κωδικός" required>';?>
                                     <?php if($nomatch==false) print '<input type="password" name="passwordnew" class="form-control" placeholder="Νέος Κωδικός" title="Νέος Κωδικός" required>';?>
                                     <?php if($nomatch==true) print'
@@ -351,7 +358,7 @@ body {font-family: "Lato", sans-serif;}
                             <tr style="height:0.5rem;"></tr>
                             <tr style="border-bottom: 1px solid #dee2e6;">
                                 <td style="padding-bottom:0.5rem;">Επιβεβαίωση Νέου Κωδικού</td>
-                                <td style="text-align:center;padding-bottom:0.5rem;">
+                                <td style="padding-bottom:0.5rem;">
                                     <?php if($nomatch==true) print  '<input type="password" name="passwordchk" '.($errorpass==true?'style="border-color: darkorange;"':'').' class="form-control is-invalid" placeholder="Επιβεβαίωση Νέου Κωδικού" title="Επιβεβάιωση Νέου Κωδικού" required>';?>
                                     <?php if($nomatch==false) print '<input type="password" name="passwordchk" class="form-control" placeholder="Επιβεβαίωση Νέου Κωδικού" title="Επιβεβάιωση Νέου Κωδικού" required>' ;?>
                                     <?php if($nomatch==true) print'
