@@ -28,7 +28,7 @@ session_start();
         $page = 'four'; include(dirname(__FILE__)."/header.php");
     ?>
 
-    <!--== Works Start ==-->
+    <!--== Start ==-->
     <section id="car-list-area" class="section-padding">
         <div class="container">
             <div class="row">
@@ -137,7 +137,7 @@ session_start();
             </div>
         </div>
     </section>
-    <!--== Works End ==-->
+    <!--== End ==-->
 
     <?php
         include(dirname(__FILE__)."/footer.php");

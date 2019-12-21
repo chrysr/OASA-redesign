@@ -1,7 +1,10 @@
 body {
-    background-color: #F9F9F9 !important;
+    background-color: #F9F9F9;
 }
 
+ul {
+    list-style-type: none;
+}
 .car-details-content h2 {
 	border-bottom: 1px solid #4098BE;
 	font-weight: 400;
@@ -22,6 +25,10 @@ body {
 	color: #666;
 	line-height: 2;
 	padding-top: 30px;
+}
+
+.car-details-info a:visited {
+    color: #4098BE;
 }
 
 .car-details-info h4 {
@@ -131,7 +138,8 @@ body {
 }
 
 .single-recent-tips {
-	margin-bottom: 20px;
+    margin-bottom: 20px;
+    list-style-type: none;
 }
 
 .single-recent-tips:last-child {
@@ -177,4 +185,72 @@ body {
 	display: block;
 	margin-top: 5px;
 	text-transform: uppercase;
+}
+
+/*==============================
+    FAQ Page Css
+================================*/
+
+.single-faq-sub {
+	margin-bottom: 70px;
+}
+
+.single-faq-sub:last-child {
+	margin-bottom: 0;
+}
+
+.single-faq-sub h3 {
+	font-size: 25px;
+	margin-bottom: 15px;
+	/* text-transform: capitalize; */
+}
+
+.single-faq-sub-content .card {
+	border: medium none;
+	margin-bottom: 20px;
+}
+
+.single-faq-sub-content .card-header {
+	background-color: #4098BE;
+	border: medium none;
+	border-radius: 0;
+}
+
+.single-faq-sub-content .card-header button {
+	color: #000;
+	cursor: pointer;
+	font-weight: 600;
+	line-height: 26px;
+	padding: 0;
+	position: relative;
+	text-align: left;
+	white-space: inherit;
+	width: 100%;
+}
+
+.single-faq-sub-content .card-header button:hover {
+	text-decoration: none;
+}
+
+.single-faq-sub-content .card-body {
+	background-color: rgba(235, 235, 235, 0.671);
+	color: #000;
+	line-height: 1.9;
+}
+
+.single-faq-sub-content .card-header button i.fa {
+	font-size: 21px;
+	position: absolute;
+	right: 0;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+.single-faq-sub-content .card-header button[aria-expanded="true"] i.fa-angle-down {
+	display: none;
+}
+
+.single-faq-sub-content .card-header button[aria-expanded="false"] i.fa-angle-up {
+	display: none;
 }
