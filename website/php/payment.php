@@ -83,9 +83,9 @@ if(!isset($_SESSION['chart']))
         <div style="margin: 1rem 3rem 0rem 3rem; ">
             <nav aria-label="breadcrumb" >
                 <ol class="breadcrumb" >
-                    <li class="breadcrumb-item" style="color:#6c757d;">Επιλογή Εισιτηρίων</li>                
-                    <li class="breadcrumb-item" style="color:#6c757d;" >Καλάθι</li>
-                    <li class="breadcrumb-item" style="color:rgb(64, 152, 190);" >Τρόποι Πληρωμής</li>
+                    <li class="breadcrumb-item" style="color:#6c757d;"><a href="./tickets.php" style="color:inherit;">Επιλογή Εισιτηρίων</a></li>                
+                    <li class="breadcrumb-item" style="color:#6c757d;" ><a href="./chart.php" style="color:inherit;">Καλάθι Αγορών</a></li>
+                    <li class="breadcrumb-item" style="color:rgb(64, 152, 190);" ><a href="./payment.php" style="color:inherit;">Τρόποι Πληρωμής</a></li>
                     <li class="breadcrumb-item" style="color:#6c757d;">Σύνοψη</li>
                 </ol>
             </nav>
@@ -230,10 +230,10 @@ if(!isset($_SESSION['chart']))
     
     <br>
     <div style="margin-bottom:5rem;">
-        <div style="border-radius:5px; float:left; margin-left:4rem;padding:1rem;background-color:black;color:white">
+        <div style="border-radius:5px; float:left; margin-left:4rem;padding:0.5rem;background-color:black;color:white">
             <a style="color:white;" href="./chart.php">Καλάθι</a>
         </div>
-        <div style="border-radius:5px;float:right; margin-right:4rem;padding:1rem;background-color:black;color:white">
+        <div style="border-radius:5px;float:right; margin-right:4rem;padding:0.5rem;background-color:black;color:white">
             <button onclick="validateForm();" style="font-size:17px;float:left;cursor:pointer; background-color:black; color:white; border:none; " id="subbtn" type="submit"  form="checkout">
             Ολοκλήρωση Αγοράς</button>
             <div class="spinner-border"  id='spinner' style="float:right; display:none;"></div>

@@ -64,7 +64,7 @@ if(!isset($_SESSION['chart']))
             <nav aria-label="breadcrumb" >
                 <ol class="breadcrumb" style="margin:0;">
                     <li class="breadcrumb-item active" >Επιλογή Εισιτηρίων</li>                
-                    <li class="breadcrumb-item active" >Καλάθι</li>
+                    <li class="breadcrumb-item active" >Καλάθι Αγορών</li>
                     <li class="breadcrumb-item active" >Τρόποι Πληρωμής</li>
                     <li class="breadcrumb-item" style="color:rgb(64, 152, 190);" >Σύνοψη</li>
                 </ol>
@@ -194,7 +194,7 @@ if(!isset($_SESSION['chart']))
         <input type='hidden' value=1 name="tostart">
     </form> -->
     <div style="margin-bottom:5rem;">
-        <div style="border-radius:5px;float:right; margin-right:4rem;padding:1rem;background-color:black;color:white">
+        <div style="border-radius:5px;float:right; margin-right:4rem;padding:0.5rem;background-color:black;color:white">
         <!-- <button style="cursor:pointer; background-color:black; color:white; border:none;" type="submit" form="tostart">
             Μετάβαση στην Αρχική</button> -->
             <a style="color:white;" href="../../index.php">Μετάβαση στην Αρχική</a>

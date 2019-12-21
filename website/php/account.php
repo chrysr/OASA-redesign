@@ -16,6 +16,46 @@ session_start();
         die();
     }
 ?>
+<?php
+    $nomatch=false;
+    $errorpass=false;
+
+    if(isset($_POST['changepass']))
+    {
+        $servername="127.0.0.1";
+        $username="root";
+        $password="";
+        $dbname="oasa";
+        $connection=new mysqli($servername,$username,$password,$dbname);
+        
+        if($connection->connect_error)
+            die("Connection failed: ".$connection->connect_error);
+        $sql="SELECT * FROM users WHERE card=".$_SESSION['card'].' and password="'.$_POST['passwordcur'].'"';
+        if(($result=$connection->query($sql))&&$result->num_rows==1)
+        {
+            if($_POST['passwordnew']==$_POST['passwordchk'])
+            {
+                $sql='UPDATE users SET password="'.$_POST['passwordnew'].'" WHERE card='.$_SESSION['card'];
+                if(($result=$connection->query($sql)))
+                {
+                    echo ("<script LANGUAGE='JavaScript'>
+                    window.alert('O κωδικός σας άλλαξε με επιτυχία');
+                    </script>");
+                }
+            }
+                
+            
+        }
+        else
+        {
+            $errorpass=true;
+        }
+        if($_POST['passwordnew']!=$_POST['passwordchk'])
+        {
+            $nomatch=true;
+        }
+    }
+?>
 <!-- Header Section Begin -->
 <?php
     $page='zero'; include(dirname(__FILE__)."/header.php");
@@ -35,7 +75,7 @@ body {font-family: "Lato", sans-serif;}
 .tab {
   float: left;
   border: 1px solid #ccc;
-  background-color: #f1f1f1;
+  background-color: darkgrey;
   width: 35%;
   max-height: 450px;
 }
@@ -57,19 +97,18 @@ body {font-family: "Lato", sans-serif;}
 
 /* Change background color of buttons on hover */
 .tab button:hover {
-  background-color: #ddd;
+  background-color: #ccc;
 }
 
 /* Create an active/current "tab button" class */
 .tab button.active {
-  background-color: #ccc;
+  background-color: rgb(64, 152, 190);
 }
 
 /* Style the tab content */
 .tabcontent {
   float: left;
   padding: 0px 12px;
-  border: 1px solid #ccc; /*to go*/
   width: 65%;
   border-left: none;
   max-height: 450px;
@@ -110,11 +149,11 @@ body {font-family: "Lato", sans-serif;}
         </nav>
         <div style="margin: 2rem 5rem 0 5rem;">    
             <div class="tab">
-                <button class="tablinks" id="default" style="margin-left:0rem" onclick="option(event, '1')"><i class="fas fa-id-card"></i> Στοιχεία Κάρτας</button>
+                <button class="tablinks" <?php if(!$nomatch) print 'id="default" ';?>style="margin-left:0rem" onclick="option(event, '1')"><i class="fas fa-id-card"></i> Στοιχεία Κάρτας</button>
                 <button class="tablinks" style="margin-left:0rem" onclick="option(event, '3')"><i class="fas fa-ticket-alt"></i> Ενεργά Εισιτήρια</button>
                 <button class="tablinks" style="margin-left:0rem" onclick="window.location.href='./tickets.php';"><i class="fas fa-shopping-cart"></i> Αγορά Εισιτηρίου</button>
                 <button class="tablinks" style="margin-left:0rem" onclick="option(event, '2')"><i class="fas fa-fast-backward"></i> Ληγμένα Εισιτήρια</button>
-                <button class="tablinks" style="margin-left:0rem" onclick="option(event, '5')"><i class="fas fa-key"></i> Αλλαγή Κωδικού Πρόσβασης</button>
+                <button class="tablinks" <?php if($nomatch) print 'id="default" ';?>style="margin-left:0rem" onclick="option(event, '5')"><i class="fas fa-key"></i> Αλλαγή Κωδικού Πρόσβασης</button>
                 <button class="tablinks" style="margin-left:0rem; " type="submit" form="signout"><i class="fas fa-sign-out-alt"></i> Έξοδος από τον Λογαριασμό</button>
             </div>                 
             <div id="1" class="tabcontent" style="padding-bottom: 2rem;">
@@ -132,22 +171,22 @@ body {font-family: "Lato", sans-serif;}
                     
                     if(isset($_POST['update']))
                     {
-                        print "try to update";
+                        // print "try to update";
                         $sql="SELECT * FROM users WHERE card=".$_SESSION['card'].' and password="'.$_POST['password'].'"';
                         if(($result=$connection->query($sql))&&$result->num_rows==1)
                         {
                             $sql='UPDATE users SET firstname="'.$_POST['firstname'].'",lastname="'.$_POST['lastname'].'",email="'.$_POST['email'].'" WHERE card='.$_SESSION['card'];
-                            print $_POST['password'];
+                            // print $_POST['password'];
                             if(($result=$connection->query($sql)))
                             {
-                                print "successfully updated";
+                                // print "successfully updated";
                                 echo ("<script LANGUAGE='JavaScript'>
                                 window.alert('Τα στοιχεία σας ενημερώθηκαν με επιτυχία');
                                 </script>");
                             }
                             else
                             {
-                                print "error update";
+                                // print "error update";
                                 $error=true;
                                 //error
                             }
@@ -169,24 +208,27 @@ body {font-family: "Lato", sans-serif;}
                         if(!isset($_POST['edit'])&&$edit==false)
                         {
                             print '
-                            <div class="container" style="margin:5rem 3rem 4rem 3rem;">
+                            <div class="container" style="margin:3rem 3rem 4rem 3rem;">
                                 <form action="account.php" method="POST">
                                     <table style="width:80%; color:black; font-size:18px; ">
                                         <tr style="border-bottom: 1px solid #dee2e6;">
-                                            <td>Αριθμός Κάρτας</td>
-                                            <td style="text-align:center;">'.$row['card'].'</td>
+                                            <td style="padding-bottom:0.25rem;">Αριθμός Κάρτας</td>
+                                            <td style="text-align:center; padding-bottom:0.25rem;">'.$row['card'].'</td>
                                         </tr>
+                                        <tr style="height:0.5rem";></tr>
                                         <tr style="border-bottom: 1px solid #dee2e6;">
-                                            <td>Όνομα Κατόχου</td>
-                                            <td style="text-align:center;">'.$row['firstname'].'</td>
+                                            <td style="padding-bottom:0.25rem;">Όνομα Κατόχου</td>
+                                            <td style="text-align:center; padding-bottom:0.25rem;">'.$row['firstname'].'</td>
                                         </tr>
+                                        <tr style="height:0.5rem";></tr>
                                         <tr style="border-bottom: 1px solid #dee2e6;">
-                                            <td>Επίθετο Κατόχου</td>
-                                            <td style="text-align:center;">'.$row['lastname'].'</td>
+                                            <td style="padding-bottom:0.25rem;">Επίθετο Κατόχου</td>
+                                            <td style="text-align:center; padding-bottom:0.25rem;">'.$row['lastname'].'</td>
                                         </tr>
+                                        <tr style="height:0.5rem";></tr>
                                         <tr style="border-bottom: 1px solid #dee2e6;">
-                                            <td>Διεύθυνση Email</td>
-                                            <td style="text-align:center;">'.$row['email'].'</td>
+                                            <td style="padding-bottom:0.25rem;">Διεύθυνση Email</td>
+                                            <td style="text-align:center; padding-bottom:0.25rem;">'.$row['email'].'</td>
                                         <t/r>
                                     </table>
                                 </form>
@@ -194,7 +236,7 @@ body {font-family: "Lato", sans-serif;}
                                 <div style="margin:0rem 3rem 0rem 3rem;">
                                     <form action="account.php" method="POST">
                                         <input type="hidden" value=1 name="edit">
-                                        <button type="submit" style="float:right;"><i class="fas fa-cog"></i> Επεξεργασία Δεδομένων</button>
+                                        <button type="submit" style="float:right; background-color:black; cursor:pointer; border:none; color:white; padding:0.5rem; border-radius:3px;"><i class="fas fa-cog"></i> Επεξεργασία Δεδομένων</button>
                                     </form>
                                 </div>
                             </div>
@@ -206,43 +248,47 @@ body {font-family: "Lato", sans-serif;}
                             print '
                             <form action="account.php" method="POST">
                                 <div class="container">
-                                    <div style="margin:3rem;">
+                                    <div style="margin:1rem 3rem 3rem 3rem;">
                                         <table style="" color:black;font-size:18px;">
-                                            <tr>
-                                                <td>Αριθμός Κάρτας</td>
-                                                <td>'.$row['card'].'</td>
+                                            <tr style="border-bottom: 1px solid #dee2e6;">
+                                                <td style="padding-bottom:0.5rem;">Αριθμός Κάρτας</td>
+                                                <td style="padding-bottom:0.5rem;">'.$row['card'].'</td>
                                             </tr>
-                                            <tr>
-                                                <td>Όνομα Κατόχου</td>
-                                                <td>
+                                            <tr style="height:0.5rem";></tr>
+                                            <tr style="border-bottom: 1px solid #dee2e6;">
+                                                <td style="padding-bottom:0.5rem;">Όνομα Κατόχου</td>
+                                                <td style="padding-bottom:0.5rem;">
                                                     <div class="input-group form-group" style="margin:0">
                                                         <input type="text" class="form-control" value="'.($edit==false?$row['firstname']:$_POST['firstname']).'"name="firstname" title="Όνομα" required placeholder="Όνομα">
                                                     </div>
                                                 </td>
                                             </tr>
-                                            <tr>
-                                                <td>Επίθετο Κατόχου</td>
-                                                <td>
+                                            <tr style="height:0.5rem";></tr>
+                                            <tr style="border-bottom: 1px solid #dee2e6;">
+                                                <td style="padding-bottom:0.5rem;">Επίθετο Κατόχου</td>
+                                                <td style="padding-bottom:0.5rem;">
                                                     <div class="input-group form-group" style="margin:0">
                                                         <input type="text" class="form-control" value="'.($edit==false?$row['lastname']:$_POST['lastname']).'"name="lastname" title="Επίθετο" required placeholder="Επίθετο">
                                                     </div>
                                                 </td>
                                             </tr>
-                                            <tr>
-                                                <td>Διεύθυνση Email</td>
-                                                <td>
+                                            <tr style="height:0.5rem";></tr>
+                                            <tr style="border-bottom: 1px solid #dee2e6;">
+                                                <td style="padding-bottom:0.5rem;">Διεύθυνση Email</td>
+                                                <td style="padding-bottom:0.5rem;">
                                                     <div class="input-group form-group" style="margin:0">
                                                         <input type="email" name="email" value="'.($edit==false?$row['email']:$_POST['email']).'" class="form-control" placeholder="E-mail" title="Διεύθυνση Ηλεκτρονικού Ταχυδρομίου" required>                                </div>
                                                     </div>
                                                 </td>
                                             </tr>
+                                            <tr style="height:0.5rem";></tr>
                                             <tr style="border:none; height:3rem;">
                                                 <td style="border:none;"></td>
                                                 <td style="border:none;"></td>
                                             </tr>
-                                            <tr>
-                                                <td>Επιβεβαίωση Κωδικού</td>
-                                                <td>'.
+                                            <tr style="border-bottom: 1px solid #dee2e6;">
+                                                <td style="padding-bottom:0.5rem;">Επιβεβαίωση Κωδικού</td>
+                                                <td style="padding-bottom:0.5rem;">'.
                                                     ($error==true?'<span class="error text-danger">Λανθασμένος Κωδικός Πρόσβασης</span>':'')
                                                     .'<div class="input-group form-group" style="margin:0">'.
                                                         ($error==true?'<input type="password" class="form-control is-invalid" name="password" class="form-control" placeholder="Κωδικός Πρόσβασης" title="Κωδικός Πρόσβασης" required>':'<input type="password" name="password" class="form-control" placeholder="Κωδικός Πρόσβασης" title="Κωδικός Πρόσβασης" required>')
@@ -253,8 +299,8 @@ body {font-family: "Lato", sans-serif;}
                                     </div>
                                     <div style="margin: 0 3rem 0 3rem;">                                   
                                         <input type="submit" name="update" value="Επιβεβαίωση Αλλαγών" style="display: none; visibility: hidden;">
-                                        <button style="float:left;" type="submit" name="exit"formnovalidate ><i class="fas fa-times"></i> Ακύρωση Επεξεργασίας</button>
-                                        <button style="float:right;" type="submit" name="update"><i class="fas fa-check"></i> Επιβεβαίωση Αλλαγών</button>
+                                        <button style="float:left; background-color:black; cursor:pointer; border:none; color:white; padding:0.5rem; border-radius:3px;" type="submit" name="exit"formnovalidate ><i class="fas fa-times"></i> Ακύρωση Επεξεργασίας</button>
+                                        <button style="float:right; background-color:black; cursor:pointer; border:none; color:white; padding:0.5rem; border-radius:3px;" type="submit" name="update"><i class="fas fa-check"></i> Επιβεβαίωση Αλλαγών</button>
                                     </div>       
                                 </div>
                             </form>                                                                 
@@ -272,17 +318,59 @@ body {font-family: "Lato", sans-serif;}
                 <h3>London</h3>
                 <p> is the capital city of England.</p>
             </div>
-            <div id="4" class="tabcontent">
-                <a href="./tickets.php">Αγορά Εισιτηρίου
-            </div>
             <div id="5" class="tabcontent">
-                <a href="#">Αλλαγή Κωδικού Πρόσβασης
-            </div>
-            <div id="6" class="tabcontent">
-                
+                <div style="margin: 3rem;">
+                    <form action="account.php" method="POST">
+                        <table style="width:100%; color:black; font-size:18px; ">
+                            <tr style="border-bottom: 1px solid #dee2e6;">
+                            <!-- 'value="'.$_POST['passwordcur'].'"  -->
+                            <!-- '.(isset($_POST['passwordcur'])?'class="form-control is-valid" ':'class="form-control"'). ' -->
+                                <td style="padding-bottom:0.5rem;">Τωρινός Κωδικός</td>
+                                <td style="text-align:center; padding-bottom:0.5rem;">
+                                    <?php if($errorpass==true) print '<input type="password" name="passwordcur" class="form-control is-invalid" placeholder="Τωρινός Κωδικός" title="Τωρινός Κωδικός" required>' ?>
+                                    <?php if($errorpass==false) print '<input style="margin:0;" type="password" name="passwordcur" '.(isset($_POST['passwordcur'])?'value="'.$_POST['passwordcur'].'" class="form-control is-valid" ':'class="form-control"'). '  placeholder="Τωρινός Κωδικός" title="Τωρινός Κωδικός" required>'; ?>
+                                    <?php if($errorpass==true) print '<div class="invalid-feedback">
+                                        Λανθασμένος Κωδικός 
+                                    </div> ' ?>
+
+
+                                </td>
+                            </tr>
+                            <tr style="height:0.5rem;"></tr>
+                            <tr style="border-bottom: 1px solid #dee2e6;">
+                                <td style="padding-bottom:0.5rem;">Νέος Κωδικός</td>
+                                <td style="text-align:center;padding-bottom:0.5rem;">
+                                    <?php if($nomatch==true) print  '<input type="password" name="passwordnew" '.($errorpass==true?'style="border-color: darkorange;"':'').' class="form-control is-invalid" placeholder="Νέος Κωδικός" title="Νέος Κωδικός" required>';?>
+                                    <?php if($nomatch==false) print '<input type="password" name="passwordnew" class="form-control" placeholder="Νέος Κωδικός" title="Νέος Κωδικός" required>';?>
+                                    <?php if($nomatch==true) print'
+                                    <div class="invalid-feedback" '.($errorpass==true?'style="color: darkorange;"':'').'>
+                                        Οι κωδικοί δεν είναι ίδιοι 
+                                    </div> ';?>
+                                </td>
+                            </tr>
+                            <tr style="height:0.5rem;"></tr>
+                            <tr style="border-bottom: 1px solid #dee2e6;">
+                                <td style="padding-bottom:0.5rem;">Επιβεβαίωση Νέου Κωδικού</td>
+                                <td style="text-align:center;padding-bottom:0.5rem;">
+                                    <?php if($nomatch==true) print  '<input type="password" name="passwordchk" '.($errorpass==true?'style="border-color: darkorange;"':'').' class="form-control is-invalid" placeholder="Επιβεβαίωση Νέου Κωδικού" title="Επιβεβάιωση Νέου Κωδικού" required>';?>
+                                    <?php if($nomatch==false) print '<input type="password" name="passwordchk" class="form-control" placeholder="Επιβεβαίωση Νέου Κωδικού" title="Επιβεβάιωση Νέου Κωδικού" required>' ;?>
+                                    <?php if($nomatch==true) print'
+                                    <div class="invalid-feedback" '.($errorpass==true?'style="color: darkorange;"':'').'>
+                                        Οι κωδικοί δεν είναι ίδιοι 
+                                    </div> ';?>
+                                </td>
+                            </tr>
+                            <tr style="height:0.5rem;"></tr>                            
+                        </table>
+                        <div style="margin-top: 2rem; margin-bottom:2rem;">
+                            <button style="float:right; background-color:black; cursor:pointer; border:none; color:white; padding:0.5rem; border-radius:3px; margin-bottom:2rem;" type="submit" name="changepass" required>Αλλαγή Κωδικού </button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
+                                                
     <?php
         include(dirname(__FILE__)."/footer.php");
     ?>
@@ -290,8 +378,7 @@ body {font-family: "Lato", sans-serif;}
 
 </body>
 
-<script>
-    
+<script>    
     function option(evt, cityName) {
     // Declare all variables
     var i, tabcontent, tablinks;

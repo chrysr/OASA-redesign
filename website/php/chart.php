@@ -76,8 +76,8 @@ if(!isset($_SESSION['chart']))
             <div style="margin: 1rem 3rem 0rem 3rem; display:flex;flex-direction:column;">
                 <nav aria-label="breadcrumb" >
                     <ol class="breadcrumb" >
-                        <li class="breadcrumb-item active">Επιλογή Εισιτηρίων</li>                
-                        <li class="breadcrumb-item" style="color:rgb(64, 152, 190);" >Καλάθι</li>
+                        <li class="breadcrumb-item active"><a href="./tickets.php" style="color:inherit;">Επιλογή Εισιτηρίων</a></li>                
+                        <li class="breadcrumb-item" style="color:rgb(64, 152, 190);" ><a href="./chart.php" style="color:inherit;">Καλάθι Αγορών</a></li>
                         <li class="breadcrumb-item active" >Τρόποι Πληρωμής</li>
                         <li class="breadcrumb-item active" >Σύνοψη</li>
                     </ol>
@@ -110,7 +110,7 @@ if(!isset($_SESSION['chart']))
                                     <li class="header">'.$row['name'].'</li>
                                     <li class="grey">'.str_replace('.',',',strval(number_format((double)$row['price'],2,'.',''))).'&#8364</li>
                                     <li class="grey">
-                                        <div class="form-control" style="background-color: #eee; border:none; margin:0;">
+                                        <div class="form-control" style="background-color: #ccc; border:none; margin:0;">
                                             <input type="number" name='.$row['id'].' min=0 value='.$value.'  style="width:2.5rem; height:2rem">
                                         </div> 
                                     </li>
@@ -140,10 +140,10 @@ if(!isset($_SESSION['chart']))
     </div>
     <br>
     <div style="margin-bottom:5rem;">
-        <div style="border-radius:5px; float:left; margin-left:4rem;padding:1rem;background-color:black;color:white">
+        <div style="border-radius:5px; float:left; margin-left:4rem;padding:0.5rem;background-color:black;color:white">
             <a style="color:white;" href="./tickets.php">Εισιτήρια</a>
         </div>
-        <div style="border-radius:5px;float:right; margin-right:4rem;padding:1rem;background-color:black;color:white">
+        <div style="border-radius:5px;float:right; margin-right:4rem;padding:0.5rem;background-color:black;color:white">
             <button style="cursor:pointer; background-color:black; color:white; border:none;" formnovalidate type="submit" name="pay" form="tick">
             Τρόποι Πληρωμής</button>
         <!-- <a style="color:white;" href="./payment.php">Πληρωμή</a> -->

@@ -94,7 +94,7 @@ session_start();
         
     
 
-    <div class="container-fluid" style="padding: 6rem 0rem 0rem 0rem; background-size:contain; background-color: black; background-position: center center;background-repeat: no-repeat; background-image: url('../images/signup-background.jpg')">
+    <div class="container-fluid" style="padding: 112px 0rem 0rem 0rem; background-size:contain; background-color: black; background-position: center center;background-repeat: no-repeat; background-image: url('../images/signup-background.jpg')">
         <div class="row">
             <div class="container" style="margin-bottom:0rem; padding:4rem 0 4rem 0; padding-right:44rem">
                 <div class="d-flex justify-content-center h-100">

@@ -69,8 +69,8 @@ if(!isset($_SESSION['chart']))
     <div style="margin: 2rem 3rem 0rem 3rem;">
         <nav aria-label="breadcrumb" >
             <ol class="breadcrumb" style="margin:0;">
-                <li class="breadcrumb-item" style="color:rgb(64, 152, 190);">Επιλογή Εισιτηρίων</li>                
-                <li class="breadcrumb-item active" >Καλάθι</li>
+                <li class="breadcrumb-item" style="color:rgb(64, 152, 190);"><a style="color:inherit;" href="./tickets.php">Επιλογή Εισιτηρίων</a></li>                
+                <li class="breadcrumb-item active" >Καλάθι Αγορών</li>
                 <li class="breadcrumb-item active" >Τρόποι Πληρωμής</li>
                 <li class="breadcrumb-item active" >Σύνοψη</li>
             </ol>
@@ -94,7 +94,7 @@ if(!isset($_SESSION['chart']))
                             <li class="header">90 Λεπτών</li>
                             <li class="grey">1,40&#8364</li>
                             <li class="grey">
-                                <div class="form-control" style="background-color: #eee; border:none; margin:0;">
+                                <div class="form-control" style="background-color: #ccc; border:none; margin:0;">
                                     <input type="number" name="n111" min=0 value=0  style="width:2.5rem; height:2rem">
                                 </div> 
                             </li>
@@ -105,7 +105,7 @@ if(!isset($_SESSION['chart']))
                             <li class="header">Ημερήσιο</li>
                             <li class="grey">4,50&#8364</li>
                             <li class="grey">
-                                <div class="form-control" style="background-color: #eee; border:none; margin:0;">
+                                <div class="form-control" style="background-color: #ccc; border:none; margin:0;">
                                     <input type="number" name="n112" min=0 value=0  style="width:2.5rem; height:2rem">
                                 </div> 
                             </li>
@@ -116,7 +116,7 @@ if(!isset($_SESSION['chart']))
                             <li class="header">5 Ημερών</li>
                             <li class="grey">9,00&#8364</li>
                             <li class="grey">
-                                <div class="form-control" style="background-color: #eee; border:none; margin:0;">
+                                <div class="form-control" style="background-color: #ccc; border:none; margin:0;">
                                     <input type="number" name="n113" min=0 value=0  style="width:2.5rem; height:2rem">
                                 </div> 
                             </li>
@@ -127,7 +127,7 @@ if(!isset($_SESSION['chart']))
                             <li class="header">5πλό Εισιτήριο</li>
                             <li class="grey">6,50&#8364</li>
                             <li class="grey">
-                                <div class="form-control" style="background-color: #eee; border:none; margin:0;">
+                                <div class="form-control" style="background-color: #ccc; border:none; margin:0;">
                                     <input type="number" name="n114" min=0 value=0  style="width:2.5rem; height:2rem">
                                 </div> 
                             </li>
@@ -138,7 +138,7 @@ if(!isset($_SESSION['chart']))
                             <li class="header">10+1 Ειστήρια</li>
                             <li class="grey">13,50&#8364</li>
                             <li class="grey">
-                                <div class="form-control" style="background-color: #eee; border:none; margin:0;">
+                                <div class="form-control" style="background-color: #ccc; border:none; margin:0;">
                                     <input type="number" name="n115" min=0 value=0  style="width:2.5rem; height:2rem">
                                 </div> 
                             </li>
@@ -149,7 +149,7 @@ if(!isset($_SESSION['chart']))
                             <li class="header">2πλό Ειστήριο</li>
                             <li class="grey">2,70&#8364</li>
                             <li class="grey">
-                                <div class="form-control" style="background-color: #eee; border:none; margin:0;">
+                                <div class="form-control" style="background-color: #ccc; border:none; margin:0;">
                                     <input type="number" name="n116" min=0 value=0  style="width:2.5rem; height:2rem">
                                 </div> 
                             </li>
@@ -162,7 +162,7 @@ if(!isset($_SESSION['chart']))
                             <li class="header">1 Διαδρομής με Μετρό</li>
                             <li class="grey">10,00&#8364</li>
                             <li class="grey">
-                                <div class="form-control" style="background-color: #eee; border:none; margin:0;">
+                                <div class="form-control" style="background-color: #ccc; border:none; margin:0;">
                                     <input type="number" name="n121" min=0 value=0  style="width:2.5rem; height:2rem">
                                 </div> 
                             </li>
@@ -173,7 +173,7 @@ if(!isset($_SESSION['chart']))
                             <li class="header">1 Διαδρομής με λεωφορείο</li>
                             <li class="grey">6,00&#8364</li>
                             <li class="grey">
-                                <div class="form-control" style="background-color: #eee; border:none; margin:0;">
+                                <div class="form-control" style="background-color: #ccc; border:none; margin:0;">
                                     <input type="number" name="n122" min=0 value=0  style="width:2.5rem; height:2rem">
                                 </div> 
                             </li>
@@ -184,7 +184,7 @@ if(!isset($_SESSION['chart']))
                             <li class="header">1 Μετ' επιστροφής</li>
                             <li class="grey">18,00&#8364</li>
                             <li class="grey">
-                                <div class="form-control" style="background-color: #eee; border:none; margin:0;">
+                                <div class="form-control" style="background-color: #ccc; border:none; margin:0;">
                                     <input type="number" name="n123" min=0 value=0  style="width:2.5rem; height:2rem">
                                 </div> 
                             </li>
@@ -195,7 +195,7 @@ if(!isset($_SESSION['chart']))
                             <li class="header">1 από/πρός τους σταθμούς Παλλήνη-Κάντζα-Κορωπί με Μετρό</li>
                             <li class="grey">6,00&#8364</li>
                             <li class="grey">
-                                <div class="form-control" style="background-color: #eee; border:none; margin:0;">
+                                <div class="form-control" style="background-color: #ccc; border:none; margin:0;">
                                     <input type="number" name="n124" min=0 value=0  style="width:2.5rem; height:2rem">
                                 </div> 
                             </li>
@@ -215,7 +215,7 @@ if(!isset($_SESSION['chart']))
                                 <li class="header">Χωρίς Διαδρομές Αεροδρομίου</li>
                                 <li class="grey">30,00&#8364</li>
                                 <li class="grey">
-                                    <div class="form-control" style="background-color: #eee; border:none; margin:0;">
+                                    <div class="form-control" style="background-color: #ccc; border:none; margin:0;">
                                         <input type="number" name="n1311" min=0 value=0  style="width:2.5rem; height:2rem">
                                     </div> 
                                 </li>
@@ -226,7 +226,7 @@ if(!isset($_SESSION['chart']))
                                 <li class="header">Με Διαδρομές Αεροδρομίου</li>
                                 <li class="grey">49,00&#8364</li>
                                 <li class="grey">
-                                    <div class="form-control" style="background-color: #eee; border:none; margin:0;">
+                                    <div class="form-control" style="background-color: #ccc; border:none; margin:0;">
                                 <input type="number" name="n1312" min=0 value=0  style="width:2.5rem; height:2rem">
                             </div> 
                                 </li>
@@ -239,7 +239,7 @@ if(!isset($_SESSION['chart']))
                             <li class="header">Χωρίς Διαδρομές Αεροδρομίου</li>
                                 <li class="grey">85,00&#8364</li>
                                 <li class="grey">
-                                    <div class="form-control" style="background-color: #eee; border:none; margin:0;">
+                                    <div class="form-control" style="background-color: #ccc; border:none; margin:0;">
                                         <input type="number" name="n1321" min=0 value=0  style="width:2.5rem; height:2rem">
                                     </div> 
                                 </li>
@@ -250,7 +250,7 @@ if(!isset($_SESSION['chart']))
                             <li class="header">Με Διαδρομές Αεροδρομίου</li>
                                 <li class="grey">142,00&#8364</li>
                                 <li class="grey">
-                                    <div class="form-control" style="background-color: #eee; border:none; margin:0;">
+                                    <div class="form-control" style="background-color: #ccc; border:none; margin:0;">
                                         <input type="number" name="n1322" min=0 value=0  style="width:2.5rem; height:2rem">
                                     </div> 
                                 </li>
@@ -263,7 +263,7 @@ if(!isset($_SESSION['chart']))
                             <li class="header">Χωρίς Διαδρομές Αεροδρομίου</li>
                                 <li class="grey">170,00&#8364</li>
                                 <li class="grey">
-                                    <div class="form-control" style="background-color: #eee; border:none; margin:0;">
+                                    <div class="form-control" style="background-color: #ccc; border:none; margin:0;">
                                         <input type="number" name="n1331" min=0 value=0  style="width:2.5rem; height:2rem">
                                     </div> 
                                 </li>
@@ -274,7 +274,7 @@ if(!isset($_SESSION['chart']))
                             <li class="header">Με Διαδρομές Αεροδρομίου</li>
                                 <li class="grey">250,00&#8364</li>
                                 <li class="grey">
-                                    <div class="form-control" style="background-color: #eee; border:none; margin:0;">
+                                    <div class="form-control" style="background-color: #ccc; border:none; margin:0;">
                                         <input type="number" name="n1332" min=0 value=0  style="width:2.5rem; height:2rem">
                                     </div> 
                                 </li>
@@ -287,7 +287,7 @@ if(!isset($_SESSION['chart']))
                             <li class="header">Χωρίς Διαδρομές Αεροδρομίου</li>
                                 <li class="grey">330,00&#8364</li>
                                 <li class="grey">
-                                    <div class="form-control" style="background-color: #eee; border:none; margin:0;">
+                                    <div class="form-control" style="background-color: #ccc; border:none; margin:0;">
                                         <input type="number" name="n1341" min=0 value=0  style="width:2.5rem; height:2rem">
                                     </div> 
                                 </li>
@@ -298,7 +298,7 @@ if(!isset($_SESSION['chart']))
                             <li class="header">Με Διαδρομές Αεροδρομίου</li>
                                 <li class="grey">490,00&#8364</li>
                                 <li class="grey">
-                                    <div class="form-control" style="background-color: #eee; border:none; margin:0;">
+                                    <div class="form-control" style="background-color: #ccc; border:none; margin:0;">
                                         <input type="number" name="n1342" min=0 value=0  style="width:2.5rem; height:2rem">
                                     </div> 
                                 </li>
@@ -319,7 +319,7 @@ if(!isset($_SESSION['chart']))
                             <li class="header">90 Λεπτών</li>
                             <li class="grey">0,60&#8364</li>
                             <li class="grey">
-                                <div class="form-control" style="background-color: #eee; border:none; margin:0;">
+                                <div class="form-control" style="background-color: #ccc; border:none; margin:0;">
                                     <input type="number" name="n211" min=0 value=0  style="width:2.5rem; height:2rem">
                                 </div> 
                             </li>
@@ -330,7 +330,7 @@ if(!isset($_SESSION['chart']))
                             <li class="header">5πλό Εισιτήριο</li>
                             <li class="grey">3,00&#8364</li>
                             <li class="grey">
-                                <div class="form-control" style="background-color: #eee; border:none; margin:0;">
+                                <div class="form-control" style="background-color: #ccc; border:none; margin:0;">
                                     <input type="number" name="n212" min=0 value=0  style="width:2.5rem; height:2rem">
                                 </div> 
                             </li>
@@ -341,7 +341,7 @@ if(!isset($_SESSION['chart']))
                             <li class="header">10+1 Ειστήρια</li>
                             <li class="grey">6,00&#8364</li>
                             <li class="grey">
-                                <div class="form-control" style="background-color: #eee; border:none; margin:0;">
+                                <div class="form-control" style="background-color: #ccc; border:none; margin:0;">
                                     <input type="number" name="n213" min=0 value=0  style="width:2.5rem; height:2rem">
                                 </div> 
                             </li>
@@ -352,7 +352,7 @@ if(!isset($_SESSION['chart']))
                             <li class="header">2πλό Ειστήριο</li>
                             <li class="grey">1,20&#8364</li>
                             <li class="grey">
-                                <div class="form-control" style="background-color: #eee; border:none; margin:0;">
+                                <div class="form-control" style="background-color: #ccc; border:none; margin:0;">
                                     <input type="number" name="n214" min=0 value=0  style="width:2.5rem; height:2rem">
                                 </div> 
                             </li>
@@ -365,7 +365,7 @@ if(!isset($_SESSION['chart']))
                             <li class="header">1 Διαδρομής με Μετρό</li>
                             <li class="grey">5,00&#8364</li>
                             <li class="grey">
-                                <div class="form-control" style="background-color: #eee; border:none; margin:0;">
+                                <div class="form-control" style="background-color: #ccc; border:none; margin:0;">
                                     <input type="number" name="n221" min=0 value=0  style="width:2.5rem; height:2rem">
                                 </div> 
                             </li>
@@ -376,7 +376,7 @@ if(!isset($_SESSION['chart']))
                             <li class="header">1 Διαδρομής με λεωφορείο</li>
                             <li class="grey">3,00&#8364</li>
                             <li class="grey">
-                                <div class="form-control" style="background-color: #eee; border:none; margin:0;">
+                                <div class="form-control" style="background-color: #ccc; border:none; margin:0;">
                                     <input type="number" name="n222" min=0 value=0  style="width:2.5rem; height:2rem">
                                 </div> 
                             </li>
@@ -387,7 +387,7 @@ if(!isset($_SESSION['chart']))
                             <li class="header">1 από/πρός τους σταθμούς Παλλήνη-Κάντζα-Κορωπί με Μετρό</li>
                             <li class="grey">3,00&#8364</li>
                             <li class="grey">
-                                <div class="form-control" style="background-color: #eee; border:none; margin:0;">
+                                <div class="form-control" style="background-color: #ccc; border:none; margin:0;">
                                 <input type="number" name="n223" min=0 value=0  style="width:2.5rem; height:2rem">
                             </div> 
                             </li>
@@ -407,7 +407,7 @@ if(!isset($_SESSION['chart']))
                                 <li class="header">Χωρίς Διαδρομές Αεροδρομίου</li>
                                 <li class="grey">15,00&#8364</li>
                                 <li class="grey">
-                                    <div class="form-control" style="background-color: #eee; border:none; margin:0;">
+                                    <div class="form-control" style="background-color: #ccc; border:none; margin:0;">
                                         <input type="number" name="n2311" min=0 value=0  style="width:2.5rem; height:2rem">
                                     </div> 
                                 </li>
@@ -418,7 +418,7 @@ if(!isset($_SESSION['chart']))
                                 <li class="header">Με Διαδρομές Αεροδρομίου</li>
                                 <li class="grey">25,00&#8364</li>
                                 <li class="grey">
-                                    <div class="form-control" style="background-color: #eee; border:none; margin:0;">
+                                    <div class="form-control" style="background-color: #ccc; border:none; margin:0;">
                                         <input type="number" name="n2312" min=0 value=0  style="width:2.5rem; height:2rem">
                                     </div> 
                                 </li>
@@ -431,7 +431,7 @@ if(!isset($_SESSION['chart']))
                             <li class="header">Χωρίς Διαδρομές Αεροδρομίου</li>
                                 <li class="grey">43,00&#8364</li>
                                 <li class="grey">
-                                    <div class="form-control" style="background-color: #eee; border:none; margin:0;">
+                                    <div class="form-control" style="background-color: #ccc; border:none; margin:0;">
                                         <input type="number" name="n2321" min=0 value=0  style="width:2.5rem; height:2rem">
                                     </div> 
                                 </li>
@@ -442,7 +442,7 @@ if(!isset($_SESSION['chart']))
                             <li class="header">Με Διαδρομές Αεροδρομίου</li>
                                 <li class="grey">71,00&#8364</li>
                                 <li class="grey">
-                                    <div class="form-control" style="background-color: #eee; border:none; margin:0;">
+                                    <div class="form-control" style="background-color: #ccc; border:none; margin:0;">
                                         <input type="number" name="n2322" min=0 value=0  style="width:2.5rem; height:2rem">
                                     </div> 
                                 </li>
@@ -455,7 +455,7 @@ if(!isset($_SESSION['chart']))
                             <li class="header">Χωρίς Διαδρομές Αεροδρομίου</li>
                                 <li class="grey">85,00&#8364</li>
                                 <li class="grey">
-                                    <div class="form-control" style="background-color: #eee; border:none; margin:0;">
+                                    <div class="form-control" style="background-color: #ccc; border:none; margin:0;">
                                         <input type="number" name="n2331" min=0 value=0  style="width:2.5rem; height:2rem">
                                     </div> 
                                 </li>
@@ -466,7 +466,7 @@ if(!isset($_SESSION['chart']))
                             <li class="header">Με Διαδρομές Αεροδρομίου</li>
                                 <li class="grey">125,00&#8364</li>
                                 <li class="grey">
-                                    <div class="form-control" style="background-color: #eee; border:none; margin:0;">
+                                    <div class="form-control" style="background-color: #ccc; border:none; margin:0;">
                                         <input type="number" name="n2332" min=0 value=0  style="width:2.5rem; height:2rem">
                                     </div> 
                                 </li>
@@ -479,7 +479,7 @@ if(!isset($_SESSION['chart']))
                             <li class="header">Χωρίς Διαδρομές Αεροδρομίου</li>
                                 <li class="grey">165,00&#8364</li>
                                 <li class="grey">
-                                    <div class="form-control" style="background-color: #eee; border:none; margin:0;">
+                                    <div class="form-control" style="background-color: #ccc; border:none; margin:0;">
                                         <input type="number" name="n2341" min=0 value=0  style="width:2.5rem; height:2rem">
                                     </div> 
                                 </li>
@@ -490,7 +490,7 @@ if(!isset($_SESSION['chart']))
                             <li class="header">Με Διαδρομές Αεροδρομίου</li>
                                 <li class="grey">245,00&#8364</li>
                                 <li class="grey">
-                                    <div class="form-control" style="background-color: #eee; border:none; margin:0;">
+                                    <div class="form-control" style="background-color: #ccc; border:none; margin:0;">
                                         <input type="number" name="n2342" min=0 value=0  style="width:2.5rem; height:2rem">
                                     </div> 
                                 </li>
@@ -505,7 +505,7 @@ if(!isset($_SESSION['chart']))
                     <li class="header">3 Ημερών + Μεταφορά και Επιστροφή στο Αεροδρόμιο</li>
                         <li class="grey" style="padding-bottom: 0;">22,00&#8364</li>
                         <li class="grey" style="padding-bottom: 1rem;">
-                            <div class="form-control" style="background-color: #eee; border:none; margin:0;">
+                            <div class="form-control" style="background-color: #ccc; border:none; margin:0;">
                                 <input type="number" name="n31" min=0 value=0  style="width:2.5rem; height:2rem">
                             </div>                                
                         </li>
@@ -517,15 +517,9 @@ if(!isset($_SESSION['chart']))
         </form>
     </div>
     </div>
-    <div class="form-control" style="background-color: white; border:none;margin-bottom:2rem; ">
-        <button formnovalidate type="submit" class="submitticket" name="addto" form="tick" style="border-radius:5px;cursor:pointer;float:right;margin-right:3rem;margin-top:1rem;">
-        Προσθήκη και μετάβαση στο Καλάθι <i class="fas fa-shopping-cart"></i></button>
+    <div style="margin-bottom: 5rem; margin-right:3rem;">
+        <button formnovalidate type="submit" style="float:right; background-color:black; cursor:pointer; border:none; color:white; padding:0.5rem; border-radius:3px; margin-bottom:2rem;" form="tick" name="addto" required><i class="fas fa-shopping-cart"></i> Προσθήκη και μετάβαση στο Καλάθι</button>
     </div>
-    
-    <!-- <div style="margin-bottom:10rem;">
-        <a href="./chart.php" style="float:right;margin-right:5rem;margin-top:4rem;padding:0.5rem;background-color:black;color:white;">Καλάθι</a>
-    </div> -->
-    <br> 
 
     
 
