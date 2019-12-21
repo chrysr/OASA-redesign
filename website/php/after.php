@@ -7,14 +7,13 @@ if(!isset($_SESSION['chart']))
 }
 ?>
 <?php
-    if(isset($_POST['tostart']))
+    if(empty($_SESSION['chart']))
     {
-        $_SESSION['chart']=array();
-        header('Location: ../../index.php');
-        die();
+        echo ("<script LANGUAGE='JavaScript'>
+        window.alert('Δεν έχετε επιλέξει εισιτήρια');
+        window.location.href='./tickets.php';
+        </script>");
     }
-?>
-<?php
     if(isset($_POST['addto']))
     {
         $_SESSION['chart']=array();
@@ -54,8 +53,24 @@ if(!isset($_SESSION['chart']))
         $page='zero'; include(dirname(__FILE__)."/header.php");
     ?>
 
-    <div class="container-fluid" style="padding: 8rem 0rem 4rem 0rem; background-color: white;display:flex;flex-direction:column;"> <!--flex;flex-direction:row; -->
-        <div style="margin-left:10rem;margin-right:10rem;">    
+    <div class="container-fluid" style="padding: 112px 0rem 4rem 0rem; background-color: white;display:flex;flex-direction:column;"> <!--flex;flex-direction:row; -->
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item" ><a href="../../index.php"><i style="color:black;" class="fas fa-home"></i></a></li>
+                <li class="breadcrumb-item" style="color:rgb(64, 152, 190);"><a style="color:inherit;" href="./tickets.php">Αγορά Εισιτηρίων</a></li>
+            </ol>
+        </nav>
+        <div style="margin: 1rem 3rem 2rem 3rem;">
+            <nav aria-label="breadcrumb" >
+                <ol class="breadcrumb" style="margin:0;">
+                    <li class="breadcrumb-item active" >Επιλογή Εισιτηρίων</li>                
+                    <li class="breadcrumb-item active" >Καλάθι</li>
+                    <li class="breadcrumb-item active" >Τρόποι Πληρωμής</li>
+                    <li class="breadcrumb-item" style="color:rgb(64, 152, 190);" >Σύνοψη</li>
+                </ol>
+            </nav>
+        </div>
+        <div style="margin-left:5rem;margin-right:5rem;">    
             <h3>Σύνοψη</h3>
             <table class="table table-hover" style="text-align:center;">
                 <thead>
@@ -102,7 +117,7 @@ if(!isset($_SESSION['chart']))
                             }                        
                         }
                     ?>
-                    <tr style="border-bottom: 5rem solid #fff;">
+                    <tr style="border-bottom: 5rem solid #fff; pointer-events: none;">
                         <td></td>
                         <td></td>
                         <td></td>
@@ -117,7 +132,7 @@ if(!isset($_SESSION['chart']))
 
             </div>
         </div>
-        <div class="alert alert-success" role="alert" style="margin:5rem 10rem 5rem 10rem;">
+        <div class="alert alert-success" role="alert" style="margin:5rem 5rem 5rem 5rem;">
             <?php
                 if(isset($_POST['subcheck']))
                 {
@@ -138,7 +153,7 @@ if(!isset($_SESSION['chart']))
             <?php
                 if(isset($_POST['subcheck']))
                 {
-                    if($_SESSION['loggedin'])
+                    if(isset($_SESSION['loggedin'])&&$_SESSION['loggedin'])
                     {
                         if($_POST['ms'])
                         {
@@ -168,20 +183,21 @@ if(!isset($_SESSION['chart']))
                             print '<p>Μπορείτε να πιστώσετε τα εισιτήρια σας στην κάρτα σας σε οποιονδήποτε σταθμό του Μετρό!</p>';
                         }
                     }
+                    $_SESSION['chart']=array();
                 }
             ?>
             <hr>
             <p class="mb-0">Ευχαριστούμε για την αγορά σας!</p>
         </div>
     </div>
-    <form method="POST" action="./after.php" id="tostart">
+    <!-- <form method="POST" action="./after.php" id="tostart">
         <input type='hidden' value=1 name="tostart">
-    </form>
+    </form> -->
     <div style="margin-bottom:5rem;">
         <div style="border-radius:5px;float:right; margin-right:4rem;padding:1rem;background-color:black;color:white">
-        <button style="cursor:pointer; background-color:black; color:white; border:none;" type="submit" form="tostart">
-            Μετάβαση στην Αρχική</button>
-            <!-- <a style="color:white;" href="../../index.php">Μετάβαση στην Αρχική</a> -->
+        <!-- <button style="cursor:pointer; background-color:black; color:white; border:none;" type="submit" form="tostart">
+            Μετάβαση στην Αρχική</button> -->
+            <a style="color:white;" href="../../index.php">Μετάβαση στην Αρχική</a>
         </div>
     </div>
 

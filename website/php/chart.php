@@ -66,47 +66,63 @@ if(!isset($_SESSION['chart']))
     ?>
 
     <form action="chart.php" method="POST" id="tick">
-        <div class="container-fluid" style="padding: 8rem 0rem 4rem 0rem; background-color: white;display:flex;flex-direction:column;"> <!--flex;flex-direction:row; -->
-            <?php
-                $total=0;
-                $servername="127.0.0.1";
-                $username="root";
-                $password="";
-                $dbname="oasa";
-                $error=false;
-                $edit=false;
-                $connection=new mysqli($servername,$username,$password,$dbname);
-                
-                if($connection->connect_error)
-                    die("Connection failed: ".$connection->connect_error);
+        <div class="container-fluid" style="padding: 112px 0rem 4rem 0rem; background-color: white;display:flex;flex-direction:column;"> <!--flex;flex-direction:row; -->
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item" ><a href="../../index.php"><i style="color:black;" class="fas fa-home"></i></a></li>
+                    <li class="breadcrumb-item" style="color:rgb(64, 152, 190);"><a style="color:inherit;" href="./tickets.php">Αγορά Εισιτηρίων</a></li>
+                </ol>
+            </nav>
+            <div style="margin: 1rem 3rem 0rem 3rem; display:flex;flex-direction:column;">
+                <nav aria-label="breadcrumb" >
+                    <ol class="breadcrumb" >
+                        <li class="breadcrumb-item active">Επιλογή Εισιτηρίων</li>                
+                        <li class="breadcrumb-item" style="color:rgb(64, 152, 190);" >Καλάθι</li>
+                        <li class="breadcrumb-item active" >Τρόποι Πληρωμής</li>
+                        <li class="breadcrumb-item active" >Σύνοψη</li>
+                    </ol>
+                </nav>
+                <?php
+                    $total=0;
+                    $servername="127.0.0.1";
+                    $username="root";
+                    $password="";
+                    $dbname="oasa";
+                    $error=false;
+                    $edit=false;
+                    $connection=new mysqli($servername,$username,$password,$dbname);
+                    
+                    if($connection->connect_error)
+                        die("Connection failed: ".$connection->connect_error);
 
-                foreach($_SESSION['chart'] as $key=>$value)
-                {
-                    //print $key.'->'.$value.'|';
-                    $sql="SELECT * FROM tickets WHERE id='".$key."'";
-                    if(($result=$connection->query($sql))&&$result->num_rows==1)
+                    foreach($_SESSION['chart'] as $key=>$value)
                     {
-                        $row=mysqli_fetch_assoc($result);
-                        $total=$total+$value*$row['price'];
-                        //print $row['id'].' '.str_replace('.',',',strval(number_format((double)$row['price'],2,'.',''))).' '.$row['name'];
-                        print'
-                        <div class="columns">
-                            <ul class="price">
-                                <li class="header">'.$row['name'].'</li>
-                                <li class="grey">'.str_replace('.',',',strval(number_format((double)$row['price'],2,'.',''))).'&#8364</li>
-                                <li class="grey">
-                                    <div class="form-control" style="background-color: #eee; border:none; margin:0;">
-                                        <input type="number" name='.$row['id'].' min=0 value='.$value.'  style="width:2.5rem; height:2rem">
-                                    </div> 
-                                </li>
-                            </ul>
-                        </div>
-                        ';
-                    }
-                    //else print "else";
+                        //print $key.'->'.$value.'|';
+                        $sql="SELECT * FROM tickets WHERE id='".$key."'";
+                        if(($result=$connection->query($sql))&&$result->num_rows==1)
+                        {
+                            $row=mysqli_fetch_assoc($result);
+                            $total=$total+$value*$row['price'];
+                            //print $row['id'].' '.str_replace('.',',',strval(number_format((double)$row['price'],2,'.',''))).' '.$row['name'];
+                            print'
+                            <div class="columns">
+                                <ul class="price">
+                                    <li class="header">'.$row['name'].'</li>
+                                    <li class="grey">'.str_replace('.',',',strval(number_format((double)$row['price'],2,'.',''))).'&#8364</li>
+                                    <li class="grey">
+                                        <div class="form-control" style="background-color: #eee; border:none; margin:0;">
+                                            <input type="number" name='.$row['id'].' min=0 value='.$value.'  style="width:2.5rem; height:2rem">
+                                        </div> 
+                                    </li>
+                                </ul>
+                            </div>
+                            ';
+                        }
+                        //else print "else";
 
-                }
-            ?>
+                    }
+                ?>
+            </div>
         </div>
     </form>
     <div style="margin-bottom:10rem;">
@@ -129,7 +145,7 @@ if(!isset($_SESSION['chart']))
         </div>
         <div style="border-radius:5px;float:right; margin-right:4rem;padding:1rem;background-color:black;color:white">
             <button style="cursor:pointer; background-color:black; color:white; border:none;" formnovalidate type="submit" name="pay" form="tick">
-            Πληρωμή</button>
+            Τρόποι Πληρωμής</button>
         <!-- <a style="color:white;" href="./payment.php">Πληρωμή</a> -->
         </div>
     </div>

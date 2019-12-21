@@ -59,10 +59,24 @@ if(!isset($_SESSION['chart']))
         
     
 
-    <div class="container-fluid" style="padding: 14rem 0rem 30rem 0rem; background-color: white; ">
-    <div style="margin: 0rem 3rem 0rem 3rem;">
+    <div class="container-fluid" style="padding: 112px 0rem 30rem 0rem; background-color: white; ">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item" ><a href="../../index.php"><i style="color:black;" class="fas fa-home"></i></a></li>
+                <li class="breadcrumb-item" style="color:rgb(64, 152, 190);"><a style="color:inherit;" href="./tickets.php">Αγορά Εισιτηρίων</a></li>
+            </ol>
+        </nav>
+    <div style="margin: 2rem 3rem 0rem 3rem;">
+        <nav aria-label="breadcrumb" >
+            <ol class="breadcrumb" style="margin:0;">
+                <li class="breadcrumb-item" style="color:rgb(64, 152, 190);">Επιλογή Εισιτηρίων</li>                
+                <li class="breadcrumb-item active" >Καλάθι</li>
+                <li class="breadcrumb-item active" >Τρόποι Πληρωμής</li>
+                <li class="breadcrumb-item active" >Σύνοψη</li>
+            </ol>
+        </nav>
         <form action="tickets.php" method="POST" id="tick">
-            <div class="tab" style="width:100%">
+            <div class="tab" style="width:100%; margin-top:1rem;">
                 <button class="tablinks lvl1" id="default" style="margin-left:0rem; width: 33.33%;" onclick="lvl1f(event, '1')">Κανονικό Εισιτήριο</button>
                 <button class="tablinks lvl1" style="margin-left:0rem; width: 33.33%;" onclick="lvl1f(event, '2')">Μειωμένο Εισιτήριο</button>
                 <button class="tablinks lvl1" style="margin-left:0rem; width: 33.33%;" onclick="lvl1f(event, '3')">Τουριστικά Εισιτήρια (Πακέτα)</button>
@@ -503,8 +517,8 @@ if(!isset($_SESSION['chart']))
         </form>
     </div>
     </div>
-    <div class="form-control" style="background-color: white; border:none;margin-bottom:10rem; ">
-        <button formnovalidate type="submit" class="submitticket" name="addto" form="tick" style="border-radius:5px;cursor:pointer;float:right;margin-right:5rem;margin-top:4rem;">
+    <div class="form-control" style="background-color: white; border:none;margin-bottom:2rem; ">
+        <button formnovalidate type="submit" class="submitticket" name="addto" form="tick" style="border-radius:5px;cursor:pointer;float:right;margin-right:3rem;margin-top:1rem;">
         Προσθήκη και μετάβαση στο Καλάθι <i class="fas fa-shopping-cart"></i></button>
     </div>
     

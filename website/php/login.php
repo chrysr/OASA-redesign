@@ -98,11 +98,11 @@ session_start();
         
     
 
-    <div class="container-fluid" style="padding: 14rem 0rem 12rem 0rem; background-color: #1d1d1d; background-position: center center;background-repeat: no-repeat; background-image: url('../images/login-background.jpg')">
+    <div class="container-fluid" style="padding: 6rem 0rem 0rem 0rem; background-color: black; background-size:contain; background-position: center center;background-repeat: no-repeat; background-image: url('../images/login-background.jpg')">
         <div class="row">
-            <div class="container" style="padding-right:35rem; padding-bottom:2rem">
+            <div class="container" style="margin-bottom:0rem; padding:4rem 0 4rem 0; padding-right:44rem">
                 <div class="d-flex justify-content-center h-100">
-                    <div class="cardlogin">
+                    <div class="cardlogin" style="border-radius:10px;">
                         <div class="card-header" style="color: white">
                             <h3>Σύνδεση</h3>
                         </div>
@@ -135,7 +135,7 @@ session_start();
                                 </div>
                             </form>
                         </div>
-                        <div class="card-footer" style="margin-top:1.25rem;background-color: #212529">
+                        <div class="card-footer" style="margin-top:1.25rem;background-color: #212529; border-radius:10px;">
                             <div class="d-flex justify-content-center links">
                                 Δεν έχετε εγγραφεί;<a href="./signup.php">Εγγραφή</a>
                             </div>
