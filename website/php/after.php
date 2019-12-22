@@ -14,14 +14,30 @@ if(!isset($_SESSION['chart']))
         window.location.href='./tickets.php';
         </script>");
     }
-    if(isset($_POST['addto']))
+?>
+<?php
+    if(isset($_POST['subcheck']))
     {
-        $_SESSION['chart']=array();
-        foreach ($_POST as $key=>$value)
+        $mysqltime = date ("Y-m-d H:i:s", time()+3600);
+        // echo $mysqltime;
+        $servername="127.0.0.1";
+        $username="root";
+        $password="";
+        $dbname="oasa";
+        $connection=new mysqli($servername,$username,$password,$dbname);
+        
+        if($connection->connect_error)
+            die("Connection failed: ".$connection->connect_error);
+        foreach ($_SESSION['chart'] as $key=>$value)
         {
-            //print $key.'->'.$value."xA";
-            if($value>0)
-                $_SESSION['chart'][$key]=$value;
+            print $key.'->'.$value."xA";
+            $sql='INSERT INTO ticket_purchase (ticketid,buyer,date,amount) VALUES ("'.$key.'",'.((empty($_SESSION['loggedin']) || $_SESSION['loggedin'] == false)?0:$_SESSION['card']).',"'.$mysqltime.'",'.$value.')';            
+            if($connection->query($sql))
+            {
+                ;
+                // print "all good";
+            }
+            // else print "bad";
         }
     }
 ?>
@@ -185,7 +201,7 @@ if(!isset($_SESSION['chart']))
                             print '<p>Μπορείτε να πιστώσετε τα εισιτήρια σας στην κάρτα σας σε οποιονδήποτε σταθμό του Μετρό δίνοντας το ονοματεπώνυμό σας!</p>';
                         }
                     }
-                    $_SESSION['chart']=array();
+                    //$_SESSION['chart']=array();
                 }
             ?>
             <hr>

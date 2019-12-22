@@ -22,7 +22,7 @@ session_start();
         else
         {            
             $sql="INSERT INTO users (firstname,lastname,email,card,password) VALUES ('".$_POST["firstname"]."','".$_POST["lastname"]."','".$_POST["email"]."','".$_POST["card"]."','".$_POST["password"]."')";
-            print $sql;
+            //print $sql;
             if($connection->query($sql))
             {
                 $connection->close();

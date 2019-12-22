@@ -154,7 +154,7 @@ body {font-family: "Lato", sans-serif;}
                 <button class="tablinks" <?php if(!$nomatch) print 'id="default" ';?>style="margin-left:0rem" onclick="option(event, '1')"><i class="fas fa-id-card"></i> Στοιχεία Κάρτας</button>
                 <button class="tablinks" style="margin-left:0rem" onclick="option(event, '3')"><i class="fas fa-ticket-alt"></i> Ενεργά Εισιτήρια</button>
                 <button class="tablinks" style="margin-left:0rem" onclick="window.location.href='./tickets.php';"><i class="fas fa-shopping-cart"></i> Αγορά Εισιτηρίου</button>
-                <button class="tablinks" style="margin-left:0rem" onclick="option(event, '2')"><i class="fas fa-fast-backward"></i> Ληγμένα Εισιτήρια</button>
+                <button class="tablinks" style="margin-left:0rem" onclick="option(event, '2')"><i class="far fa-clock"></i> Ιστορικό Αγορών</button>
                 <button class="tablinks" <?php if($nomatch) print 'id="default" ';?>style="margin-left:0rem" onclick="option(event, '5')"><i class="fas fa-key"></i> Αλλαγή Κωδικού Πρόσβασης</button>
                 <button class="tablinks" style="margin-left:0rem; " type="submit" form="signout"><i class="fas fa-sign-out-alt"></i> Έξοδος από τον Λογαριασμό</button>
             </div>                 
@@ -235,10 +235,10 @@ body {font-family: "Lato", sans-serif;}
                                     </table>
                                 </form>
                                 <br>
-                                <div style="margin:0rem 3rem 0rem 3rem;">
+                                <div style="margin:2rem 0rem 0rem 0rem;">
                                     <form action="account.php" method="POST">
                                         <input type="hidden" value=1 name="edit">
-                                        <button type="submit" style="float:right; background-color:black; cursor:pointer; border:none; color:white; padding:0.5rem; border-radius:3px;"><i class="fas fa-cog"></i> Επεξεργασία Δεδομένων</button>
+                                        <button type="submit" style="float:left; background-color:black; cursor:pointer; border:none; color:white; padding:0.5rem; border-radius:3px;"><i class="fas fa-user-edit"></i> Επεξεργασία Δεδομένων</button>
                                     </form>
                                 </div>
                             </div>
@@ -306,8 +306,8 @@ body {font-family: "Lato", sans-serif;}
                                     </div>
                                     <div style="margin: 0 3rem 0 3rem;">                                   
                                         <input type="submit" name="update" value="Επιβεβαίωση Αλλαγών" style="display: none; visibility: hidden;">
-                                        <button style="float:left; background-color:black; cursor:pointer; border:none; color:white; padding:0.5rem; border-radius:3px;" type="submit" name="exit"formnovalidate ><i class="fas fa-times"></i> Ακύρωση Επεξεργασίας</button>
-                                        <button style="float:right; background-color:black; cursor:pointer; border:none; color:white; padding:0.5rem; border-radius:3px;" type="submit" name="update"><i class="fas fa-check"></i> Επιβεβαίωση Αλλαγών</button>
+                                        <button style="float:left; background-color:#de1010; cursor:pointer; border:none; color:white; padding:0.5rem; border-radius:3px;" type="submit" name="exit"formnovalidate ><i class="fas fa-times"></i> Ακύρωση Επεξεργασίας</button>
+                                        <button style="float:right; background-color:#009129; cursor:pointer; border:none; color:white; padding:0.5rem; border-radius:3px;" type="submit" name="update"><i class="fas fa-check"></i> Επιβεβαίωση Αλλαγών</button>
                                     </div>       
                                 </div>
                             </form>                                                                 
@@ -318,8 +318,55 @@ body {font-family: "Lato", sans-serif;}
                 ?>
             </div>
             <div id="2" class="tabcontent">
-                <h3>London</h3>
-                <p>London is the capital city of England.</p>
+                <div>
+                    <table class="table table-hover" style="text-align:center;">
+                        <thead>
+                            <tr>
+                                <th>Προϊόν</th>
+                                <th>Ημερομηνία Αγοράς</th>
+                                <th>Τιμή</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                                $servername="127.0.0.1";
+                                $username="root";
+                                $password="";
+                                $dbname="oasa";
+                                $connection=new mysqli($servername,$username,$password,$dbname);
+                                
+                                if($connection->connect_error)
+                                    die("Connection failed: ".$connection->connect_error);
+
+                                $sql='select * from tickets,ticket_purchase where ticket_purchase.ticketid=tickets.id and ticket_purchase.buyer="'.$_SESSION['card'].'"';
+                                if($result=$connection->query($sql))
+                                {
+                                    while(($row=mysqli_fetch_assoc($result)))
+                                    {
+                                        // print $row['buyer'];
+                                        // foreach($row as $key=>$value)
+                                        // {
+                                        //     print $key.' '.$value.'|';
+                                        // }
+                                        print'
+                                        <tr >
+                                            <td>'.$row['name'].'</td>
+                                            <td>'.date_format(new DateTime($row['date']),"d/m/Y H:i").'</td>
+                                            <td>'.str_replace('.',',',strval(number_format((double)$row['price'],2,'.',''))).'&#8364</td>
+                                        </tr>
+                                        ';
+                                    }
+                                }
+                                else print "bad";
+                            ?>
+                            <tr >
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
             <div id="3" class="tabcontent">
                 <h3>London</h3>
@@ -370,7 +417,7 @@ body {font-family: "Lato", sans-serif;}
                             <tr style="height:0.5rem;"></tr>                            
                         </table>
                         <div style="margin-top: 2rem; margin-bottom:2rem;">
-                            <button style="float:right; background-color:black; cursor:pointer; border:none; color:white; padding:0.5rem; border-radius:3px; margin-bottom:2rem;" type="submit" name="changepass" required>Αλλαγή Κωδικού </button>
+                            <button style="float:right; background-color:#009129; cursor:pointer; border:none; color:white; padding:0.5rem; border-radius:3px; margin-bottom:2rem;" type="submit" name="changepass" required><i class="far fa-edit"></i>Αλλαγή Κωδικού </button>
                         </div>
                     </form>
                 </div>
