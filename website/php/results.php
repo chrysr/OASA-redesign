@@ -113,12 +113,15 @@ session_start();
                         </div>';
                 } else {
                     if ($curr_scenario != 0) {
-                            echo '<div class="eye"><h5>' . $ending_station . '</h5></div>';
+                        echo '<div class="eye"><h5>' . $ending_station . '</h5></div>';
+                        echo '<br>';
+                        echo '<span style="padding: 150px 0 0 6px;">Κόστος Εισιτηρίου: ' . $row["ticket"] . '</span>';
                         echo '</div>';
                         echo '</li>'; 
                     }
                     echo '<li>';
                     echo '<button class="acc_ctrl"><h2>';
+                    $ticket_last = $row["ticket"];
                     if ($time_var !== '') {
                         date_default_timezone_set("Europe/Athens");
                         $curr_time = $date_var . ' ' . $time_var;
@@ -180,6 +183,8 @@ session_start();
             }
 
             echo '<div class="eye"><h5>' . $ending_station . '</h5></div>';
+            echo '<br>';
+            echo '<span style="padding: 150px 0 0 6px;">Κόστος Εισιτηρίου: ' . $ticket_last . '</span>';
             echo '</div>';
             echo '</li>'; 
             echo '</ul>
