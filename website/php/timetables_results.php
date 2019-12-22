@@ -26,25 +26,83 @@ session_start();
         $page = 'three'; include(dirname(__FILE__)."/header.php");
     ?>
 
-<section id="timetable-list-area" class="section-padding">
-        <div class="container">
+    <!--== Start ==-->
+    <section class="section-padding">
+        <div class="container" style="width: 1000px">
             <div class="row">
                 <!-- Main Start -->
-                <div class="col-lg-8">
-                    <div class="timetable-details-content">
-                        <h2>Στάση (Από- Πρός)</h2>
-                        <div class="timetable-details-info blog-content">
-                            <div style="font-size: 19px;">
-                                <p>
-                                    Για την καλύτερη εξυπηρέτηση των επιβατών αλλά και των ατόμων με αναπηρία ο ΟΑΣΑ έχει τοποθετήσει στις παρακάτω στάσεις ειδικές προεξοχές για την ευκολότερη πρόσβαση των επιβατών στα οχήματα (Λεωφορεία και Τρόλλεϋ).
-                                </p>
-                            </div>
+                <div class="timetable-details-content">
+                    <?php
+                        $line_var = $_GET['TID'];
 
-                            <br>
-                            <br>
+                        // Connecting to the database
+                        $servername="127.0.0.1";
+                        $username="root";
+                        $password="";
+                        $dbname="oasa";
+                        
+                        $connection=new mysqli($servername,$username,$password,$dbname);
+
+                        if($connection->connect_error)
+                            die("Connection failed: ".$connection->connect_error);
+
+                        // Querying the database
+                        $sql="select * FROM timetables WHERE line_name LIKE '%$line_var%'";
+                        $result=$connection->query($sql);
+
+                        if ($result->num_rows > 0) {
+                            $curr_row = 0;
+
+                            while($row = $result->fetch_assoc()) {
+                                if ($curr_row == 0) {
+                                    echo '<h2 class="'; 
+                                    if ($row["line_name"] == 'Μ1') {
+                                        echo 'm1_c';
+                                    } else if ($row["line_name"] == 'Μ2') {
+                                        echo 'm2_c';
+                                    } else if ($row["line_name"] == 'Π1') {
+                                        echo 'p1_c';
+                                    } else {
+                                        echo 'bus_c';
+                                    }
+                                    echo '">Δρομολόγιο ' . $row["line_name"] . '<p style="padding: 15px 0 0 20px; font-size: 18px;">' . $row["full_name"] . '</p></h2>';
+                                    echo '<div class="timetable-details-info blog-content" style="width: 1000px">';
+                                    echo '<br>';
+                                    echo '<table class="table-fill">';
+                                    echo '<tbody class="table-hover">';
+                                    echo '<tr>
+                                            <td class="text-left">';
+                                    echo $row["station"];
+                                    echo         '<p class="address">Διεύθυνση: ' . $row["address"] . '</p>
+                                            </td>
+                                          </tr>';
+                                } else {
+                                    echo '<tr>
+                                            <td class="text-left">';
+                                    echo $row["station"];
+                                    echo         '<p class="address">Διεύθυνση: ' . $row["address"] . '</p>
+                                            </td>
+                                          </tr>';
+                                }
+    
+                                $curr_row += 1;
+                            }
+
+                            echo '</tbody>
+                                </table>
+                                </div>';
+                        } else {
+                            echo '<h5>Δυστυχώς δεν υπάρχουν αποτελέσματα, δοκιμάστε μια <a href="timetables.php">καινούργια αναζήτηση</a>.</h5>';
+                        }
+
+                        $connection->close();
+                    ?>
+                </div>
+                <!-- Main End -->
             </div>
         </div>
     </section>
+    <!--== End ==-->
 
     <?php
         include(dirname(__FILE__)."/footer.php");
