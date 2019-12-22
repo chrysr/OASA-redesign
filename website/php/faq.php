@@ -6,6 +6,8 @@ session_start();
 <html lang="el">
 
 <head>
+	<link rel="shortcut icon" type="image/x-icon" href="<?$_SERVER['DOCUMENT_ROOT']?>/OASA-redesign/website/images/favicon.ico">
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Συχνές Ερωτήσεις</title>
@@ -34,6 +36,9 @@ session_start();
 				<div class="col-lg-8">
 					<div class="faq-details-content">
 						<!-- Single FAQ Subject  Start -->
+						<h2 style="border-bottom: 1px solid #4098BE; font-weight: bold; margin-bottom: 20px; padding-bottom: 10px;">ΣΥΧΝΕΣ ΕΡΩΤΗΣΕΙΣ</h2>
+						<br>
+
 						<div class="single-faq-sub">
 							<h3>Μέσα Μεταφοράς υπό την εποπτεία του ΟΑΣΑ</h3>
 							<div class="single-faq-sub-content">
@@ -248,24 +253,17 @@ session_start();
 								<div id="accordion_2">
 									<!-- Single FAQ Start -->
 									<div class="card">
-										<div class="card-header" id="heading4">
-											<h5 class="mb-0"><button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
-												<span>Εισιτήριο 90 λεπτών για όλα τα Μέσα</span>
+										<div class="card-header" id="heading9">
+											<h5 class="mb-0"><button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse9" aria-expanded="false" aria-controls="collapse9">
+												<span>Περιοχή Ευθύνης</span>
 												<i class="fa fa-angle-down"></i>
 												<i class="fa fa-angle-up"></i>
 											</button></h5>
 										</div>
 
-										<div id="collapse4" class="collapse" aria-labelledby="heading4" data-parent="#accordion_2">
+										<div id="collapse9" class="collapse" aria-labelledby="heading9" data-parent="#accordion_2">
 											<div class="card-body">
-                                                <h5>Κανονικό 1,40 ευρώ / μειωμένο 0,60 ευρώ</h5>
-                                            Το Ενιαίο Εισιτήριο 90 λεπτών ισχύει σε όλα τα μέσα αρμοδιότητας ΟΑΣΑ: Λεωφορεία, Τρόλλεϋ, Τραμ, Ηλεκτρικό Σιδηρόδρομο, Μετρό (μέχρι Κορωπί) και στην ΤΡΑΙΝΟΣΕ (στο τμήμα του Προαστιακού Μαγούλα-Πειραιάς-Κορωπί). Δεν ισχύει στις λεωφορειακές γραμμές EXPRESS του Αεροδρομίου, στη γραμμή Χ80 και στο Μετρό στο τμήμα Κορωπί-Αεροδρόμιο.
-Ο χρόνος ισχύος του ενιαίου εισιτηρίου είναι 90 λεπτά από την πρώτη επικύρωσή του σε πύλη σταθμού του μετρό ή σε επικυρωτικό μηχάνημα στα λεωφορεία, τρόλλευ, τραμ.
-
-
-Τα εισιτήρια των 90 λεπτών για όλα τα μέσα διατίθενται σε εκπτωτικά πακέτα,  2πλου εισιτηρίου, 5 εισιτηρίων και 10+1 εισιτηρίων.
-Στην περίπτωση αγοράς πακέτου εισιτηρίων αξίας 1,40 ευρώ, συνολικής τιμής 6,50 ευρώ (πακέτο 5 εισιτηρίων) ή 13,50 ευρώ (πακέτο 10+1 εισιτηρίων), ισχύει η μέγιστη χρέωση ανά ημέρα.
-Δηλαδή, εάν επικυρώσετε 4 εισιτήρια από το πακέτο σας σε μία ημέρα, δεν χρεώνεστε με άλλο εισιτήριο για τις υπόλοιπες μετακινήσεις σας την ίδια ημέρα. (Συνεχίζετε να επικυρώνετε την κάρτα/εισιτήριό σας, χωρίς να ακυρωθεί άλλο εισιτήριο).
+												Η περιοχή που εξυπηρετείται σήμερα από αστική συγκοινωνία εκτείνεται Δυτικά μέχρι την Ελευσίνα, Μάνδρα και Μαγούλα (Θριάσιο Πεδίο). Ανατολικά μέχρι την Πεντέλη, την Παλλήνη, τα Σπάτα, τη Λούτσα και το Κορωπί (περιοχή Μεσογείων). Βόρεια μέχρι τη Φυλή, τη Πάρνηθα, το Κρυονέρι, το φράγμα της Λίμνης του Μαραθώνα, το Διόνυσο, τη Σταμάτα και τη Νέα και την Παλαιά Πεντέλη. Νότια μέχρι τη θάλασσα και νοτιοανατολικά μέχρι και την Σαρωνίδα. Η περιοχή αυτή περιλαμβάνει ένα σύνολο 84 δήμων και κοινοτήτων/οικισμών,
 											</div>
 										</div>
 									</div>
@@ -273,97 +271,27 @@ session_start();
 									
 									<!-- Single FAQ Start -->
 									<div class="card">
-										<div class="card-header" id="headingFour">
-											<h5 class="mb-0"><button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-									  			<span>Ημερήσιο Εισιτήριο για όλα τα Μέσα</span>
+										<div class="card-header" id="heading10">
+											<h5 class="mb-0"><button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse10" aria-expanded="false" aria-controls="collapse10">
+									  			<span>Δήμοι και Κοινότητες</span>
 												<i class="fa fa-angle-down"></i>
 												<i class="fa fa-angle-up"></i>
 									  		</button></h5>
 										</div>
-										<div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion_2">
+										<div id="collapse10" class="collapse" aria-labelledby="heading10" data-parent="#accordion_2">
 											<div class="card-body">
-                                                <h5>4,50 ευρώ</h5>
-                                            Το Ημερήσιο εισιτήριο ισχύει σε όλα τα μέσα αρμοδιότητας ΟΑΣΑ: Λεωφορεία, Τρόλλεϋ, Τραμ, Ηλεκτρικό Σιδηρόδρομο, Μετρό (μέχρι Κορωπί) και στην ΤΡΑΙΝΟΣΕ (στο τμήμα του Προαστιακού Μαγούλα-Πειραιάς-Κορωπί).Το εισιτήριο αυτό ισχύει στη γραμμή Χ80, ενώ δεν ισχύει στις λεωφορειακές γραμμές EXPRESS του Αεροδρομίου, και στο Μετρό στο τμήμα Κορωπί-Αεροδρόμιο.
-Το Ημερήσιο Εισιτήριο ισχύει για 24 ώρες από την πρώτη επικύρωσή του σε πύλη σταθμού του μετρό ή σε επικυρωτικό μηχάνημα στα λεωφορεία, τρόλλευ, τραμ.
+												Οι Δήμοι και Κοινότητες/Οικισμοί της Περιοχής Εξυπηρέτησης των Αστικών Συγκοινωνιών ομαδοποιούνται στους παρακάτω 10 Τομείς Αστικών Συγκοινωνιών, οι οποίοι χρησιμοποιούνται και για την αρίθμηση των κεντρικών, διαδημοτικών και τοπικών λεωφορειακών γραμμών.
+												<br>
+												<ul>
+													<li>Τομέας 0: Αθήνα</li>
+													<li>Τομέας 1: Νέα Σμύρνη, Παλαιό Φάληρο, Άλιμος, Ελληνικό, Γλυφάδα, Βούλα, Βουλιαγμένη, Βάρη</li>
+													<li>Τομέας 2: Δάφνη, Άγιος Δημήτριος, Αργυρούπολη, Ηλιούπολη, Υμηττός, Βύρωνας, Καισαριανή, Ζωγράφου</li>
+													<li>Τομέας 3: Γέρακας, Ανθούσα, Γλυκά Νερά, Παλλήνη, Σπάτα, Παιανία, Κορωπί, Αρτέμιδα, Σαρωνίδα</li>
+												</ul>
 											</div>
 										</div>
 									</div>
 									<!-- Single FAQ Start -->
-									
-									<!-- Single FAQ End -->
-									<div class="card">
-										<div class="card-header" id="headingFive">
-											<h5 class="mb-0"><button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-									  			<span>Εισιτήριο πέντε ημερών για όλα τα Μέσα</span>
-												<i class="fa fa-angle-down"></i>
-												<i class="fa fa-angle-up"></i>
-											</button></h5>
-										</div>
-										<div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion_2">
-											<div class="card-body">
-                                                <h5>9,00 ευρώ</h5>
-                                            Το εισιτήριο 5 ημερών ισχύει σε όλα τα μέσα αρμοδιότητας ΟΑΣΑ Λεωφορεία, Τρόλλεϋ, Τραμ, Ηλεκτρικό Σιδηρόδρομο, Μετρό (μέχρι Κορωπί) και στην ΤΡΑΙΝΟΣΕ (στο τμήμα του Προαστιακού Μαγούλα-Πειραιάς-Κορωπί). Δεν ισχύει στις λεωφορειακές γραμμές EXPRESS του Αεροδρομίου, στη γραμμή Χ80 και στο Μετρό στο τμήμα Κορωπί-Αεροδρόμιο.
-Το εισιτήριο 5 ημερών ισχύει για πέντε 24ωρα από την πρώτη επικύρωσή του σε πύλη σταθμού του μετρό ή σε επικυρωτικό μηχάνημα στα λεωφορεία, τρόλλευ, τραμ.
-											</div>
-										</div>
-									</div>
-									<!-- Single FAQ End -->
-									
-									<!-- Single FAQ End -->
-									<div class="card">
-										<div class="card-header" id="headingSix">
-											<h5 class="mb-0"><button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-									  			<span>3ημερο Τουριστικό εισιτήριο</span>
-												<i class="fa fa-angle-down"></i>
-												<i class="fa fa-angle-up"></i>
-											</button></h5>
-										</div>
-										<div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordion_2">
-											<div class="card-body">
-                                                <h5>22,00 ευρώ</h5>
-                                            Το 3ημερο Τουριστικό  εισιτήριο ισχύει  για 3 πλήρη 24ωρα από την πρώτη επικύρωσή του σε πύλη σταθμού του μετρό ή σε επικυρωτικό μηχάνημα στα λεωφορεία, τρόλλευ, τραμ, σε όλα τα μέσα αρμοδιότητας ΟΑΣΑ:  Λεωφορεία, Τρόλλεϋ, Τραμ, Ηλεκτρικό Σιδηρόδρομο, Μετρό (μέχρι Κορωπί) και στην ΤΡΑΙΝΟΣΕ (στο τμήμα του Προαστιακού Μαγούλα-Πειραιάς-Κορωπί). Επίσης περιλαμβάνει από μια διαδρομή από και προς τον Διεθνή Αερολιμένα Αθηνών με το Μετρό ή τις αντίστοιχες λεωφορειακές γραμμές express της Ο.ΣΥ. Το εισιτήριο αυτό ισχύει στη γραμμή Χ80.
-											</div>
-										</div>
-									</div>
-                                    <!-- Single FAQ End -->
-                                    
-                                    <!-- Single FAQ End -->
-									<div class="card">
-										<div class="card-header" id="headingSeven">
-											<h5 class="mb-0"><button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
-									  			<span>Εισιτήριο λεωφορειακών γραμμών EXPRESS Αεροδρομίου</span>
-												<i class="fa fa-angle-down"></i>
-												<i class="fa fa-angle-up"></i>
-											</button></h5>
-										</div>
-										<div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#accordion_2">
-											<div class="card-body">
-                                                <h5>Κανονικό 6,00 ευρώ / μειωμένο 3,00 ευρώ</h5>
-                                                Τα εισιτήρια για τις λεωφορειακές γραμμές EXPRESS του Αεροδρομίου ισχύουν για μία μόνο διαδρομή, από ή προς το Αεροδρόμιο.
-Η αποβίβαση από τις λεωφορειακές γραμμές EXPRESS του Αεροδρομίου με κατεύθυνση το Αεροδρόμιο επιτρέπεται μόνο στο Αεροδρόμιο, και αντίστροφα, η επιβίβαση στις λεωφορειακές γραμμές EXPRESS του Αεροδρομίου με αφετηρία το Αεροδρόμιο επιτρέπεται μόνο από το Αεροδρόμιο.
-											</div>
-										</div>
-									</div>
-                                    <!-- Single FAQ End -->
-                                    
-                                    <!-- Single FAQ End -->
-									<div class="card">
-										<div class="card-header" id="heading8">
-											<h5 class="mb-0"><button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse8" aria-expanded="false" aria-controls="collapse8">
-									  			<span>Εισιτήριο Αεροδρομίου του ΜΕΤΡΟ</span>
-												<i class="fa fa-angle-down"></i>
-												<i class="fa fa-angle-up"></i>
-											</button></h5>
-										</div>
-										<div id="collapse8" class="collapse" aria-labelledby="heading8" data-parent="#accordion_2">
-											<div class="card-body">
-                                                <h5>Κανονικό 10,00 ευρώ / μειωμένο 5,00 ευρώ</h5>
-                                                Το Εισιτήρια Αεροδρομίου του ΜΕΤΡΟ ισχύουν σε όλα τα μέσα αρμοδιότητας ΟΑΣΑ για 90 λεπτά από την επικύρωσή τους σε πύλη σταθμού του μετρό ή σε επικυρωτικό μηχάνημα στα λεωφορεία, τρόλλευ, τραμ.
-Ισχύουν επίσης και στην ΤΡΑΙΝΟΣΕ (στο τμήμα του Προαστιακού Μαγούλα-Πειραιάς-Αεροδρόμιο). Εξαιρούνται μόνο οι λεωφορειακές γραμμές EXPRESS Αεροδρομίου και η γραμμή Χ80.
-											</div>
-										</div>
-									</div>
-									<!-- Single FAQ End -->
 								</div>
 							</div>
 						</div>
