@@ -30,12 +30,12 @@ if(!isset($_SESSION['chart']))
 <!DOCTYPE html>
 <html lang="el">
 <head>
+
     <link rel="shortcut icon" type="image/x-icon" href="<?$_SERVER['DOCUMENT_ROOT']?>/OASA-redesign/website/images/favicon.ico">
 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>ΟΑΣΑ</title>
-
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
 
@@ -45,7 +45,7 @@ if(!isset($_SESSION['chart']))
     <link rel="stylesheet" href="../css/style.css" type="text/css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     
-    <!--Fontawesome CDN-->
+
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
 </head>
@@ -57,10 +57,8 @@ if(!isset($_SESSION['chart']))
     ?>
     <!-- Header End -->
 
-    
-        
-    
 
+    
     <div class="container-fluid" style="padding: 112px 0rem 30rem 0rem; background-color: white; ">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
@@ -80,7 +78,9 @@ if(!isset($_SESSION['chart']))
         <form action="tickets.php" method="POST" id="tick">
             <div class="tab" style="width:100%; margin-top:1rem;">
                 <button class="tablinks lvl1" id="default" style="margin-left:0rem; width: 33.33%;" onclick="lvl1f(event, '1')">Κανονικό Εισιτήριο</button>
-                <button class="tablinks lvl1" style="margin-left:0rem; width: 33.33%;" onclick="lvl1f(event, '2')">Μειωμένο Εισιτήριο</button>
+                <button class="tablinks lvl1" style="margin-left:0rem; width: 33.33%;" onclick="lvl1f(event, '2')">Μειωμένο Εισιτήριο <i style="vertical-align:middle; text-align:center; font-size:20px;" title=
+                'Δικαιούνται Μειωμένο Εισιτήριο οι:&#10&#10;-Φοιτητές Τριτοβάθμιας Εκπαίδευσης&#10;-Μαθητές Πρωτοβάθμιας και Δευτεροβάθμιας Εκπαίδευσης&#10;-Σπουδαστές Δημόσιων Ι.Ε.Κ. &#10;-Φοιτητές Τριτοβάθμιας Εκπαίδευσης ή Πανεπιστημίων της αλλοδαπής&#10;-Πολύτεκνοι και μέλη των οικογενειών τους&#10;-Άτομα ηλικίας κάτω των 18 ετών&#10;-Άτομα ηλικίας άνω των 65 ετών'
+                class="far fa-question-circle"></i></button>
                 <button class="tablinks lvl1" style="margin-left:0rem; width: 33.33%;" onclick="lvl1f(event, '3')">Τουριστικά Εισιτήρια (Πακέτα)</button>
 
             </div>
@@ -562,15 +562,15 @@ if(!isset($_SESSION['chart']))
             lvl3evt='';
         }
         //console.log(document.getElementById(id));
-        console.log(1);
+        // console.log(1);
         document.getElementById(id).style.display="block";
-        console.log(2);
+        // console.log(2);
         evt.currentTarget.className += " active";
-        console.log(3);
+        // console.log(3);
         lvl1=id;
-        console.log(4);
+        // console.log(4);
         lvl1evt=evt.currentTarget;
-        console.log(5);
+        // console.log(5);
         
         
     };
@@ -607,32 +607,4 @@ if(!isset($_SESSION['chart']))
         lvl3=id;
         lvl3evt=evt.currentTarget;
     };
-
-
-
-    // function option(evt, cityName) {
-    // // Declare all variables
-    // var i, tabcontent, tablinks;
-
-    // // Get all elements with class="tabcontent" and hide them
-    // tabcontent = document.getElementsByClassName("lvl1");
-    // for (i = 0; i < tabcontent.length; i++) {
-    //     tabcontent[i].style.display = "none";
-    // }
-
-    // // Get all elements with class="tablinks" and remove the class "active"
-    // tablinks = document.getElementsByClassName("lvl1");
-    // for (i = 0; i < tablinks.length; i++) {
-    //     tablinks[i].className = tablinks[i].className.replace(" active", "");
-    // }
-
-    // // Show the current tab, and add an "active" class to the button that opened the tab
-    // document.getElementById(cityName).style.display = "block";
-    // evt.currentTarget.className += " active";
-    // }
-</script>
-
-<script>
-// Get the element with id="defaultOpen" and click on it
-    //document.getElementById('default').click();
 </script>
