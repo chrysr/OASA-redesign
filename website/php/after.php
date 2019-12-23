@@ -30,7 +30,7 @@ if(!isset($_SESSION['chart']))
             die("Connection failed: ".$connection->connect_error);
         foreach ($_SESSION['chart'] as $key=>$value)
         {
-            print $key.'->'.$value."xA";
+            // print $key.'->'.$value."xA";
             $sql='INSERT INTO ticket_purchase (ticketid,buyer,date,amount) VALUES ("'.$key.'",'.((empty($_SESSION['loggedin']) || $_SESSION['loggedin'] == false)?0:$_SESSION['card']).',"'.$mysqltime.'",'.$value.')';            
             if($connection->query($sql))
             {
@@ -201,7 +201,7 @@ if(!isset($_SESSION['chart']))
                             print '<p>Μπορείτε να πιστώσετε τα εισιτήρια σας στην κάρτα σας σε οποιονδήποτε σταθμό του Μετρό δίνοντας το ονοματεπώνυμό σας!</p>';
                         }
                     }
-                    //$_SESSION['chart']=array();
+                    $_SESSION['chart']=array();
                 }
             ?>
             <hr>

@@ -77,7 +77,7 @@ body {font-family: "Lato", sans-serif;}
   border: 1px solid #ccc;
   background-color: darkgrey;
   width: 35%;
-  max-height: 450px;
+  max-height: 420px;
 }
 
 /* Style the buttons inside the tab */
@@ -111,7 +111,7 @@ body {font-family: "Lato", sans-serif;}
   padding: 0px 12px;
   width: 65%;
   border-left: none;
-  max-height: 450px;
+  max-height: 420px;
 }
 </style>
 <head>
@@ -132,6 +132,7 @@ body {font-family: "Lato", sans-serif;}
     
     <!--Fontawesome CDN-->
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/payment.css" type="text/css">
 
 </head>
 
@@ -317,60 +318,149 @@ body {font-family: "Lato", sans-serif;}
                         
                 ?>
             </div>
-            <div id="2" class="tabcontent">
-                <div>
-                    <table class="table table-hover" style="text-align:center;">
-                        <thead>
-                            <tr>
-                                <th>Προϊόν</th>
-                                <th>Ημερομηνία Αγοράς</th>
-                                <th>Τιμή</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php
-                                $servername="127.0.0.1";
-                                $username="root";
-                                $password="";
-                                $dbname="oasa";
-                                $connection=new mysqli($servername,$username,$password,$dbname);
-                                
-                                if($connection->connect_error)
-                                    die("Connection failed: ".$connection->connect_error);
+            <style>
+            /* width */
+            ::-webkit-scrollbar {
+            width: 10px;
+            height: 200px;
+            }
 
-                                $sql='select * from tickets,ticket_purchase where ticket_purchase.ticketid=tickets.id and ticket_purchase.buyer="'.$_SESSION['card'].'"';
-                                if($result=$connection->query($sql))
+            /* Track */
+            ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            }
+
+            /* Handle */
+            ::-webkit-scrollbar-thumb {
+            background: #888;
+            }
+
+            /* Handle on hover */
+            ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+            }
+
+            </style>
+            <div id="2" class="tabcontent" style="overflow:auto;">
+                <div style=" ">
+                    <?php
+                        $servername="127.0.0.1";
+                        $username="root";
+                        $password="";
+                        $dbname="oasa";
+                        $connection=new mysqli($servername,$username,$password,$dbname);
+                        
+                        if($connection->connect_error)
+                            die("Connection failed: ".$connection->connect_error);
+
+                        $sql='select * from tickets,ticket_purchase where ticket_purchase.ticketid=tickets.id and ticket_purchase.buyer="'.$_SESSION['card'].'" order by date desc';
+                        if($result=$connection->query($sql))
+                        {
+                            $date='';
+                            $arr=array();
+                            while(($row=mysqli_fetch_assoc($result)))
+                            {
+                                $newdate=date_format(new DateTime($row['date']),"d/m/Y H:i");
+                                if($newdate!=$date)
                                 {
-                                    while(($row=mysqli_fetch_assoc($result)))
-                                    {
-                                        // print $row['buyer'];
-                                        // foreach($row as $key=>$value)
-                                        // {
-                                        //     print $key.' '.$value.'|';
-                                        // }
-                                        print'
-                                        <tr >
-                                            <td>'.$row['name'].'</td>
-                                            <td>'.date_format(new DateTime($row['date']),"d/m/Y H:i").'</td>
-                                            <td>'.str_replace('.',',',strval(number_format((double)$row['price'],2,'.',''))).'&#8364</td>
-                                        </tr>
-                                        ';
-                                    }
+                                    $date=$newdate;
+                                    $arr[$date]=array();
                                 }
-                                else print "bad";
-                            ?>
-                            <tr >
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                        </tbody>
-                    </table>
+                                array_push($arr[$date],$row);
+                            }
+                                
+                            foreach($arr as $key=>$value)
+                            {
+                                print '
+                                    <button style="font-size:17px;" type="button" class="collapsible">Ημερομηνία Αγοράς: '.$key.'</button>
+                                    <div class="content" >
+                                        <div>
+                                            <table class="table table-hover" style="text-align:center;">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Προϊόν</th>
+                                                        <th>Ποσότητα</th>
+                                                        <th>Τιμή μονάδας
+                                                        <th>Επιμέρους Σύνολο</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                ';
+                                $sum=0;
+                                foreach($value as $k=>$v)
+                                {
+                                    $sum=$sum+($v['price']*$v['amount']);
+                                    print '<tr>                                    
+                                        <td>'.$v['name'].'</td>
+                                        <td>'.$v['amount'].'</td>
+                                        <td>'.str_replace('.',',',strval(number_format((double)$v['price'],2,'.',''))).'&#8364</td>    
+                                        <td>'.str_replace('.',',',strval(number_format((double)$v['price']*$v['amount'],2,'.',''))).'&#8364</td> 
+                                    </tr>';
+                                }
+                                print'
+                                    <tr style="height:1rem;"></tr>
+                                    '
+                                ;
+                                print '
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div>
+                                            <div style="float:right; border-bottom: 2px solid #dee2e6; padding-left:1rem; padding-right:1rem; margin-bottom:1rem;">
+                                                <span>
+                                                    Σύνολο: '.str_replace('.',',',strval(number_format((double)$sum,2,'.',''))).'&#8364
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                ';
+                            }
+                        }
+                    ?>
                 </div>
             </div>
-            <div id="3" class="tabcontent">
-                <h3>London</h3>
-                <p> is the capital city of England.</p>
+            <style>
+            .columns {
+                float: left;
+                width: 33.3%;
+                padding: 8px;
+            }
+            
+            </style>
+            <div id="3" class="tabcontent" style="overflow:auto;">
+                <?php
+                    $servername="127.0.0.1";
+                    $username="root";
+                    $password="";
+                    $dbname="oasa";
+                    $connection=new mysqli($servername,$username,$password,$dbname);
+                    
+                    if($connection->connect_error)
+                        die("Connection failed: ".$connection->connect_error);
+
+                    $sql='select * from tickets,ticket_purchase where ticket_purchase.ticketid=tickets.id and ticket_purchase.buyer="'.$_SESSION['card'].'" order by date desc';
+                    if($result=$connection->query($sql))
+                    {
+                        while(($row=mysqli_fetch_assoc($result)))
+                        {
+                            print'
+                                <div style="width:75%; display:table; margin-left:3rem;">
+                                    <div style=" display:table-cell; padding:1rem;  width:75%; background-color:#ccc; color:black; border-radius:3px 0 0 3px; margin-bottom: 1rem;">
+                                        <span>'.$row['name'].'</span>
+                                    </div>  
+                                    <div style="text-align:center; vertical-align:middle; display:table-cell;  width:25%; border-left: 2px solid black; background-color:#ccc; color:black; border-radius:0 3px 3px 0; padding:1rem; margin-bottom: 1rem;">
+                                        <span>'.str_replace('.',',',strval(number_format((double)$row['price'],2,'.',''))).'&#8364</span>
+                                    </div>
+                                </div>   
+                                <div style="display:table; height:1rem;">
+                                    <div style="display:table-cell; height:1rem;">
+                                    </div>
+                                </div>
+
+                            ';
+                        }
+                    }
+                ?>                              
             </div>
             <div id="5" class="tabcontent">
                 <div style="margin: 3rem;">
@@ -417,7 +507,7 @@ body {font-family: "Lato", sans-serif;}
                             <tr style="height:0.5rem;"></tr>                            
                         </table>
                         <div style="margin-top: 2rem; margin-bottom:2rem;">
-                            <button style="float:right; background-color:#009129; cursor:pointer; border:none; color:white; padding:0.5rem; border-radius:3px; margin-bottom:2rem;" type="submit" name="changepass" required><i class="far fa-edit"></i>Αλλαγή Κωδικού </button>
+                            <button style="float:right; background-color:#009129; cursor:pointer; border:none; color:white; padding:0.5rem; border-radius:3px; margin-bottom:2rem;" type="submit" name="changepass" required><i class="fas fa-check"></i> Αλλαγή Κωδικού </button>
                         </div>
                     </form>
                 </div>
@@ -458,4 +548,21 @@ body {font-family: "Lato", sans-serif;}
 <script>
 // Get the element with id="defaultOpen" and click on it
     document.getElementById('default').click();
+</script>
+
+<script>
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+
+    for (i = 0; i < coll.length; i++) {
+        coll[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.maxHeight){
+            content.style.maxHeight = null;
+            } else {
+            content.style.maxHeight = content.scrollHeight + "px";
+            }
+        });
+    }
 </script>
