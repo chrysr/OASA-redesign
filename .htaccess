@@ -1,0 +1,5 @@
+ErrorDocument 400 /OASA-redesign/errors/404.php
+ErrorDocument 401 /OASA-redesign/errors/404.php
+ErrorDocument 403 /OASA-redesign/errors/404.php
+ErrorDocument 404 /OASA-redesign/errors/404.php
+ErrorDocument 500 /OASA-redesign/errors/404.php
