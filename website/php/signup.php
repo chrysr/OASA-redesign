@@ -4,6 +4,7 @@ session_start();
 ?>
 <?php
     $exists=false;
+    $mail=false;
     if(isset($_POST['card']))
     {
         $servername="127.0.0.1";
@@ -19,26 +20,34 @@ session_start();
         //print $sql;
         if(($result=$connection->query($sql))&&$result->num_rows>0)
             $exists=true;
-        else
-        {            
-            $sql="INSERT INTO users (firstname,lastname,email,card,password) VALUES ('".$_POST["firstname"]."','".$_POST["lastname"]."','".$_POST["email"]."','".$_POST["card"]."','".$_POST["password"]."')";
-            //print $sql;
-            if($connection->query($sql))
-            {
-                $connection->close();
-                echo ("<script LANGUAGE='JavaScript'>
-                window.alert('Η εγγραφή σας ολοκληρώθηκε με επιτυχία');
-                window.location.href='./login.php';
-                </script>");
 
-            }
+        else
+        {   
+            $sql="SELECT * FROM users WHERE users.email='".$_POST["email"]."'";
+            //print $sql;
+            if(($result=$connection->query($sql))&&$result->num_rows>0)
+                $mail=true;
             else
             {
-                $connection->close();
-                echo ("<script LANGUAGE='JavaScript'>
-                window.alert('Υπήρξε κάποιο σφάλμα');
-                window.location.href='./signup.php';
-                </script>");
+                $sql="INSERT INTO users (firstname,lastname,email,card,password) VALUES ('".$_POST["firstname"]."','".$_POST["lastname"]."','".$_POST["email"]."','".$_POST["card"]."','".$_POST["password"]."')";
+                //print $sql;
+                if($connection->query($sql))
+                {
+                    $connection->close();
+                    echo ("<script LANGUAGE='JavaScript'>
+                    window.alert('Η εγγραφή σας ολοκληρώθηκε με επιτυχία');
+                    window.location.href='./login.php';
+                    </script>");
+
+                }
+                else
+                {
+                    $connection->close();
+                    echo ("<script LANGUAGE='JavaScript'>
+                    window.alert('Υπήρξε κάποιο σφάλμα');
+                    window.location.href='./signup.php';
+                    </script>");
+                }
             }
         }
     }
@@ -107,16 +116,16 @@ session_start();
                         <div class="card-body card-body-signup">
                             <form action="signup.php" method="POST">
                                 <!-- <span style="color:white">ATH.ENA Card Number*</span> -->
-                                <?php if($exists==true) print '<span class="error text-danger">Αυτός ο αριθμός κάρτας έχει ήδη εγγραφεί</span>' ?>
-
                                 <div class="input-group form-group">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="fas fa-id-card" title="Αριθμός ATH.ENA Card"></i></span>
                                     </div>
                                     <!-- <input type="tel" name='card' class="form-control" placeholder="ATH.ENA Card Number" pattern=".{16}" required title="ATH.ENA Card has 16 digits" > -->
-                                    <?php if($exists==true) print '<input type="tel" name="card" class="form-control is-invalid" placeholder="Αριθμός ATH.ENA Card" required title="Η ATH.ENA Card έχει 16 ψηφία" >' ?>
-                                    <?php if($exists==false) print '<input type="tel" name="card" class="form-control" placeholder="Αριθμός ATH.ENA Card" required title="Η ATH.ENA Card έχει 16 ψηφία" >' ?>
-
+                                    <?php if($exists==true) print '<input type="tel" pattern=".{16}" name="card" class="form-control is-invalid"  value="'.(isset($_POST['card'])?$_POST['card']:'').'" placeholder="Αριθμός ATH.ENA Card" required title="Η ATH.ENA Card έχει 16 ψηφία" >' ?>
+                                    <?php if($exists==false) print '<input type="tel"  pattern=".{16}" name="card" class="form-control '.(isset($_POST['card'])?'is-valid ':'').'" value="'.(isset($_POST['card'])?$_POST['card']:'').'" placeholder="Αριθμός ATH.ENA Card" required title="Η ATH.ENA Card έχει 16 ψηφία" >' ?>
+                                    <?php if($exists) print '<div style="font-size:15px;" class="invalid-feedback">
+                                        Αυτός ο αριθμός κάρτας έχει ήδη εγγραφεί
+                                    </div> ' ?>
 
                                 </div>
                                 <!-- <span style="color:white">Password*</span> -->
@@ -124,13 +133,17 @@ session_start();
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="fas fa-key" title="Κωδικός Πρόσβασης"></i></span>
                                     </div>
-                                    <input type="password" name='password' class="form-control" placeholder="Κωδικός Πρόσβασης" title="Κωδικός Πρόσβασης" required>
+                                    <?php print'<input type="password" name="password" class="form-control '.(isset($_POST['card'])?'is-valid ':'').'" value="'.(isset($_POST['card'])?$_POST['card']:'').'" placeholder="Κωδικός Πρόσβασης" title="Κωδικός Πρόσβασης" required>'?>
                                 </div>
                                 <div class="input-group form-group">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="fas fa-envelope" title="Διεύθυνση Ηλεκτρονικού Ταχυδρομίου"></i></span>
                                     </div>
-                                    <?php print '<input type="email" name="email" value="'.(isset($_POST['email'])?$_POST['email']:'').'" class="form-control" placeholder="E-mail" title="Διεύθυνση Ηλεκτρονικού Ταχυδρομίου" required>' ?>
+                                    <?php if($mail==true) print '<input type="email" name="email" value="'.(isset($_POST['email'])?$_POST['email']:'').'" class="form-control is-invalid" placeholder="E-mail" title="Διεύθυνση Ηλεκτρονικού Ταχυδρομίου" required>' ?>
+                                    <?php if($mail==false) print '<input type="email" name="email" value="'.(isset($_POST['email'])?$_POST['email']:'').'" class="form-control '.(isset($_POST['card'])?'is-valid ':'').'" placeholder="E-mail" title="Διεύθυνση Ηλεκτρονικού Ταχυδρομίου" required>' ?>
+                                    <?php if($mail) print '<div style="font-size:15px;" class="invalid-feedback">
+                                        Αυτό το email χρησιμοποιείται ήδη
+                                    </div> ' ?>
                                 </div>
                                 <div class="row">
                                     <div class="form-group name1 col-md-6">

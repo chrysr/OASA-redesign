@@ -170,7 +170,7 @@ if(!isset($_SESSION['chart']))
                     <button onclick="if(paypal==0){window.open('https://www.paypal.com/login');}paypal=1-paypal;" type="button" class="collapsible"><i class="fab fa-paypal"></i> Πληρωμή μέσω PayPal </button>
                     <div class="content" style="padding:0;">
                         <div class="alert alert-success" role="alert">
-                            Έχετε πραγματοποιήσει πληρωμή μέσω PayPal
+                            Έχετε επιλέξει πληρωμή μέσω PayPal
                         </div>
                         <!-- <p>Έχετε πραγματοποιήσει πληρωμή μέσω PayPal</p> -->
                     </div>
@@ -262,7 +262,7 @@ if(!isset($_SESSION['chart']))
         </div>
         <div style="border-radius:5px;float:right; margin-right:4rem;padding:0.5rem;background-color:black;color:white">
             <button onclick="validateForm();" style="font-size:17px;float:left;cursor:pointer; background-color:black; color:white; border:none; " id="subbtn" type="submit"  form="checkout">
-            Ολοκλήρωση Αγοράς</button>
+            Πληρωμή και Ολοκλήρωση Αγοράς</button>
             <div class="spinner-border"  id='spinner' style="float:right; display:none;"></div>
 
         </div>
