@@ -126,8 +126,8 @@ session_start();
                                         <span class="input-group-text"><i class="fas fa-id-card" title="Αριθμός ATH.ENA Card"></i></span>
                                     </div>
                                     <!-- <input type="tel" name='card' class="form-control" placeholder="ATH.ENA Card Number" pattern=".{16}" required title="ATH.ENA Card has 16 digits" > -->
-                                    <?php if($card==true) print '<input type="tel" name="card" class="form-control is-invalid" value="'.(isset($_POST['card'])?$_POST['card']:'').'" placeholder="Αριθμός ATH.ENA Card" required title="Η ATH.ENA Card έχει 16 ψηφία" >' ?>
-                                    <?php if($card==false) print '<input type="tel" name="card" class="form-control '.(isset($_POST['card'])?'is-valid ':'').'" value="'.(isset($_POST['card'])?$_POST['card']:'').'" placeholder="Αριθμός ATH.ENA Card" required title="Η ATH.ENA Card έχει 16 ψηφία" >' ?>
+                                    <?php if($card==true) print '<input type="tel" pattern=".{16}" name="card" class="form-control is-invalid" value="'.(isset($_POST['card'])?$_POST['card']:'').'" placeholder="Αριθμός ATH.ENA Card" required title="Η ATH.ENA Card έχει 16 ψηφία" >' ?>
+                                    <?php if($card==false) print '<input type="tel" pattern=".{16}"  name="card" class="form-control '.(isset($_POST['card'])?'is-valid ':'').'" value="'.(isset($_POST['card'])?$_POST['card']:'').'" placeholder="Αριθμός ATH.ENA Card" required title="Η ATH.ENA Card έχει 16 ψηφία" >' ?>
                                     <?php if($card) print '<div style="font-size:15px;" class="invalid-feedback">
                                         Ο αριθμός κάρτας δεν υπάρχει
                                     </div> ' ?>

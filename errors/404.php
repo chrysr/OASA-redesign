@@ -428,7 +428,7 @@
   </div>
 </div>
 <div>
-    <a style="font-size: 22px;padding:1rem;color:black;background-color:rgb(179,220,255); text-decoration:none;" href="<?$_SERVER['DOCUMENT_ROOT']?>/OASA-redesign/index.php">Πίσω στην Αρχική</a>
+    <a style="border-radius:4px; font-size: 22px;padding:1rem;color:black;background-color:rgb(179,220,255); text-decoration:none;" href="<?$_SERVER['DOCUMENT_ROOT']?>/OASA-redesign/index.php">Πίσω στην Αρχική</a>
 </div>
 </body>
 </html>
