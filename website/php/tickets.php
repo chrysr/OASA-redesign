@@ -80,7 +80,7 @@ if(!isset($_SESSION['chart']))
                 <button class="tablinks lvl1" id="default" style="margin-left:0rem; width: 33.33%;" onclick="lvl1f(event, '1')">Κανονικό Εισιτήριο</button>
                 <button class="tablinks lvl1" style="margin-left:0rem; width: 33.33%;" onclick="lvl1f(event, '2')">Μειωμένο Εισιτήριο <i style="vertical-align:middle; text-align:center; font-size:20px;" title=
                 'Δικαιούνται Μειωμένο Εισιτήριο οι:&#10&#10;-Φοιτητές Τριτοβάθμιας Εκπαίδευσης&#10;-Μαθητές Πρωτοβάθμιας και Δευτεροβάθμιας Εκπαίδευσης&#10;-Σπουδαστές Δημόσιων Ι.Ε.Κ. &#10;-Φοιτητές Τριτοβάθμιας Εκπαίδευσης ή Πανεπιστημίων της αλλοδαπής&#10;-Πολύτεκνοι και μέλη των οικογενειών τους&#10;-Άτομα ηλικίας κάτω των 18 ετών&#10;-Άτομα ηλικίας άνω των 65 ετών'
-                class="far fa-question-circle"></i></button>
+                class="fas fa-info-circle"></i></button>
                 <button class="tablinks lvl1" style="margin-left:0rem; width: 33.33%;" onclick="lvl1f(event, '3')">Τουριστικά Εισιτήρια (Πακέτα)</button>
 
             </div>
