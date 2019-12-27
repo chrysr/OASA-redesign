@@ -31,7 +31,13 @@
                         </div>
                     </div>
                 </li>
-            </ul>
+                <li>
+                    <div class="searchbar">
+                        <input class="search_input" type="text" name="" placeholder="Αναζήτηση...">
+                        <button type="submit" class="search_icon"><img src="<?$_SERVER['DOCUMENT_ROOT']?>/OASA-redesign/website/images/search.png" alt="search icon"></button>
+                    </div>
+                </li>
+            </ul>    
         </nav>
         <div class="header-right">
             
