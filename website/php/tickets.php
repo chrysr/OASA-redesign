@@ -35,7 +35,7 @@ if(!isset($_SESSION['chart']))
 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>ΟΑΣΑ</title>
+    <title>Αγορά Εισιτηρίων</title>
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
 

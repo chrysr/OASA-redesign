@@ -124,7 +124,7 @@ body {font-family: "Lato", sans-serif;}
 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>ΟΑΣΑ</title>
+    <title>Η ATH.ENA Card μου</title>
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
