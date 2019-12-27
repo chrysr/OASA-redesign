@@ -60,10 +60,10 @@ session_start();
                         $result=$connection->query($sql);
 
                         if ($result->num_rows > 0) {
-                            $curr_row = 0;
+                            $curr_row = 1;
 
                             while($row = $result->fetch_assoc()) {
-                                if ($curr_row == 0) {
+                                if ($curr_row == 1) {
                                     echo '<h2 class="'; 
                                     if ($row["line_name"] == 'Μ1') {
                                         echo 'm1_c';
@@ -81,14 +81,14 @@ session_start();
                                     echo '<tbody class="table-hover">';
                                     echo '<tr>
                                             <td class="text-left">';
-                                    echo $row["station"];
+                                    echo $curr_row . '. ' . $row["station"];
                                     echo         '<p class="address">Διεύθυνση: ' . $row["address"] . '</p>
                                             </td>
                                           </tr>';
                                 } else {
                                     echo '<tr>
                                             <td class="text-left">';
-                                    echo $row["station"];
+                                    echo $curr_row . '. ' . $row["station"];
                                     echo         '<p class="address">Διεύθυνση: ' . $row["address"] . '</p>
                                             </td>
                                           </tr>';

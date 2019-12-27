@@ -266,6 +266,10 @@ ol {
 	margin-left: -31px;
 }
 
+.footer-section .footer-widget a {
+	color: #8e8e8e;
+}
+
 /* MODAL */
 .bg-modal {
 	width: 100%;
