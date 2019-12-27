@@ -107,56 +107,6 @@
                             </div>
                         </div>
                         <!-- Single Sidebar End -->
-
-                        <!-- Single Sidebar Start -->
-                        <!-- <div class="single-sidebar">
-                            <h3>Rental Tips</h3>
-
-                            <div class="sidebar-body">
-                                <ul class="recent-tips">
-                                    <li class="single-recent-tips">
-                                        <div class="recent-tip-thum">
-                                            <a href="#"><img src="assets/img/we-do/service1-img.png" alt="JSOFT"></a>
-                                        </div>
-                                        <div class="recent-tip-body">
-                                            <h4><a href="#">How to Enjoy Losses Angeles Car Rentals</a></h4>
-                                            <span class="date">February 5, 2018</span>
-                                        </div>
-                                    </li>
-
-                                    <li class="single-recent-tips">
-                                        <div class="recent-tip-thum">
-                                            <a href="#"><img src="assets/img/we-do/service3-img.png" alt="JSOFT"></a>
-                                        </div>
-                                        <div class="recent-tip-body">
-                                            <h4><a href="#">How to Enjoy Losses Angeles Car Rentals</a></h4>
-                                            <span class="date">February 5, 2018</span>
-                                        </div>
-                                    </li>
-
-                                    <li class="single-recent-tips">
-                                        <div class="recent-tip-thum">
-                                            <a href="#"><img src="assets/img/we-do/service2-img.png" alt="JSOFT"></a>
-                                        </div>
-                                        <div class="recent-tip-body">
-                                            <h4><a href="#">How to Enjoy Losses Angeles Car Rentals</a></h4>
-                                            <span class="date">February 5, 2018</span>
-                                        </div>
-                                    </li>
-
-                                    <li class="single-recent-tips">
-                                        <div class="recent-tip-thum">
-                                            <a href="#"><img src="assets/img/we-do/service3-img.png" alt="JSOFT"></a>
-                                        </div>
-                                        <div class="recent-tip-body">
-                                            <h4><a href="#">How to Enjoy Losses Angeles Car Rentals</a></h4>
-                                            <span class="date">February 5, 2018</span>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div> -->
-                        <!-- Single Sidebar End -->
                     </div>
                 </div>
                 <!-- Sidebar Area End -->
@@ -170,16 +120,6 @@
     ?>
 </body>
 
-<script>
-    document.getElementById('button').addEventListener('click',
-    function() {
-        document.querySelector('.bg-modal').style.display = 'flex';
-    });
-
-    document.querySelector('.close').addEventListener('click',
-    function() {
-        document.querySelector('.bg-modal').style.display = 'none';
-    });
-</script>
+<script src="../javascript/modal.js"></script>
 
 </html>

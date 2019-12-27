@@ -608,3 +608,5 @@ if(!isset($_SESSION['chart']))
         lvl3evt=evt.currentTarget;
     };
 </script>
+
+<script src="../javascript/modal.js"></script>

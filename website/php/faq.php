@@ -327,19 +327,8 @@ session_start();
     ?>
 </body>
 
-<script>
-    document.getElementById('button').addEventListener('click',
-    function() {
-        document.querySelector('.bg-modal').style.display = 'flex';
-    });
-
-    document.querySelector('.close').addEventListener('click',
-    function() {
-        document.querySelector('.bg-modal').style.display = 'none';
-    });
-</script>
-
 <script src="../javascript/jquery.min.js"></script>
 <script src="../javascript/bootstrap.min.js"></script>
+<script src="../javascript/modal.js"></script>
 
 </html>

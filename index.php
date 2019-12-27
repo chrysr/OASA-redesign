@@ -136,22 +136,11 @@ session_start();
     ?>
 </body>
 
-<script>
-    document.getElementById('button').addEventListener('click',
-    function() {
-        document.querySelector('.bg-modal').style.display = 'flex';
-    });
-
-    document.querySelector('.close').addEventListener('click',
-    function() {
-        document.querySelector('.bg-modal').style.display = 'none';
-    });
-</script>
-
 <script src="website/javascript/jquery.min.js"></script>
 <script src="website/javascript/jquery-migrate-3.0.1.min.js"></script>
 <script src="website/javascript/bootstrap.min.js"></script>
 <script src="website/javascript/bootstrap-datepicker.js"></script>
 <script src="website/javascript/jquery.timepicker.min.js"></script>
 <script src="website/javascript/index.js"></script>
+<script src="website/javascript/modal.js"></script>
 </html>

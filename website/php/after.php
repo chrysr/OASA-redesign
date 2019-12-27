@@ -226,3 +226,5 @@ if(!isset($_SESSION['chart']))
     <!-- Footer Section End -->
 
 </body>
+
+<script src="../javascript/modal.js"></script>

@@ -171,19 +171,8 @@ session_start();
     ?>
 </body>
 
-<script>
-    document.getElementById('button').addEventListener('click',
-    function() {
-        document.querySelector('.bg-modal').style.display = 'flex';
-    });
-
-    document.querySelector('.close').addEventListener('click',
-    function() {
-        document.querySelector('.bg-modal').style.display = 'none';
-    });
-</script>
-
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 <script src="../javascript/timetables.js"></script>
+<script src="../javascript/modal.js"></script>
 
 </html>

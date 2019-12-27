@@ -69,7 +69,6 @@ session_start();
 <html lang="el">
 <style>
 * {box-sizing: border-box}
-body {font-family: "Lato", sans-serif;}
 
 /* Style the tab */
 .tab {
@@ -571,3 +570,5 @@ body {font-family: "Lato", sans-serif;}
         });
     }
 </script>
+
+<script src="../javascript/modal.js"></script>

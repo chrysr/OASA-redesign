@@ -227,18 +227,18 @@ ol {
 }
 
 .footer-section .newslatter-form button {
-	position: absolute;
-	right: 0;
-	background: rgb(64, 152, 190);
-	/* background: #FF5581; */
-	width: 292px;
-	color: #fff;
-	font-size: 18px;
-	font-weight: 700;
-	border: 1px solid rgb(64, 152, 190);
-	/* border: 1px solid #FF5581; */
-	height: 100%;
-	cursor: pointer;
+	position: absolute !important;
+	right: 0 !important;
+	background: rgb(64, 152, 190) !important;
+	width: 292px !important;
+	color: #fff !important;
+	font-size: 18px !important;
+	font-weight: 700 !important;
+	border: 1px solid rgb(64, 152, 190) !important;
+	height: 66px !important;
+	cursor: pointer !important;
+	padding: 0 !important;
+	margin: 0 !important;
 }
 
 .footer-section .footer-widget {

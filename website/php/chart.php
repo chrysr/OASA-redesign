@@ -160,3 +160,4 @@ if(!isset($_SESSION['chart']))
 
 </body>
 
+<script src="../javascript/modal.js"></script>

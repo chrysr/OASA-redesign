@@ -377,3 +377,5 @@ if(!isset($_SESSION['chart']))
         return false;
     }
 </script>
+
+<script src="../javascript/modal.js"></script>
