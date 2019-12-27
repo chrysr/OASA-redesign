@@ -100,7 +100,7 @@
   }
   .collapsible {
     background-color: #eee;
-    color: #444;
+    color: black;
     cursor: pointer;
     padding: 18px;
     width: 100%;
@@ -112,7 +112,7 @@
   
   /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
   .active, .collapsible:hover {
-    background-color: #ccc;
+    background-color: #4098BE;
   }
   
   /* Style the collapsible content. Note: hidden by default */
@@ -132,15 +132,8 @@
     font-family: "Font Awesome 5 Free";
     content: "\f107";
     font-weight: 900;
-    color:rgb(64, 152, 190);
+    color:black;
     font-size:20px;
   }
   
-  .active:after {
-    /* content: "\2796"; Unicode character for "minus" sign (-) */
-    font-family: "Font Awesome 5 Free";
-    content: "\f106";
-    font-weight: 900;
-    color:rgb(64, 152, 190);
-    font-size:20px;
-  }
+  

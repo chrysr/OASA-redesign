@@ -245,6 +245,7 @@ ul {
 	top: 50%;
 	-webkit-transform: translateY(-50%);
 	transform: translateY(-50%);
+	font-weight: 900;
 }
 
 .single-faq-sub-content .card-header button[aria-expanded="true"] i.fa-angle-down {

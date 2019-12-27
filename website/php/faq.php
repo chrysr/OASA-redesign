@@ -46,14 +46,14 @@ session_start();
 									<!-- Single FAQ Start -->
 									<div class="card">
 										<div class="card-header" id="headingOne">
-											<h5 class="mb-0"><button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+											<h5 class="mb-0"><button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
 												<span>Μητροπολιτικός Σιδηρόδρομος (Μετρό)</span>
 												<i class="fa fa-angle-down"></i>
 												<i class="fa fa-angle-up"></i>
 											</button></h5>
 										</div>
 
-										<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+										<div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
 											<div class="card-body">
                                                 Το Μετρό της Αθήνας είναι το δίκτυο υπόγειου και επίγειου μητροπολιτικού σιδηροδρόμου της πόλης των Αθηνών, καθώς και την Μητροπολιτική περιοχή της Αθήνας. Το μετρό της Αθήνας είναι το μοναδικό δίκτυο μετρό στην Ελλάδα. Εξυπηρετεί το πολεοδομικό συγκρότημα Αθήνας, το οποίο έχει πληθυσμό άνω των τριών εκατομμυρίων κατοίκων. Προσφέρει επίσης πρόσβαση στο Διεθνές Αεροδρόμιο Αθηνών «Ελευθέριος Βενιζέλος» που βρίσκεται στην ανατολική Αττική.    
                                                 <p>Το δίκτυο εκμεταλλεύεται η ΣΤΑ.ΣΥ. Α.Ε.</p>

@@ -113,6 +113,11 @@ body {font-family: "Lato", sans-serif;}
   border-left: none;
   max-height: 420px;
 }
+.active:after {
+    /* content: "\2796"; Unicode character for "minus" sign (-) */
+    color:black;
+    font-size:20px;
+  }
 </style>
 <head>
     <link rel="shortcut icon" type="image/x-icon" href="<?$_SERVER['DOCUMENT_ROOT']?>/OASA-redesign/website/images/favicon.ico">

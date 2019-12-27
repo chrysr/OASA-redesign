@@ -68,7 +68,16 @@ if(!isset($_SESSION['chart']))
     <link rel="stylesheet" href="../css/payment.css" type="text/css">
     
 </head>
-
+<style>
+    .active:after {
+    /* content: "\2796"; Unicode character for "minus" sign (-) */
+    font-family: "Font Awesome 5 Free";
+    content: "\f106";
+    font-weight: 900;
+    color:black;
+    font-size:20px;
+  }
+</style>
 <body>
     <!-- Header Section Begin -->
     <?php
