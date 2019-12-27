@@ -18,9 +18,9 @@ session_start();
     <!-- Css Styles -->
     <link rel="stylesheet" href="../../website/css/header_footer.css" type="text/css">
     <link rel="stylesheet" href="../../website/css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="../../website/css/faq.css" type="text/css">
+	<link rel="stylesheet" href="../../website/css/faq.css" type="text/css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
-
 </head>
 
 <body>
@@ -30,7 +30,13 @@ session_start();
 
     <!--== FAQ Area Start ==-->
     <section id="faq-page-area" class="section-padding">
-        <div class="container">
+		<nav aria-label="breadcrumb" style="margin-top: -83px">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item" ><a href="../../index.php"><i style="color:black;" class="fas fa-home"></i></a></li>
+                <li class="breadcrumb-item" style="color:rgb(64, 152, 190);"><a style="color:inherit;" href="./faq.php">Συχνές Ερωτήσεις</a></li>
+            </ol>
+        </nav>
+        <div class="container" style="margin-top: 50px">
             <div class="row">
                 <!-- FAQ Content Start -->
 				<div class="col-lg-8">

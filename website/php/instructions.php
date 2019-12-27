@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="../../website/css/header_footer.css" type="text/css">
     <link rel="stylesheet" href="../../website/css/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="../../website/css/instructions.css" type="text/css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
 </head>
 
@@ -25,11 +26,18 @@
 
     <!--== Instructions Start ==-->
     <section id="car-list-area" class="section-padding">
-        <div class="container">
+        <nav aria-label="breadcrumb" style="margin-top: -83px">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item" ><a href="../../index.php"><i style="color:black;" class="fas fa-home"></i></a></li>
+                <li class="breadcrumb-item" style="color:rgb(64, 152, 190);"><a style="color:inherit;" href="./amea.php">ΑμεΑ</a></li>
+                <li class="breadcrumb-item" style="color:rgb(64, 152, 190);"><a style="color:inherit;" href="./instructions.php">Γενικές Οδηγίες</a></li>
+            </ol>
+        </nav>
+        <div class="container"  style="margin-top: 50px;">
             <div class="row">
                 <!-- Main -->
                 <div class="col-lg-8">
-                    <div class="car-details-content">
+                    <div class="car-details-content" >
                         <h2>ΓΕΝΙΚΕΣ ΟΔΗΓΙΕΣ ΧΡΗΣΗΣ</h2>
                         <div class="car-details-info blog-content">
                             <p>Για τα Εμποδιζόμενα άτομα έχει ληφθεί ειδική μέριμνα που διευκολύνει τις μετακινήσεις τους με την Αστική Συγκοινωνία. Εάν η πρόσβαση προς τις ράμπες επιβίβασης-αποβίβασης των λεωφορείων ή τους σταθμούς εμποδίζονται από παράνομα παρκαρισμένα οχήματα ή έχετε οποιαδήποτε απορία, καλέστε τον ΟΑΣΑ, στη νέα αποκλειστικής εξυπηρέτησης γραμμή 21 82 887 από 06:30 έως 22:30 τις καθημερινές & από 07:30 έως 22:30 τα Σ/Κ.</p>

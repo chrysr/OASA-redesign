@@ -19,6 +19,7 @@ session_start();
     <link rel="stylesheet" href="../../website/css/header_footer.css" type="text/css">
     <link rel="stylesheet" href="../../website/css/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="../../website/css/amea.css" type="text/css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 </head>
 
 <body>
@@ -28,6 +29,12 @@ session_start();
 
     <!-- AMEA Front Page Begin -->
     <section class="blog-section spad">
+        <nav aria-label="breadcrumb" style="margin-top: -48px">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item" ><a href="../../index.php"><i style="color:black;" class="fas fa-home"></i></a></li>
+                <li class="breadcrumb-item" style="color:rgb(64, 152, 190);"><a style="color:inherit;" href="./amea.php">ΑμεΑ</a></li>
+            </ol>
+        </nav>
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">

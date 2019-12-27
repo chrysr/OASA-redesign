@@ -20,7 +20,6 @@ session_start();
     <link rel="stylesheet" href="../../website/css/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="../../website/css/timetables.css" type="text/css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-
 </head>
 
 <body>
@@ -28,7 +27,14 @@ session_start();
         $page = 'three'; include(dirname(__FILE__)."/header.php");
     ?>
 
-    <div class="container-fluid" style="padding:200px 0 0 285px;">
+    <nav aria-label="breadcrumb" style="padding-top: 112px">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item" ><a href="../../index.php"><i style="color:black;" class="fas fa-home"></i></a></li>
+            <li class="breadcrumb-item" style="color:rgb(64, 152, 190);"><a style="color:inherit;" href="./timetables.php">Αναζήτηση Δρομολογίου</a></li>
+        </ol>
+    </nav>
+
+    <div class="container-fluid" style="padding:60px 0 0 285px;">
         <h5 style="font-weight: bold;"><i style="padding-right: 10px;" class="fas fa-search"></i>Αναζήτηση</h5>
         <br>
         <div class="search-box">
