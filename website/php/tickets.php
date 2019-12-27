@@ -53,7 +53,7 @@ if(!isset($_SESSION['chart']))
 <body>
     <!-- Header Section Begin -->
     <?php
-        $page='zero'; include(dirname(__FILE__)."/header.php");
+        $page='two'; include(dirname(__FILE__)."/header.php");
     ?>
     <!-- Header End -->
 

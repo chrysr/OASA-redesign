@@ -110,7 +110,11 @@ ol {
 	margin-right: 55px;
 }
 
-.header-section .main-menu ul li a.active:first-child{
+.header-section .main-menu ul li a.active_head:first-child{
+	color: rgb(124, 205, 240);
+}
+
+.header-section .header-right .user-access a.active_head {
 	color: rgb(124, 205, 240);
 }
 

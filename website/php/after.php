@@ -68,7 +68,7 @@ if(!isset($_SESSION['chart']))
 <body>
     <!-- Header Section Begin -->
     <?php
-        $page='zero'; include(dirname(__FILE__)."/header.php");
+        $page='two'; include(dirname(__FILE__)."/header.php");
     ?>
 
     <div class="container-fluid" style="padding: 112px 0rem 4rem 0rem; background-color: white;display:flex;flex-direction:column;"> <!--flex;flex-direction:row; -->

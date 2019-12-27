@@ -106,7 +106,7 @@ session_start();
     ?>
     <!-- Header Section Begin -->
     <?php
-        $page='zero'; include(dirname(__FILE__)."/header.php");
+        $page='six'; include(dirname(__FILE__)."/header.php");
     ?>   
     
 
