@@ -1,6 +1,6 @@
-body {
+/* body {
     background-color: #F9F9F9;
-}
+} */
 
 ul {
     list-style-type: none;
@@ -30,7 +30,7 @@ ul {
   .tab-menu li.active {
     color:#464646;
     opacity: 1;
-    background-color: white;
+    background-color: rgb(251, 251, 251);
   }
   
   .tab-menu li.active:hover {
@@ -38,7 +38,7 @@ ul {
   }
   
   .tab-content>div {
-    background-color: #fff;
+    background-color: rgb(251, 251, 251);
     box-sizing:border-box;
     width: 100%;
     padding: 50px;   
