@@ -77,13 +77,14 @@ if(!isset($_SESSION['chart']))
     color:black;
     font-size:20px;
   }
+  
 </style>
 <body>
     <!-- Header Section Begin -->
     <?php
         $page='two'; include(dirname(__FILE__)."/header.php");
     ?>
-
+    
     <div class="container-fluid" style="padding: 112px 0rem 0rem 0rem; background-color: white;display:flex;flex-direction:column;"> <!--flex;flex-direction:row; -->
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">

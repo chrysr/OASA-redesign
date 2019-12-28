@@ -3,11 +3,11 @@
 
 <header class="header-section">
 
-    <div class="container-fluid">
+    <div class="container-fluid" style="padding-left:5rem;padding-right:5rem;">
         <div class="logo">
             <a href="<?$_SERVER['DOCUMENT_ROOT']?>/OASA-redesign/index.php"><img src="<?$_SERVER['DOCUMENT_ROOT']?>/OASA-redesign/website/images/logo.png" alt="Αρχική"></a>
         </div>
-        <nav class="main-menu mobile-menu">
+        <nav class="main-menu ">
             <ul>
                 <li><a <?php echo ($page == 'one') ? "class='active_head'" : ""; ?> href="<?$_SERVER['DOCUMENT_ROOT']?>/OASA-redesign/index.php">Υπολογισμός Διαδρομής</a></li>
                 <li><a <?php echo ($page == 'two') ? "class='active_head'" : ""; ?> href="<?$_SERVER['DOCUMENT_ROOT']?>/OASA-redesign/website/php/tickets.php">Εισιτήρια</a></li>
@@ -31,7 +31,7 @@
                         </div>
                     </div>
                 </li>
-                <li>
+                <li style="border:none;color:white;">
                     <div class="searchbar">
                         <input class="search_input" type="text" name="" placeholder="Αναζήτηση...">
                         <button type="submit" class="search_icon"><img src="<?$_SERVER['DOCUMENT_ROOT']?>/OASA-redesign/website/images/search.png" alt="search icon"></button>
@@ -47,9 +47,10 @@
                 </div> 
             <?php else:?>
                 <div class="user-access">
+                    <a style="border-right: 1px solid #878787; " <?php echo ($page == 'six') ? "class='active_head'" : ""; ?> href="<?$_SERVER['DOCUMENT_ROOT']?>/OASA-redesign/website/php/login.php">Σύνδεση</a>
+
                     <a <?php echo ($page == 'seven') ? "class='active_head'" : ""; ?> href="<?$_SERVER['DOCUMENT_ROOT']?>/OASA-redesign/website/php/signup.php">Εγγραφή</a>
-                    <a href="#"> / </a>
-                    <a <?php echo ($page == 'six') ? "class='active_head'" : ""; ?> href="<?$_SERVER['DOCUMENT_ROOT']?>/OASA-redesign/website/php/login.php">Σύνδεση</a>
+                    <!-- <a href="#"> / </a> -->
                 </div>        
             <?php endif;?>
             

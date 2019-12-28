@@ -72,11 +72,12 @@ ol {
 -----------------------*/
 
 .header-section {
-	height: 112px;
-	padding: 32px 0 31px 0px;
+	/* height: 2rem; */
+	/* padding: 1rem 0 1rem 0; */
 	position: absolute;
 	z-index: 1;
 	width: 100%;
+	vertical-align: middle;
 }
 
 .header-section:after {
@@ -93,8 +94,11 @@ ol {
 
 .header-section .logo {
 	float: left;
-	margin-right: 115px;
-	width: 155px;
+	/* margin-right: 1rem; */
+	
+	width: 80px;
+	margin-top:0.4rem;
+	margin-right: 0.4rem;
 }
 
 .header-section .logo a {
@@ -103,12 +107,23 @@ ol {
 
 .header-section .main-menu {
 	float: left;
-}
+	margin: 0;
+	padding: 0;
+	border-left: 1px solid #878787;
 
+}
+.header-section .main-menu ul
+{
+	margin:0;
+}
 .header-section .main-menu ul li {
 	display: inline-block;
 	list-style: none;
-	margin-right: 30px;
+	margin-right: 0rem;
+	border-right: 1px solid #878787;
+	font-size: 18px;
+	padding: 0.4rem 0.6rem 0.4rem 0.6rem;
+
 }
 
 .header-section .main-menu ul li a.active_head:first-child{
@@ -121,10 +136,10 @@ ol {
 
 .header-section .main-menu ul li a {
 	color: #fff;
-	display: inline-block;
-	font-size: 20px;
-	font-weight: 400;
-	line-height: 42px;
+	/* display: inline-block; */
+	/* font-size: 20px; */
+	/* font-weight: 400; */
+	/* line-height: 42px; */
 	-webkit-transition: all 0.2s;
 	-webkit-transition: 0.2s;
 	transition: 0.2s;
@@ -136,19 +151,22 @@ ol {
 
 .header-section .header-right {
 	float: right;
+	font-size: 18px;
 }
 
 .header-section .header-right .user-access {
 	display: inline-block;
-	margin-right: 25px;
-	margin-top: 6px;
+	/* margin-right: 25px; */
+	/* margin-top: 6px; */
 }
 
 .header-section .header-right .user-access a {
 	display: inline-block;
 	color: #fff;
-	font-size: 20px;
-	font-weight: 400;
+	padding:0.4rem 0.6rem 0.4rem 0.6rem;
+
+	/* font-size: 20px; */
+	/* font-weight: 400; */
 }
 
 /* DROPDOWN */
@@ -210,10 +228,12 @@ ol {
 
   .searchbar{
 	/* margin-left: 300px; */
-    margin-bottom: auto;
-    margin-top: auto;
+    /* margin-bottom: auto;
+    margin-top: auto; */
     background-color: rgb(32, 32, 32);
 	border-radius: 30px;
+	color:white;
+	border-color: white;
     }
 
     .search_input{
@@ -222,8 +242,8 @@ ol {
     outline: 0;
     background: none;
     width: 0;
-    caret-color:transparent;
-	line-height: 40px;
+    /* caret-color:transparent; */
+	/* line-height: 40px; */
 	transition: all 0.3s linear;
     }
 
@@ -240,15 +260,17 @@ ol {
     }
 
     .search_icon{
-    height: 40px;
-	width: 40px;
-	padding: 11px;
+    height: 27px;
+	width: 27px;
+	/* padding: 11px; */
     float: right;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 50%;
-    color:white;
+	color:white;
+	border: none;
+	cursor: pointer;
 	} 
 
   /*---------------------
