@@ -36,7 +36,7 @@ session_start();
         $page = 'one'; include(dirname(__FILE__)."/header.php");
     ?>
 
-    <nav aria-label="breadcrumb" style="padding-top: 112px">
+    <nav aria-label="breadcrumb" style="padding-top: 42px">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item" ><a href="../../index.php"><i style="color:black;" class="fas fa-home"></i></a></li>
                 <li class="breadcrumb-item" style="color:rgb(64, 152, 190);"><a style="color:inherit;" href="#">Υπολογισμός Διαδρομής</a></li>

@@ -179,12 +179,13 @@ ol {
   
   /* Dropdown Content (Hidden by Default) */
   .dropdown-content {
-	padding-top: 40px;
+	padding-top: 10px;
 	display: none;
 	position: absolute;
 	min-width: 160px;
 	z-index: 1;
-	margin-left: -3px;
+	margin-left: -15px;
+	margin-top: 8px;
 	background: #0e0e0e;
 	/* opacity: 0.90; */
   }
