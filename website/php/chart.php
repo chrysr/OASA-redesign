@@ -68,7 +68,7 @@ if(!isset($_SESSION['chart']))
     ?>
 
     <form action="chart.php" method="POST" id="tick">
-        <div class="container-fluid" style="padding: 112px 0rem 4rem 0rem; background-color: white;display:flex;flex-direction:column;"> <!--flex;flex-direction:row; -->
+        <div class="container-fluid" style="padding: 2.65rem 0rem 4rem 0rem; background-color: white;display:flex;flex-direction:column;"> <!--flex;flex-direction:row; -->
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item" ><a href="../../index.php"><i style="color:black;" class="fas fa-home"></i></a></li>

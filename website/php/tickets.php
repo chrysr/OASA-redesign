@@ -59,7 +59,7 @@ if(!isset($_SESSION['chart']))
 
 
     
-    <div class="container-fluid" style="padding: 112px 0rem 30rem 0rem; background-color: white; ">
+    <div class="container-fluid" style="padding: 2.65rem 0rem 30rem 0rem; background-color: white; ">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item" ><a href="../../index.php"><i style="color:black;" class="fas fa-home"></i></a></li>

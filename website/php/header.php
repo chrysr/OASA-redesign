@@ -31,11 +31,15 @@
                         </div>
                     </div>
                 </li>
-                <li style="border:none;color:white;">
-                    <div class="searchbar">
-                        <input class="search_input" type="text" name="" placeholder="Αναζήτηση...">
-                        <button type="submit" class="search_icon"><img src="<?$_SERVER['DOCUMENT_ROOT']?>/OASA-redesign/website/images/search.png" alt="search icon"></button>
-                    </div>
+                <li style="border:none;color:white;">                        
+                    <form action="<?$_SERVER['DOCUMENT_ROOT']?>/OASA-redesign/website/php/searchbar.php" method="POST">
+
+                        <div class="searchbar">
+                            <input class="search_input" type="text" name="search" placeholder="Αναζήτηση..." required>
+                            <button type="submit" class="search_icon"><img src="<?$_SERVER['DOCUMENT_ROOT']?>/OASA-redesign/website/images/search.png" alt="search icon"></button>
+                        </div>
+
+                    </form>
                 </li>
             </ul>    
         </nav>

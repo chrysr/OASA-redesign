@@ -192,9 +192,10 @@ ol {
   
   /* Links inside the dropdown */
   .dropdown-content a {
-	width: 250px;
+	/* width:  250px; */
+	white-space: nowrap;
 	color: white;
-	padding: 12px 16px;
+	padding: 0.75em;
 	text-decoration: none;
 	display: block;
 	font-size: 18px !important;
