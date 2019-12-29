@@ -69,7 +69,10 @@ session_start();
                                     {
                                         foreach($curfilearr as $indx=>$arrwrd)
                                         {
-                                            print $arrwrd.' ';   
+                                            if($arrwrd==$word)
+                                                print '<b>'.$arrwrd.'</b> ';
+                                            else
+                                                print $arrwrd.' ';   
                                         }
                                     }
                                     else
@@ -78,7 +81,10 @@ session_start();
                                         {
                                             if($indx==$index+50)
                                                 break;
-                                            print $arrwrd.' ';
+                                            if($arrwrd==$word)
+                                                print '<b>'.$arrwrd.'</b> ';
+                                            else
+                                                print $arrwrd.' ';   
                                         }
                                     }
                                 }
@@ -91,7 +97,10 @@ session_start();
                                         {
                                             if($indx<$index)
                                                 continue;
-                                            print $arrwrd.' ';   
+                                            if($arrwrd==$word)
+                                                print '<b>'.$arrwrd.'</b> ';
+                                            else
+                                                print $arrwrd.' ';   
                                         }
                                     }
                                     else
@@ -102,7 +111,10 @@ session_start();
                                                 continue;
                                             if($indx>$index+50)
                                                 break;
-                                            print $arrwrd.' ';   
+                                            if($arrwrd==$word)
+                                                print '<b>'.$arrwrd.'</b> ';
+                                            else
+                                                print $arrwrd.' ';   
                                         }
                                     }
                                 }
