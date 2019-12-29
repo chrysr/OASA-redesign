@@ -41,12 +41,12 @@ session_start();
         </nav>   
         <?php
             $files=array('./amea.php' => "ΑμεΑ",'./faq.php'=>'Συχνές Ερωτήσεις','./proexoxes.php'=>'Στάσεις με Προεξοχές','./instructions.php'=>'Γενικές Οδηγίες','./works.php'=>'Κατάσταση Δικτύου');
-            if(isset($_POST['search']))
+            if(isset($_GET['search']))
             {    
                 print '<div style="margin: 2rem 4rem 2rem 4rem;">
-                <h3 style="">Αποτελέσματα για: <b>'.$_POST['search'].'</b></h3>
+                <h3 style="">Αποτελέσματα για: <b>'.$_GET['search'].'</b></h3>
                 </div>';
-                $pieces=explode(" ",$_POST['search']);
+                $pieces=explode(" ",$_GET['search']);
                 $counter=0;
                 foreach($files as $file=>$title)
                 {
@@ -57,11 +57,12 @@ session_start();
                         $position=0;
                         foreach($curfilearr as $index=>$arrword)
                         {
-                            if($arrword==$word)
+                            if(strtolower($arrword)==strtolower($word))
                             {
                                 $counter+=1;
-                                print '<div style="margin:1rem 6rem;border-radius:7px;border:2px solid #ccc;">';
-                                print '<h3 style="border-bottom:5px solid #ccc;vertical-align:middle;">Σελίδα: <a href="'.$file.'">'.$title.'</a></h3>';
+                                print '<div style="margin:1rem 6rem;border-radius:7px;border:2px solid #ccc;">
+                                <div style="border-bottom:5px solid #ccc;vertical-align:middle; margin:0;"> ';
+                                print '<h3 style="padding: 0.5rem 0rem 0.5rem 1rem; margin:0;"><a href="'.$file.'">'.$title.'</a></h3></div>';
                                 print '<div style="padding:1rem;" ><span>';
                                 if($index-50<0)
                                 {
@@ -69,7 +70,7 @@ session_start();
                                     {
                                         foreach($curfilearr as $indx=>$arrwrd)
                                         {
-                                            if($arrwrd==$word)
+                                            if(strtolower($arrwrd)==strtolower($word))
                                                 print '<b>'.$arrwrd.'</b> ';
                                             else
                                                 print $arrwrd.' ';   
@@ -81,7 +82,7 @@ session_start();
                                         {
                                             if($indx==$index+50)
                                                 break;
-                                            if($arrwrd==$word)
+                                            if(strtolower($arrwrd)==strtolower($word))
                                                 print '<b>'.$arrwrd.'</b> ';
                                             else
                                                 print $arrwrd.' ';   
@@ -97,7 +98,7 @@ session_start();
                                         {
                                             if($indx<$index)
                                                 continue;
-                                            if($arrwrd==$word)
+                                            if(strtolower($arrwrd)==strtolower($word))
                                                 print '<b>'.$arrwrd.'</b> ';
                                             else
                                                 print $arrwrd.' ';   
@@ -111,14 +112,14 @@ session_start();
                                                 continue;
                                             if($indx>$index+50)
                                                 break;
-                                            if($arrwrd==$word)
+                                            if(strtolower($arrwrd)==strtolower($word))
                                                 print '<b>'.$arrwrd.'</b> ';
                                             else
                                                 print $arrwrd.' ';   
                                         }
                                     }
                                 }
-                                print '</span></div>';
+                                print ' ...</span></div>';
                                 print '</div>';
                             }
                         }

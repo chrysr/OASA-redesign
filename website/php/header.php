@@ -32,7 +32,7 @@
                     </div>
                 </li>
                 <li style="border:none;color:white;">                        
-                    <form action="<?$_SERVER['DOCUMENT_ROOT']?>/OASA-redesign/website/php/searchbar.php" method="POST">
+                    <form style="margin:0;" action="<?$_SERVER['DOCUMENT_ROOT']?>/OASA-redesign/website/php/searchbar.php" method="GET">
 
                         <div class="searchbar">
                             <input class="search_input" type="text" name="search" placeholder="Αναζήτηση..." required>
