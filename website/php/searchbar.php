@@ -52,37 +52,63 @@ session_start();
                 {
                     foreach($pieces as $word)
                     {
-                        $curfile=file_get_contents($file);
+                        $curfile=strip_tags(file_get_contents($file));
+                        $curfilearr=explode(" ",$curfile);
                         $position=0;
-                        while(true)
+                        foreach($curfilearr as $index=>$arrword)
                         {
-                            $position=strpos($curfile,$word,$position+1);
-                            if($position===false)
+                            if($arrword==$word)
                             {
-                                break;
-                            }
-                            $counter+=1;
-                            print '<div style="margin:1rem 6rem;border-radius:7px;border:2px solid #ccc;">';
-                            print '<h3 style="border-bottom:5px solid #ccc;vertical-align:middle;"> <a href="'.$file.'">'.$title.'</a></h3>';
-                            print '<div style="padding:1rem;" >';
-                            if($position-48>0)
-                            {
-
-                                if($position+96<strlen($curfile))
-                                    echo '<span>'.substr($curfile,$position-48,96).'</span>';
+                                $counter+=1;
+                                print '<div style="margin:1rem 6rem;border-radius:7px;border:2px solid #ccc;">';
+                                print '<h3 style="border-bottom:5px solid #ccc;vertical-align:middle;">Σελίδα: <a href="'.$file.'">'.$title.'</a></h3>';
+                                print '<div style="padding:1rem;" ><span>';
+                                if($index-50<0)
+                                {
+                                    if($index+50>count($curfilearr))
+                                    {
+                                        foreach($curfilearr as $indx=>$arrwrd)
+                                        {
+                                            print $arrwrd.' ';   
+                                        }
+                                    }
+                                    else
+                                    {
+                                        foreach($curfilearr as $indx=>$arrwrd)
+                                        {
+                                            if($indx==$index+50)
+                                                break;
+                                            print $arrwrd.' ';
+                                        }
+                                    }
+                                }
                                 else
-                                    echo '<span>'.substr($curfile,$position-48,strlen($curfile)-$position).'</span>';
+                                {
 
+                                    if($index+50>count($curfilearr))
+                                    {
+                                        foreach($curfilearr as $indx=>$arrwrd)
+                                        {
+                                            if($indx<$index)
+                                                continue;
+                                            print $arrwrd.' ';   
+                                        }
+                                    }
+                                    else
+                                    {
+                                        foreach($curfilearr as $indx=>$arrwrd)
+                                        {
+                                            if($indx<$index-50)
+                                                continue;
+                                            if($indx>$index+50)
+                                                break;
+                                            print $arrwrd.' ';   
+                                        }
+                                    }
+                                }
+                                print '</span></div>';
+                                print '</div>';
                             }
-                            else
-                            {
-                                if($position+96<strlen($curfile))
-                                    echo '<span>'.substr($curfile,0,96).'</span>';
-                                else
-                                    echo '<span>'.substr($curfile,0,strlen($curfile)).'</span>';
-                            }
-                            print '</div>';
-                            print '</div>';
                         }
                     }
                 }
