@@ -25,7 +25,7 @@ session_start();
         $servername="127.0.0.1";
         $username="root";
         $password="";
-        $dbname="oasa";
+        $dbname="sdi1500205";
         $connection=new mysqli($servername,$username,$password,$dbname);
         
         if($connection->connect_error)
@@ -168,7 +168,7 @@ session_start();
                     $servername="127.0.0.1";
                     $username="root";
                     $password="";
-                    $dbname="oasa";
+                    $dbname="sdi1500205";
                     $error=false;
                     $edit=false;
                     $connection=new mysqli($servername,$username,$password,$dbname);
@@ -351,7 +351,7 @@ session_start();
                         $servername="127.0.0.1";
                         $username="root";
                         $password="";
-                        $dbname="oasa";
+                        $dbname="sdi1500205";
                         $connection=new mysqli($servername,$username,$password,$dbname);
                         
                         if($connection->connect_error)
@@ -436,7 +436,7 @@ session_start();
                     $servername="127.0.0.1";
                     $username="root";
                     $password="";
-                    $dbname="oasa";
+                    $dbname="sdi1500205";
                     $connection=new mysqli($servername,$username,$password,$dbname);
                     
                     if($connection->connect_error)
