@@ -6,6 +6,8 @@ session_start();
 <html lang="el">
 
 <head>
+<link rel="shortcut icon" type="image/x-icon" href="<?$_SERVER['DOCUMENT_ROOT']?>/OASA-redesign/website/images/favicon.ico">
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Υπό Κατασκευή</title>
@@ -41,7 +43,7 @@ session_start();
 </body>
 
 <script>
-    var countDownDate = new Date("Jan 15, 2020 00:00:00").getTime();
+    var countDownDate = new Date("Feb 15, 2020 00:00:00").getTime();
     var x = setInterval(function() {
         var now = new Date().getTime();
         var distance = countDownDate - now;
