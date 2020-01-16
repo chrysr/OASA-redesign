@@ -21,7 +21,7 @@ localhost/OASA-redesign/
 
 ## Screenshots
 Front Page  
-![alt text](Screenshots/front_page)  
+![alt text](Screenshots/front_page.png)  
 
 ![alt text](https://raw.githubusercontent.com/chrysr/OASA-redesign/master/Screenshots/front_page2.png?token=AKRBLU3IB4V7MSDGNEY625C6FH7S6)
 
