@@ -21,12 +21,12 @@ localhost/OASA-redesign/
 
 ## Screenshots
 Front Page
-![alt text](https://raw.githubusercontent.com/chrysr/OASA-redesign/master/Screenshots/front_page.png)
+![alt text](https://raw.githubusercontent.com/chrysr/OASA-redesign/master/Screenshots/front_page.png?token=AKRBLU3IB4V7MSDGNEY625C6FH7S6)
 
-![alt text](https://raw.githubusercontent.com/chrysr/OASA-redesign/master/Screenshots/front_page2.png)
+![alt text](https://raw.githubusercontent.com/chrysr/OASA-redesign/master/Screenshots/front_page2.png?token=AKRBLU3IB4V7MSDGNEY625C6FH7S6)
 
 Subscription Modal
-![alt text](https://raw.githubusercontent.com/chrysr/OASA-redesign/master/Screenshots/subscription.png)
+![alt text](https://raw.githubusercontent.com/chrysr/OASA-redesign/master/Screenshots/subscription.png?token=AKRBLU3IB4V7MSDGNEY625C6FH7S6)
 
 Journey Planner
 ![alt text](https://raw.githubusercontent.com/chrysr/OASA-redesign/master/Screenshots/journey.png)
