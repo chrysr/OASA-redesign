@@ -1,6 +1,6 @@
 # OASA-redesign
 
-Redesigning the website of OASA (Athens' transportation system), focusing on UX Design.
+Redesigning the website of OASA (Athens' transportation system), focusing on UX Design.  
 Made using PHP, SQL, HTML, CSS (Bootstrap) and JAVASCRIPT (Bootstrap, jQuery).
 
 ## Usage
@@ -23,40 +23,40 @@ localhost/OASA-redesign/
 Front Page  
 ![alt text](Screenshots/front_page.png)  
 
-![alt text](https://raw.githubusercontent.com/chrysr/OASA-redesign/master/Screenshots/front_page2.png?token=AKRBLU3IB4V7MSDGNEY625C6FH7S6)
+![alt text](Screenshots/front_page2.png)
 
 Subscription Modal  
-![alt text](https://raw.githubusercontent.com/chrysr/OASA-redesign/master/Screenshots/subscription.png?token=AKRBLU3IB4V7MSDGNEY625C6FH7S6)
+![alt text](Screenshots/subscription.png)
 
 Journey Planner  
-![alt text](https://raw.githubusercontent.com/chrysr/OASA-redesign/master/Screenshots/journey.png)
+![alt text](Screenshots/journey.png)
 
 Tickets  
-![alt text](https://raw.githubusercontent.com/chrysr/OASA-redesign/master/Screenshots/buy_ticket.png)  
+![alt text](Screenshots/buy_ticket.png)  
 
-![alt text](https://raw.githubusercontent.com/chrysr/OASA-redesign/master/Screenshots/buy_ticket2.png)
+![alt text](Screenshots/buy_ticket2.png)
 
 Stations  
-![alt text](https://raw.githubusercontent.com/chrysr/OASA-redesign/master/Screenshots/stops.png)
+![alt text](Screenshots/stops.png)
 
 FAQ  
-![alt text](https://raw.githubusercontent.com/chrysr/OASA-redesign/master/Screenshots/faq.png)
+![alt text](Screenshots/faq.png)
 
 Accessibility Information  
-![alt text](https://raw.githubusercontent.com/chrysr/OASA-redesign/master/Screenshots/amea.png)  
+![alt text](Screenshots/amea.png)  
 
-![alt text](https://raw.githubusercontent.com/chrysr/OASA-redesign/master/Screenshots/amea_info.png)
+![alt text](Screenshots/amea_info.png)
 
 Login  
-![alt text](https://raw.githubusercontent.com/chrysr/OASA-redesign/master/Screenshots/login.png)
+![alt text](Screenshots/login.png)
 
 Password Recovery  
-![alt text](https://raw.githubusercontent.com/chrysr/OASA-redesign/master/Screenshots/reset_password.png)
+![alt text](Screenshots/reset_password.png)
 
 Signup  
-![alt text](https://raw.githubusercontent.com/chrysr/OASA-redesign/master/Screenshots/signup.png)
+![alt text](Screenshots/signup.png)
 
 User Dashboard  
-![alt text](https://raw.githubusercontent.com/chrysr/OASA-redesign/master/Screenshots/user_dashboard.png)  
+![alt text](Screenshots/user_dashboard.png)  
 
-![alt text](https://raw.githubusercontent.com/chrysr/OASA-redesign/master/Screenshots/user_dashboard2.png)
+![alt text](Screenshots/user_dashboard2.png)
