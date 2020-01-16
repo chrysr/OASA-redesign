@@ -15,48 +15,48 @@ localhost/OASA-redesign/
 ```
 
 ## Contributors
-[Chrysostomos Rampidis](https://github.com/hectortav)
+[Chrysostomos Rampidis](https://github.com/chrysr)  
 
 [Konstantinos Paschopoulos](https://github.com/KonstantinosPaschopoulos)
 
 ## Screenshots
-Front Page
-![alt text](https://raw.githubusercontent.com/chrysr/OASA-redesign/master/Screenshots/front_page.png?token=AKRBLU3IB4V7MSDGNEY625C6FH7S6)
+Front Page  
+![alt text](Screenshots/front_page)  
 
 ![alt text](https://raw.githubusercontent.com/chrysr/OASA-redesign/master/Screenshots/front_page2.png?token=AKRBLU3IB4V7MSDGNEY625C6FH7S6)
 
-Subscription Modal
+Subscription Modal  
 ![alt text](https://raw.githubusercontent.com/chrysr/OASA-redesign/master/Screenshots/subscription.png?token=AKRBLU3IB4V7MSDGNEY625C6FH7S6)
 
-Journey Planner
+Journey Planner  
 ![alt text](https://raw.githubusercontent.com/chrysr/OASA-redesign/master/Screenshots/journey.png)
 
-Tickets
-![alt text](https://raw.githubusercontent.com/chrysr/OASA-redesign/master/Screenshots/buy_ticket.png)
+Tickets  
+![alt text](https://raw.githubusercontent.com/chrysr/OASA-redesign/master/Screenshots/buy_ticket.png)  
 
 ![alt text](https://raw.githubusercontent.com/chrysr/OASA-redesign/master/Screenshots/buy_ticket2.png)
 
-Stations
+Stations  
 ![alt text](https://raw.githubusercontent.com/chrysr/OASA-redesign/master/Screenshots/stops.png)
 
-FAQ
+FAQ  
 ![alt text](https://raw.githubusercontent.com/chrysr/OASA-redesign/master/Screenshots/faq.png)
 
-Accessibility Information
-![alt text](https://raw.githubusercontent.com/chrysr/OASA-redesign/master/Screenshots/amea.png)
+Accessibility Information  
+![alt text](https://raw.githubusercontent.com/chrysr/OASA-redesign/master/Screenshots/amea.png)  
 
 ![alt text](https://raw.githubusercontent.com/chrysr/OASA-redesign/master/Screenshots/amea_info.png)
 
-Login
+Login  
 ![alt text](https://raw.githubusercontent.com/chrysr/OASA-redesign/master/Screenshots/login.png)
 
-Password Recovery
+Password Recovery  
 ![alt text](https://raw.githubusercontent.com/chrysr/OASA-redesign/master/Screenshots/reset_password.png)
 
-Signup
+Signup  
 ![alt text](https://raw.githubusercontent.com/chrysr/OASA-redesign/master/Screenshots/signup.png)
 
-User Dashboard
-![alt text](https://raw.githubusercontent.com/chrysr/OASA-redesign/master/Screenshots/user_dashboard.png)
+User Dashboard  
+![alt text](https://raw.githubusercontent.com/chrysr/OASA-redesign/master/Screenshots/user_dashboard.png)  
 
 ![alt text](https://raw.githubusercontent.com/chrysr/OASA-redesign/master/Screenshots/user_dashboard2.png)
